@@ -16,7 +16,7 @@ module.exports = {
         file: '79326fc0-b197-11ed-a3dd-6ff71a7ec8d4.wav',
         genre: 'Rap',
         description: 'Around Me - Metro Boomin ft. Don Toliver',
-        imageUrl: 'https://media.pitchfork.com/photos/638a00f26bff496656dc0b1c/master/w_1280%2Cc_limit/Metro-Boomin.jpg'
+        imageUrl: 'https://i1.sndcdn.com/artworks-9mmyAe29zCMZ-0-t500x500.jpg'
       },
       {
         userId: 2,
