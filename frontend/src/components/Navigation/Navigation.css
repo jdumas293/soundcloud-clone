@@ -2,12 +2,27 @@
     display: none;
 }
 
+.nav-background-container {
+    border-bottom: 1px solid black;
+    height: 3em;
+    width: 100%;
+    /* background-color: #333; */
+    padding: 0px;
+}
+
 .nav-container {
     display: flex;
     margin-left: 150px;
     margin-right: 150px;
-    height: 2em;
+    align-self: center;
     /* border: 1px solid black; */
+}
+
+.profile-btn button {
+    border-radius:10px;
+    background-color: white;
+    height: 2em;
+    width: 3em;
 }
 
 .home-btn-container {
@@ -20,9 +35,27 @@
 
 .create-acct-btn {
     display: flex;
-    width: 80%;
+    width: 10%;
     height: 1.75em;
     justify-content: flex-end;
+}
+
+.login-btn {
+    display: flex;
+    width: 70%;
+    height: 1.75em;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+
+.login-btn button {
+    border-color: black;
+    border-radius: 5px;
+    height: 2em;
+    color: black;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    font-weight: 100;
+    cursor: pointer;
 }
 
 .create-acct-btn button {
@@ -32,6 +65,7 @@
     color: white;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
     font-weight: 100;
+    cursor: pointer;
 }
 
 .profile-btn-container {
@@ -45,9 +79,25 @@
 .profile-dropdown {
     position: absolute;
     list-style-type: none;
-    border: 2px solid black;
-    right: 50px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    right: 115px;
     padding: 10px;
-    background-color: rgba(0,0,0,0.7);
+    height: 200px;
+    width: 6em;
     /* text-align: center; */
+}
+
+.demo-user-btn button {
+    border: none;
+    color: #333;
+    width: 100%;
+    height: 2.5em;
+    cursor: pointer;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.demo-user-btn button:hover {
+    color: white;
+    background-color: #f50;
 }

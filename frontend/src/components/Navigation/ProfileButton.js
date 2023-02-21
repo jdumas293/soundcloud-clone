@@ -41,9 +41,11 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
-      </button>
+      <div className="profile-btn">
+        <button onClick={openMenu}>
+          <i className="fas fa-user-circle" />
+        </button>
+      </div>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
@@ -55,19 +57,15 @@ function ProfileButton({ user }) {
           </>
         ) : (
           <>
-            <li>
-              <OpenModalButton
-                buttonText="Log In"
-                onButtonClick={closeMenu}
-                modalComponent={<LoginFormModal />}
-              />
-            </li>
-            <li>
-                <OpenModalButton
-                    buttonText="Demo User"
-                    onButtonClick={() => dispatch(sessionActions.login({credential: 'Demo-lition', password: 'password'}))}
-                />
-            </li>
+            <div className="demo-user-btn">
+              <li>
+                  <OpenModalButton
+                      buttonText="Demo User"
+                      onButtonClick={() => dispatch(sessionActions.login({credential: 'Demo-lition', password: 'password'}))}
+                  />
+              </li>
+
+            </div>
           </>
         )}
       </ul>
