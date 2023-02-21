@@ -1,0 +1,56 @@
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 325px;
+    width: 400px;
+    /* border: 2px solid blue; */
+}
+
+.login-cred-container {
+    display: flex;
+    justify-content: center;
+}
+
+.login-cred-container input {
+    width: 90%;
+    height: 3em;
+    border-radius: 5px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 2px solid red; */
+}
+
+.login-pw-container {
+    /* border: 2px solid orange; */
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.login-pw-container input {
+    width: 90%;
+    height: 3em;
+    border-radius: 5px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 2px solid red; */
+}
+
+.login-form-container button {
+    width: 90%;
+    height: 3em;
+    align-self: center;
+    margin-top: 1em;
+    color: white;
+    background-color: #f50;
+    border-color: #f50;
+    border-radius: 5px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.login-disclaimer {
+    width: 90%;
+    align-self: center;
+    font-size: 11.5px;
+    color: grey;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+}
