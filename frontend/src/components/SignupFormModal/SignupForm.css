@@ -1,0 +1,85 @@
+.signup-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 425px;
+    width: 400px;
+    /* border: 2px solid blue; */
+}
+
+.signup-email-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.signup-email-container input {
+    width: 90%;
+    height: 3em;
+    border-radius: 5px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 2px solid red; */
+}
+
+.signup-username-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.signup-username-container input {
+    width: 90%;
+    height: 3em;
+    border-radius: 5px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 2px solid red; */
+}
+
+.signup-pw-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.signup-pw-container input {
+    width: 90%;
+    height: 3em;
+    border-radius: 5px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 2px solid red; */
+}
+
+.signup-confirm-pw {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.signup-confirm-pw input {
+    width: 90%;
+    height: 3em;
+    border-radius: 5px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 2px solid red; */
+}
+
+.signup-form-container button {
+    width: 90%;
+    height: 3em;
+    align-self: center;
+    margin-top: 1em;
+    color: white;
+    background-color: #f50;
+    border-color: #f50;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.login-disclaimer {
+    width: 90%;
+    align-self: center;
+    font-size: 11.5px;
+    color: grey;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+}
