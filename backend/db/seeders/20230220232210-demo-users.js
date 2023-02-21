@@ -1,7 +1,7 @@
 'use strict';
 /** @type {import('sequelize-cli').Migration} */
+
 const bcrypt = require("bcryptjs");
-const { query } = require('express');
 
 let options = {};
 if (process.env.NODE_ENV === 'production') {
