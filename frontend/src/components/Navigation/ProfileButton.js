@@ -64,7 +64,9 @@ function ProfileButton({ user }) {
                       onButtonClick={() => dispatch(sessionActions.login({credential: 'Demo-lition', password: 'password'}))}
                   />
               </li>
-
+            </div>
+            <div className="dropdown-profile-btn">
+              <button>Profile</button>
             </div>
           </>
         )}
