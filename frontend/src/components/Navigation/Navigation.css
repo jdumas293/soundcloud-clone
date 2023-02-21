@@ -6,21 +6,38 @@
     display: flex;
     margin-left: 150px;
     margin-right: 150px;
+    height: 2em;
     /* border: 1px solid black; */
 }
 
 .home-btn-container {
     display: flex;
     justify-content: flex-start;
-    width: 50%;
+    width: 10%;
     list-style-type: none;
     /* border: 1px solid black; */
+}
+
+.create-acct-btn {
+    display: flex;
+    width: 80%;
+    height: 1.75em;
+    justify-content: flex-end;
+}
+
+.create-acct-btn button {
+    background-color: #f50;
+    border-color: #f50;
+    border-radius: 5px;
+    color: white;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    font-weight: 100;
 }
 
 .profile-btn-container {
     display: flex;
     justify-content: flex-end;
-    width: 50%;
+    width: 10%;
     list-style-type: none;
     /* border: 1px solid black; */
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import OpenModalButton from '../OpenModalButton';
+import SignupFormModal from '../SignupFormModal';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
@@ -13,6 +15,13 @@ function Navigation({ isLoaded }){
         <li>
           <NavLink exact to="/">Home</NavLink>
         </li>
+      </div>
+      <div className="create-acct-btn">
+        <OpenModalButton
+          buttonText="Create Account"
+          // onButtonClick={closeMenu}
+          modalComponent={<SignupFormModal />}
+        />
       </div>
       <div className='profile-btn-container'>
         {isLoaded && (
