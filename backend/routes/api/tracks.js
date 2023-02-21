@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { Track, TrackImage } = require('../../db/models');
+const { Track, Comment } = require('../../db/models');
 const { requireAuth } = require('../../utils/auth');
 
 const router = express.Router();
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
         Tracks.push(track.toJSON());
     });
 
-    console.log('TRACKS ===>', tracks);
+    // console.log('TRACKS ===>', tracks);
 
     res.json({ Tracks });
 });
@@ -32,7 +32,7 @@ router.get('/current', requireAuth, async (req, res) => {
         Tracks.push(track.toJSON());
     });
 
-    console.log('TRACKS ===>', Tracks);
+    // console.log('TRACKS ===>', Tracks);
 
     res.json({ Tracks });
 })
@@ -73,51 +73,46 @@ router.post('/', requireAuth, async (req, res) => {
     res.json(track);
 });
 
-// ADD AN IMAGE TO A TRACK
-router.post('/:trackId/images', requireAuth, async (req, res) => {
-    const { url } = req.body;
-    const track = await Track.findOne({
-        where: {
-            id: req.params.trackId
-        },
-        include: [
-            {
-                model: TrackImage
-            }
-        ]
-    });
+// // ADD AN IMAGE TO A TRACK
+// router.post('/:trackId/images', requireAuth, async (req, res) => {
+//     const { url } = req.body;
+//     const track = await Track.findOne({
+//         where: {
+//             id: req.params.trackId
+//         },
+//     });
 
-    if (!track) {
-        res.status(404);
-        res.json({
-            message: "Track not found",
-            statusCode: 404
-        })
-    }
+//     if (!track) {
+//         res.status(404);
+//         res.json({
+//             message: "Track not found",
+//             statusCode: 404
+//         })
+//     }
 
-    // Track must belong to the current user
-    if (track.userId === req.user.id) {
-        await TrackImage.create({
-            trackId: req.params.trackId,
-            url: url
-        });
-    } else {
-        res.status(403);
-        res.json({
-            message: "Forbidden",
-            statusCode: 403
-        });
-    };
+//     // Track must belong to the current user
+//     if (track.userId === req.user.id) {
+//         await TrackImage.create({
+//             trackId: req.params.trackId,
+//             url: url
+//         });
+//     } else {
+//         res.status(403);
+//         res.json({
+//             message: "Forbidden",
+//             statusCode: 403
+//         });
+//     };
 
-    // Query for new track image
-    const newTrackImage = await TrackImage.findOne({
-        where: {
-            trackId: req.params.trackId
-        }
-    });
+//     // Query for new track image
+//     const newTrackImage = await TrackImage.findOne({
+//         where: {
+//             trackId: req.params.trackId
+//         }
+//     });
 
-    res.json(newTrackImage);
-})
+//     res.json(newTrackImage);
+// })
 
 // EDIT A TRACK
 router.put('/:trackId', requireAuth, async (req, res) => {
@@ -190,10 +185,64 @@ router.delete('/:trackId', requireAuth, async (req, res) => {
 });
 
 
-// COMMENT ROUTES HERE
-// GET ALL COMMENTS BY TRACK ID
-// CREATE COMMENT FOR TRACK BY TRACK ID
+// COMMENT ROUTES
 
+// GET ALL COMMENTS BY TRACK ID
+router.get('/:trackId/comments', async (req, res) => {
+    const track = await Track.findByPk(req.params.trackId);
+
+    if (!track) {
+        res.status(404);
+        return res.json({
+            message: "Track not found",
+            statusCode: 404
+        });
+    };
+
+    const comments = await Comment.findAll({
+        where: {
+            trackId: req.params.trackId
+        },
+        include: [
+            {
+                model: User
+            }
+        ]
+    });
+
+    let Comments = [];
+    comments.forEach(comment => {
+        Comments.push(comment.toJSON());
+    });
+
+    return res.json({ Comments });
+});
+
+// CREATE COMMENT FOR TRACK BY TRACK ID
+router.post('/:trackId/comments', requireAuth, async (req, res) => {
+    const { commentBody } = req.body;
+    const track = await Track.findOne({
+        where: {
+            id: req.params.trackId
+        }
+    });
+
+    if (!track) {
+        res.status(404);
+        res.json({
+            message: "Track not found",
+            statusCode: 404
+        });
+    };
+
+    const comment = await Comment.create({
+        userId: req.user.id,
+        trackId: req.params.trackId,
+        commentBody: commentBody
+    });
+
+    res.json(comment);
+})
 
 
 
