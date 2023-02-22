@@ -13,7 +13,7 @@ module.exports = {
       {
         userId: 1,
         title: 'Around Me',
-        file: '79326fc0-b197-11ed-a3dd-6ff71a7ec8d4.wav',
+        file: 'https://soundcloud-clone-bucket.s3.us-east-2.amazonaws.com/Around+Me.mp3',
         genre: 'Rap',
         description: 'Around Me - Metro Boomin ft. Don Toliver',
         imageUrl: 'https://i1.sndcdn.com/artworks-9mmyAe29zCMZ-0-t500x500.jpg'
@@ -21,7 +21,7 @@ module.exports = {
       {
         userId: 2,
         title: 'Drugs You Should Try It',
-        file: '9373d260-b198-11ed-b97d-7bb0de193c37.wav',
+        file: 'https://soundcloud-clone-bucket.s3.us-east-2.amazonaws.com/04+Drugs+You+Should+Try+It.mp3',
         genre: 'Rap',
         description: 'Drugs You Should Try It - Travis Scott',
         imageUrl: 'https://i1.sndcdn.com/artworks-000088468281-q999dc-t500x500.jpg'
@@ -29,7 +29,7 @@ module.exports = {
       {
         userId: 3,
         title: 'Codeine Crazy',
-        file: 'd25dc760-b198-11ed-803a-33e6c07c8035.wav',
+        file: 'https://soundcloud-clone-bucket.s3.us-east-2.amazonaws.com/Future+-+Codeine+Crazy+(Audio).mp3',
         genre: 'Rap',
         description: 'Codeine Crazy - Future',
         imageUrl: 'https://i1.sndcdn.com/artworks-000250149364-jppbe9-t500x500.jpg'
