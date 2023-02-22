@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkLoadTracks } from "../../store/track";
+import OpenModalButton from '../OpenModalButton';
 import AudioPlayer from "./AudioPlayer/AudioPlayer";
+import UploadTrack from "./UploadTrack/UploadTrack";
 import TrackCard from "./TrackCard";
 
 const LoadAllTracks = () => {
@@ -20,6 +22,12 @@ const LoadAllTracks = () => {
             </div> */}
             <div>
                 <AudioPlayer tracks={tracks} />
+            </div>
+            <div>
+                <OpenModalButton 
+                    buttonText="Upload"
+                    modalComponent={<UploadTrack />}
+                />
             </div>
         </>
     )

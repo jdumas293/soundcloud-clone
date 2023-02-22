@@ -2,6 +2,7 @@ const express = require('express');
 
 const { Track, Comment } = require('../../db/models');
 const { requireAuth } = require('../../utils/auth');
+const { singlePublicFileUpload, singleMulterUpload } = require('../../awsS3');
 
 const router = express.Router();
 
@@ -59,60 +60,22 @@ router.get('/:trackId', async (req, res) => {
 });
 
 // CREATE A TRACK
-router.post('/', requireAuth, async (req, res) => {
-    const { title, file, genre, description, imageUrl } = req.body;
+router.post('/', singleMulterUpload("file"), requireAuth, async (req, res) => {
+    const { title, genre, description, imageUrl } = req.body;
+
+    const audioFile = await singlePublicFileUpload(req.file);
+
     const track = await Track.create({
         userId: req.user.id,
         title: title,
-        file: file,
+        file: audioFile,
         genre: genre,
         description: description,
         imageUrl: imageUrl
     });
 
-    res.json(track);
+    return res.json(track);
 });
-
-// // ADD AN IMAGE TO A TRACK
-// router.post('/:trackId/images', requireAuth, async (req, res) => {
-//     const { url } = req.body;
-//     const track = await Track.findOne({
-//         where: {
-//             id: req.params.trackId
-//         },
-//     });
-
-//     if (!track) {
-//         res.status(404);
-//         res.json({
-//             message: "Track not found",
-//             statusCode: 404
-//         })
-//     }
-
-//     // Track must belong to the current user
-//     if (track.userId === req.user.id) {
-//         await TrackImage.create({
-//             trackId: req.params.trackId,
-//             url: url
-//         });
-//     } else {
-//         res.status(403);
-//         res.json({
-//             message: "Forbidden",
-//             statusCode: 403
-//         });
-//     };
-
-//     // Query for new track image
-//     const newTrackImage = await TrackImage.findOne({
-//         where: {
-//             trackId: req.params.trackId
-//         }
-//     });
-
-//     res.json(newTrackImage);
-// })
 
 // EDIT A TRACK
 router.put('/:trackId', requireAuth, async (req, res) => {

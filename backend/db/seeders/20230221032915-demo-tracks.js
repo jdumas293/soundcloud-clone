@@ -33,6 +33,14 @@ module.exports = {
         genre: 'Rap',
         description: 'Codeine Crazy - Future',
         imageUrl: 'https://i1.sndcdn.com/artworks-000250149364-jppbe9-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'Sanguine Paradise',
+        file: 'https://soundcloud-clone-bucket.s3.us-east-2.amazonaws.com/bf319920-b2ef-11ed-ac58-a1d2e790c701.wav',
+        genre: 'Rap',
+        description: 'Sanguine Paradise - LUV',
+        imageUrl: 'https://i1.sndcdn.com/artworks-jKhZxZp2WEMwtM6k-ciuTdQ-t500x500.jpg'
       }
     ])
   },

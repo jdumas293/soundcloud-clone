@@ -64,12 +64,24 @@ export const thunkLoadSingleTrack = (trackId) => async (dispatch) => {
 };
 
 export const thunkUploadTrack = (track) => async (dispatch) => {
+    const { title, file, genre, description, imageUrl } = track;
+    const formData = new FormData();
+
+    formData.append("title", title);
+    formData.append("genre", genre);
+    formData.append("description", description);
+    formData.append("imageUrl", imageUrl);
+
+    if (file) {
+        formData.append("file", file);
+    };
+
     const res = await csrfFetch('api/tracks', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'multipart/form-data'
         },
-        body: JSON.stringify(track)
+        body: formData
     });
 
     if (res.ok) {
@@ -142,6 +154,6 @@ const tracksReducer = (state = initialState, action) => {
         default:
             return state;
     }
-};
+}
 
 export default tracksReducer;
