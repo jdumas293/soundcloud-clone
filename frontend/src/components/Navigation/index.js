@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import OpenModalButton from '../OpenModalButton';
 import SignupFormModal from '../SignupFormModal';
 import LoginFormModal from '../LoginFormModal';
+import UploadTrack from '../TrackComponents/UploadTrack/UploadTrack';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
@@ -17,6 +18,12 @@ function Navigation({ isLoaded }){
         <li>
           <NavLink exact to="/">Home</NavLink>
         </li>
+      </div>
+      <div className='upload-btn'>
+        <OpenModalButton 
+          buttonText="Upload"
+          modalComponent={<UploadTrack />}
+        />
       </div>
       <div className='login-btn'>
         <li>

@@ -20,12 +20,6 @@ const LoadAllTracks = () => {
             {/* <div className="trackcard-container">
                 {tracks.map(track => <TrackCard track={track} />)}                
             </div> */}
-            <div>
-                <OpenModalButton 
-                    buttonText="Upload"
-                    modalComponent={<UploadTrack />}
-                />
-            </div>
         </>
     )
 }

@@ -50,50 +50,50 @@ const UploadTrack = () => {
                 <ul>
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
-                <div className="upload-title">
-                    <input
-                        type="text"
-                        placeholder="Your title"
-                        name="title"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="upload-file">
-                    <input 
-                        type="file"
-                        onChange={updateFile}
-                    />
-                </div>
-                <div className="upload-genre">
-                    <input 
-                        type="text"
-                        placeholder="Your genre"
-                        name="genre"
-                        value={genre}
-                        onChange={(e) => setGenre(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="upload-description">
-                    <textarea 
-                        placeholder="Your description"
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="upload-trackimage">
-                    <input 
-                        type="url"
-                        name="imageUrl"
-                        placeholder="Your track image"
-                        value={imageUrl}
-                        onChange={(e) => setImageUrl(e.target.value)}
-                    />
-                </div>
-                <div>
+                <div className="uploadtrack-form-container">
+                    <div className="upload-file">
+                        <input 
+                            type="file"
+                            onChange={updateFile}
+                        />
+                    </div>
+                    <div className="upload-title">
+                        <input
+                            type="text"
+                            placeholder="Your title"
+                            name="title"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="upload-genre">
+                        <input 
+                            type="text"
+                            placeholder="Your genre"
+                            name="genre"
+                            value={genre}
+                            onChange={(e) => setGenre(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="upload-description">
+                        <textarea 
+                            placeholder="Your description"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="upload-trackimage">
+                        <input 
+                            type="url"
+                            name="imageUrl"
+                            placeholder="Your track image"
+                            value={imageUrl}
+                            onChange={(e) => setImageUrl(e.target.value)}
+                        />
+                    </div>
                     <button onSubmit={handleUpload}>Upload</button>
                 </div>
             </form>

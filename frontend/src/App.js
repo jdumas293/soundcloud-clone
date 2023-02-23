@@ -18,8 +18,11 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route exact path='/'>
+          {/* <Route exact path='/'>
             <LoadAllTracks />
+          </Route> */}
+          <Route exact path='/tracks/:trackId'>
+            THIS ROUTE WORKS
           </Route>
         </Switch>
       )}
