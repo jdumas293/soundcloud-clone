@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./components/TrackComponents/HomePage/HomePage";
 import SingleTrackPage from "./components/TrackComponents/SingleTrackPage/SingleTrackPage";
+import ProfilePage from "./components/ProfileComponents/ProfilePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,9 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <HomePage />
+          </Route>
+          <Route exact path='/profile'>
+            <ProfilePage />
           </Route>
           <Route exact path='/tracks/:trackId'>
             <SingleTrackPage />

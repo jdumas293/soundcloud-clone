@@ -20,8 +20,8 @@ const AudioPlayer = ({ tracks }) => {
 
     const { duration } = audioRef.current;
 
+    // Go to previous track
     const toPrevTrack = () => {
-        console.log('TODO go to prev');
         if (trackIndex - 1 < 0) {
             setTrackIndex(tracks.length - 1);
         } else {
@@ -29,8 +29,8 @@ const AudioPlayer = ({ tracks }) => {
         };
     };
 
+    // Go to next track
     const toNextTrack = () => {
-        console.log('TODO go to next');
         if (trackIndex < tracks.length - 1) {
             setTrackIndex(trackIndex + 1);
         } else {
@@ -39,21 +39,21 @@ const AudioPlayer = ({ tracks }) => {
     };
 
     const startTimer = () => {
-        clearInterval(intervalRef.current);
+        clearInterval(intervalRef.current); // clear interval when timer starts
 
         intervalRef.current = setInterval(() => {
-            if (audioRef.current.ended) {
-                toNextTrack();
+            if (audioRef.current.ended) { // if audioRef reaches the end
+                toNextTrack(); // play next track
             } else {
-                setTrackProgress(audioRef.current.currentTime);
+                setTrackProgress(audioRef.current.currentTime); // else set track progress to the current time
             }
-        }, [1000]);
+        }, [1000]); // 1 sec intervals
     }
 
     const onScrub = (value) => {
-        clearInterval(intervalRef.current);
-        audioRef.current.currentTime = value;
-        setTrackProgress(audioRef.current.currentTime);
+        clearInterval(intervalRef.current); // clear current interval
+        audioRef.current.currentTime = value; 
+        setTrackProgress(audioRef.current.currentTime); // set current time to value of scrubber
     };
 
     const onScrubEnd = () => {
@@ -82,6 +82,7 @@ const AudioPlayer = ({ tracks }) => {
         }
     }, []);
 
+    // Listens for changes in the track index and load new track
     useEffect(() => {
         audioRef.current.pause();
 

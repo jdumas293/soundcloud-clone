@@ -1,6 +1,7 @@
 import { csrfFetch } from './csrf';
 
 const LOAD_TRACKS = 'tracks/loadTracks';
+// const LOAD_CURR_USER_TRACKS = 'tracks/loadCurrUserTracks';
 const LOAD_SINGLE_TRACK = 'tracks/loadSingleTrack';
 const UPLOAD_TRACK = 'tracks/uploadTrack';
 const EDIT_TRACK = 'tracks/editTrack';
@@ -13,6 +14,13 @@ export const actionLoadTracks = (tracks) => {
         payload: tracks
     };
 };
+
+// export const actionLoadCurrUserTracks = (tracks) => {
+//     return {
+//         type: LOAD_CURR_USER_TRACKS,
+//         payload: tracks
+//     };
+// };
 
 export const actionLoadSingleTrack = (track) => {
     return {
@@ -52,6 +60,16 @@ export const thunkLoadTracks = () => async (dispatch) => {
         return tracks;
     };
 };
+
+// export const thunkLoadCurrUserTracks = () => async (dispatch) => {
+//     const res = await csrfFetch('/api/tracks/current');
+
+//     if (res.ok) {
+//         const tracks = await res.json();
+//         dispatch(actionLoadCurrUserTracks(tracks));
+//         return tracks;
+//     };
+// };
 
 export const thunkLoadSingleTrack = (trackId) => async (dispatch) => {
     const res = await csrfFetch(`/api/tracks/${trackId}`);
@@ -132,6 +150,13 @@ const tracksReducer = (state = initialState, action) => {
             });
             return newState;
         }
+        // case LOAD_CURR_USER_TRACKS: {
+        //     newState = { allTracks: {}, singleTrack: {} };
+        //     action.payload.forEach(track => {
+        //         newState.allTracks[track.id] = track;
+        //     });
+        //     return newState;
+        // }
         case LOAD_SINGLE_TRACK: {
             newState = { allTracks: {}, singleTrack: {...action.payload} };
             return newState;
