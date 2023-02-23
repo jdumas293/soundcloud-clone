@@ -1,12 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { thunkLoadTracks } from "../../store/track";
-import OpenModalButton from '../OpenModalButton';
-import AudioPlayer from "./AudioPlayer/AudioPlayer";
-import UploadTrack from "./UploadTrack/UploadTrack";
+import { thunkLoadTracks } from "../../../store/track";
 import TrackCard from "./TrackCard";
+import "./HomePage.css";
 
-const LoadAllTracks = () => {
+const HomePage = () => {
     const dispatch = useDispatch();
     const tracks = Object.values(useSelector(state => state?.tracks?.allTracks));
     // console.log("TRACKS ===>", tracks);
@@ -17,11 +15,11 @@ const LoadAllTracks = () => {
 
     return (
         <>
-            {/* <div className="trackcard-container">
+            <div className="trackcard-container">
                 {tracks.map(track => <TrackCard track={track} />)}                
-            </div> */}
+            </div>
         </>
     )
 }
 
-export default LoadAllTracks;
+export default HomePage;

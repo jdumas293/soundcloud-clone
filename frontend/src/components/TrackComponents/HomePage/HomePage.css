@@ -1,0 +1,25 @@
+.trackcard-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 2em;
+    /* border: 1px solid black; */
+}
+
+.trackdetails-container {
+    display: flex;
+    flex-direction: column;
+    /* flex-direction: column; */
+    /* border: 1px solid black; */
+}
+
+/* .track-image {
+    border: 1px solid black;
+} */
+
+.track-image img {
+    object-fit: cover;
+}

@@ -4,11 +4,13 @@ import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer/Footer";
-import LoadAllTracks from "./components/TrackComponents/LoadAllTracks";
+import HomePage from "./components/TrackComponents/HomePage/HomePage";
+import SingleTrackPage from "./components/TrackComponents/SingleTrackPage/SingleTrackPage";
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
@@ -18,11 +20,11 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          {/* <Route exact path='/'>
-            <LoadAllTracks />
-          </Route> */}
+          <Route exact path='/'>
+            <HomePage />
+          </Route>
           <Route exact path='/tracks/:trackId'>
-            THIS ROUTE WORKS
+            <SingleTrackPage />
           </Route>
         </Switch>
       )}

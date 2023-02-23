@@ -1,0 +1,31 @@
+.singletrack-container {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 150px;
+    margin-left: 150px;
+    background-color: lightgrey;
+    /* border: 1px solid black; */
+}
+
+.singletrack-info-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    /* justify-content: space-evenly; */
+    /* border: 1px solid black; */
+}
+
+.singletrack-img-container {
+    /* border: 1px solid black; */
+    object-fit: cover;
+}
+
+.singletrack-img-container img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.singletrack-comments-container {
+    margin-left: 150px;
+    margin-right: 150px;
+}
