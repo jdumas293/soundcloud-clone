@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import AudioControls from "./AudioControls";
+import './AudioPlayer.css';
 
 const AudioPlayer = ({ tracks }) => {
 ;   const [trackIndex, setTrackIndex] = useState(0); // index of track being played
@@ -99,28 +100,39 @@ const AudioPlayer = ({ tracks }) => {
     return (
         <div className="audioplayer-container">
             <div className="track-info-container">
-                <img
-                    className="album-art"
-                    src={imageUrl}
-                />
-                <h2 className="track-title">{title}</h2>
-                <AudioControls 
-                    isPlaying={isPlaying}
-                    onPrevClick={toPrevTrack}
-                    onNextClick={toNextTrack}
-                    onPlayPauseClick={setIsPlaying}
-                />
-                <input
-                    type="range"
-                    value={trackProgress}
-                    step="1"
-                    min="0"
-                    max={duration ? duration : `${duration}`}
-                    className="progress"
-                    onChange={(e) => onScrub(e.target.value)}
-                    onMouseUp={onScrubEnd}
-                    onKeyUp={onScrubEnd}
-                />
+                <div className="player-controls">
+                    <AudioControls 
+                        isPlaying={isPlaying}
+                        onPrevClick={toPrevTrack}
+                        onNextClick={toNextTrack}
+                        onPlayPauseClick={setIsPlaying}
+                    />
+                </div>
+                <div className="player-scrubber">
+                    <input
+                        type="range"
+                        value={trackProgress}
+                        step="1"
+                        min="0"
+                        max={duration ? duration : `${duration}`}
+                        className="progress"
+                        onChange={(e) => onScrub(e.target.value)}
+                        onMouseUp={onScrubEnd}
+                        onKeyUp={onScrubEnd}
+                    />
+                </div>
+                <div className="player-info-container">
+                    <div className="player-image">
+                        <img
+                            className="album-art"
+                            src={imageUrl}
+                        />
+                    </div>
+                    <div className="track-details">
+                        <div className="track-title">{title}</div>
+                        <div className="track-description">{description}</div>
+                    </div>
+                </div>
             </div>
         </div>
     );

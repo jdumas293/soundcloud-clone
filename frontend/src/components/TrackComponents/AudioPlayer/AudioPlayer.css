@@ -1,0 +1,44 @@
+.track-info-container {
+    display: flex;
+    margin-right: 150px;
+    margin-left: 150px;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid black;
+}
+
+.player-controls {
+    height: fit-content;
+    width: fit-content;
+    /* border: 1px solid black; */
+}
+
+.player-scrubber {
+    height: fit-content;
+    /* border: 1px solid black; */
+}
+
+
+.player-info-container {
+    display: flex;
+    justify-content: flex-end;
+    height: fit-content;
+    /* border: 1px solid black; */
+}
+
+.player-image {
+    object-fit: cover;
+    /* border: 1px solid black; */
+}
+
+.player-image img {
+    height: 40px;
+    width: 40px;
+}
+
+.track-details {
+    margin-left: 1em;
+    height: fit-content;
+    align-self: center;
+    /* border: 1px solid black; */
+}

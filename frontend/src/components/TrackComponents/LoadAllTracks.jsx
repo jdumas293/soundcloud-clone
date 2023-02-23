@@ -21,9 +21,6 @@ const LoadAllTracks = () => {
                 {tracks.map(track => <TrackCard track={track} />)}                
             </div> */}
             <div>
-                <AudioPlayer tracks={tracks} />
-            </div>
-            <div>
                 <OpenModalButton 
                     buttonText="Upload"
                     modalComponent={<UploadTrack />}
