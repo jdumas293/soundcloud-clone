@@ -1,9 +1,11 @@
 .track-info-container {
     display: flex;
+    margin-top: 0.4em;
     margin-right: 150px;
     margin-left: 150px;
     justify-content: space-between;
     align-items: center;
+    /* border: 1px solid black; */
 }
 
 .player-controls {
@@ -14,9 +16,15 @@
 
 .player-scrubber {
     height: fit-content;
-    /* border: 1px solid black; */
+    /* accent-color: #f50; */
 }
 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      width: 600px;
+      cursor: pointer;
+    }
+}
 
 .player-info-container {
     display: flex;
@@ -24,6 +32,7 @@
     height: fit-content;
     /* border: 1px solid black; */
 }
+
 
 .player-image {
     object-fit: cover;
@@ -40,4 +49,17 @@
     height: fit-content;
     align-self: center;
     /* border: 1px solid black; */
+}
+
+.audio-controls {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    /* border: 1px solid black; */
+    
+}
+.audio-controls button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
 }

@@ -1,3 +1,5 @@
+import "./AudioPlayer.css";
+
 const AudioControls = ({ isPlaying, onPlayPauseClick, onPrevClick, onNextClick}) => {
     return (
         <>
