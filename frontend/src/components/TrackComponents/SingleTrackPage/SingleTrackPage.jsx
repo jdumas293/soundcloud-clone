@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
+import { thunkLoadComments } from "../../../store/comment";
 import { thunkLoadSingleTrack } from "../../../store/track";
+import CommentCard from "../../CommentComponents/CommentCard";
+import CreateComment from "../../CommentComponents/CreateComment/CreateComment";
+import OpenModalButton from '../../OpenModalButton';
 import "./SingleTrackPage.css"
 
 const SingleTrackPage = () => {
@@ -9,10 +13,16 @@ const SingleTrackPage = () => {
     const { trackId } = useParams();
 
     const track = useSelector(state => state.tracks.singleTrack);
-    console.log(track);
+    console.log("TRACK ===>", track);
+    const comments = Object.values(useSelector(state => state.comments.allComments));
+    console.log("COMMENTS ===>", comments);
 
     useEffect(() => {
         dispatch(thunkLoadSingleTrack(trackId));
+    }, [dispatch, trackId]);
+
+    useEffect(() => {
+        dispatch(thunkLoadComments(trackId))
     }, [dispatch, trackId]);
 
     return (
@@ -34,7 +44,14 @@ const SingleTrackPage = () => {
                 </div>
             </div>
             <div className="singletrack-comments-container">
-                COMMENTS HERE
+                <div className="create-comment-btn">
+                    <OpenModalButton 
+                        buttonText="New Comment"
+                        modalComponent={<CreateComment />}
+                    />
+                </div>
+                
+                {comments.map(comment => <CommentCard comment={comment} key={comment.id} />)}
             </div>
         </>
     )

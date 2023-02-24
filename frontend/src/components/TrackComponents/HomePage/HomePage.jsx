@@ -15,6 +15,7 @@ const HomePage = () => {
 
     return (
         <>
+            <div className="track-display"></div>
             <div className="trackcard-container">
                 {tracks.map(track => <TrackCard track={track} />)}                
             </div>

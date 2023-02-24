@@ -16,7 +16,7 @@
 
 .player-scrubber {
     height: fit-content;
-    /* accent-color: #f50; */
+    accent-color: #f50;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {

@@ -166,11 +166,11 @@ router.get('/:trackId/comments', async (req, res) => {
         where: {
             trackId: req.params.trackId
         },
-        include: [
-            {
-                model: User
-            }
-        ]
+        // include: [
+        //     {
+        //         model: User
+        //     }
+        // ]
     });
 
     let Comments = [];
