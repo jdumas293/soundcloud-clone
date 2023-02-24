@@ -13,9 +13,9 @@ const SingleTrackPage = () => {
     const { trackId } = useParams();
 
     const track = useSelector(state => state.tracks.singleTrack);
-    console.log("TRACK ===>", track);
+    // console.log("TRACK ===>", track);
     const comments = Object.values(useSelector(state => state.comments.allComments));
-    console.log("COMMENTS ===>", comments);
+    // console.log("COMMENTS ===>", comments);
 
     useEffect(() => {
         dispatch(thunkLoadSingleTrack(trackId));
@@ -45,10 +45,7 @@ const SingleTrackPage = () => {
             </div>
             <div className="singletrack-comments-container">
                 <div className="create-comment-btn">
-                    <OpenModalButton 
-                        buttonText="New Comment"
-                        modalComponent={<CreateComment />}
-                    />
+                    <CreateComment />
                 </div>
                 
                 {comments.map(comment => <CommentCard comment={comment} key={comment.id} />)}

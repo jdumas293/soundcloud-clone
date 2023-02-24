@@ -41,11 +41,12 @@ const CreateComment = () => {
                 <ul>
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
-                <div className="createcomment-form-container">
+                <div className="create-comment-form-container">
                     <div className="commentbody-container">
-                        <textarea 
+                        <input
+                            type="text" 
                             name="create-comment"
-                            placeholder="Your comment here"
+                            placeholder="Write a comment"
                             value={commentBody}
                             onChange={(e) => setCommentBody(e.target.value)}
                             required

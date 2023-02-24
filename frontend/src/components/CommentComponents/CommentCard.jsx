@@ -1,5 +1,5 @@
-import "./CommentCard.css";
 import DeleteComment from "./DeleteComment/DeleteComment";
+import "./CommentCard.css";
 
 const CommentCard = ({ comment }) => {
     return (

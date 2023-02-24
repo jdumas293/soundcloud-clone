@@ -31,6 +31,8 @@
     margin-top: 0px;
     margin-bottom: 10px;
     margin-left: 5px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    font-size: 12px;
     /* border: 1px solid black; */
 }
 
@@ -45,15 +47,19 @@
 }
 
 .track-image img {
-    width: 200px;
-    height: 200px;
-    /* border-radius: 20px; */
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
     margin: 5px;
     padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     object-fit: cover;
+}
+
+.track-image img:hover {
+    cursor: pointer;
 }
 
 .button {

@@ -3,7 +3,8 @@
     justify-content: space-between;
     margin-right: 150px;
     margin-left: 150px;
-    background-color: lightgrey;
+    margin-top: 4em;
+    background-color: whitesmoke;
     /* border: 1px solid black; */
 }
 
@@ -11,21 +12,48 @@
     display: flex;
     flex-direction: column;
     margin-left: 50px;
+    margin-top: 3em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
     /* justify-content: space-evenly; */
     /* border: 1px solid black; */
 }
 
 .singletrack-img-container {
-    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
     object-fit: cover;
+    /* border: 1px solid black; */
 }
 
 .singletrack-img-container img {
-    height: 100%;
+    display: flex;
+    align-self: center;
+    height: 80%;
     object-fit: cover;
+}
+
+.singletrack-title h1 {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+    background-color: rgba(0,0,0,.8);
+    color: white;
+    font-weight: 100;
+    font-size: 24px;
+    border: 1px solid black;
 }
 
 .singletrack-comments-container {
     margin-left: 150px;
     margin-right: 150px;
+    margin-top: 2em;
+    margin-bottom: 5em;
+    /* border: 1px solid black; */
+}
+
+.create-comment-btn {
+    margin-left: 150px;
+    margin-bottom: 1em;
+    /* border: 1px solid black; */
 }

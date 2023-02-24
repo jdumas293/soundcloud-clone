@@ -1,10 +1,18 @@
+import { useHistory } from "react-router-dom";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import "./HomePage.css";
 
 const TrackCard = ({ track }) => {
+    const history = useHistory();
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        history.push(`/tracks/${track.id}`);
+    }
+
     return (
         <>
-            <div className="trackdetails-container">
+            <div className="trackdetails-container" onClick={handleClick}>
                 <div className="track-image">
                     <img src={track.imageUrl}></img>
                 </div>

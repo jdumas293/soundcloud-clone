@@ -1,0 +1,17 @@
+.create-comment-form-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.create-comment-form-container button {
+    align-self: center;
+    margin-left: 1em;
+    height: 2em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.commentbody-container input {
+    width: 700px;
+    height: 2em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
