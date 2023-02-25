@@ -3,10 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import OpenModalButton from '../OpenModalButton';
-import SignupFormModal from '../SignupFormModal';
-import LoginFormModal from '../LoginFormModal';
 import UploadTrack from '../TrackComponents/UploadTrack/UploadTrack';
 import './Navigation.css';
+import SearchFilter from './SearchFilter';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -19,34 +18,21 @@ function Navigation({ isLoaded }){
           <NavLink exact to="/">Home</NavLink>
         </li>
       </div>
-      <div className='upload-btn'>
-        <OpenModalButton 
-          buttonText="Upload"
-          modalComponent={<UploadTrack />}
-        />
+      <div className='search-filter-container'>
+        <SearchFilter />
       </div>
-      <div className='login-btn'>
-        <li>
-          <OpenModalButton
-            buttonText="Log In"
-            // onButtonClick={closeMenu}
-            modalComponent={<LoginFormModal />}
+      <div className='right-container'>
+        <div className='upload-btn'>
+          <OpenModalButton 
+            buttonText="Upload"
+            modalComponent={<UploadTrack />}
           />
-        </li>
-      </div>
-      <div className="create-acct-btn">
-        <OpenModalButton
-          buttonText="Create Account"
-          // onButtonClick={closeMenu}
-          modalComponent={<SignupFormModal />}
-        />
-      </div>
-      <div className='profile-btn-container'>
-        {isLoaded && (
-          <li>
+        </div>
+        <div className='profile-btn-container'>
+          {isLoaded && (
             <ProfileButton user={sessionUser} />
-          </li>
-        )}
+          )}
+        </div>
       </div>
     </div>
   </div>
