@@ -1,16 +1,32 @@
 .profilepage-container {
     margin-left: 150px;
     margin-right: 150px;
-    margin-top: 5em;
-    margin-bottom: 5em;
+    margin-top: 4em;
+    margin-bottom: 6em;
+    /* border: 1px solid black; */
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 15em;
+    background-color: whitesmoke;
+    /* border: 1px solid black; */
+}
+
+.profile-username {
+    display: flex;
+    justify-content: center;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
     /* border: 1px solid black; */
 }
 
 .profiletrack-container {
     display: flex;
     justify-content: space-around;
-    margin-top: 3em;
-    border-bottom: 1px solid black;
+    border-top: 1px solid lightgray;
+    /* margin-top: 2em; */
     /* border: 1px solid black; */
 }
 
@@ -27,6 +43,7 @@
 
 .profiletrack-img-container {
     object-fit: cover;
+    margin-top: 3em;
     margin-bottom: 3em;
 }
 

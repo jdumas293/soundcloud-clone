@@ -1,4 +1,5 @@
 import { useHistory } from "react-router-dom";
+import AudioControls from "../AudioPlayer/AudioControls";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import "./HomePage.css";
 
@@ -16,10 +17,10 @@ const TrackCard = ({ track }) => {
                 <div className="track-image">
                     <img src={track.imageUrl}></img>
                 </div>
-                <button className="button" onClick={() => console.log("CLICKED")}>
+                {/* <button className="button" onClick={() => console.log("CLICKED")}>
                     PLAY ME!
                 </button>
-                {/* <div id="track-audiofile">
+                <div id="track-audiofile">
                     <AudioPlayer track={track} />
                     <audio src={track.file}></audio>
                 </div> */}

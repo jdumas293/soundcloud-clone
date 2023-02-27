@@ -19,8 +19,10 @@ const ProfilePage = () => {
 
     return (
         <div className="profilepage-container">
-            <div>
-                {user.username}
+            <div className="profile-header">
+                <div className="profile-username">
+                    <h3>{user.username}</h3>
+                </div>
             </div>
             <div>
                 {tracks.map(track => <ProfileTrack track={track} />)}

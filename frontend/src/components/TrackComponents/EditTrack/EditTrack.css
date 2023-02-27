@@ -1,0 +1,90 @@
+.edittrack-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+    width: 400px;
+    /* border: 1px solid red; */
+}
+
+.edittrack-file {
+    display: flex;
+    justify-content: center;
+}
+
+.edittrack-file input {
+    width: 90%;
+    height: 3em;
+    border-radius: 5px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 2px solid red; */
+}
+
+.edittrack-title {
+    display: flex;
+    justify-content: center;
+}
+
+.edittrack-title input {
+    width: 90%;
+    height: 3em;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 2px solid red; */
+}
+
+.edittrack-genre {
+    display: flex;
+    justify-content: center;
+}
+
+.edittrack-genre input {
+    width: 90%;
+    height: 3em;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 2px solid red; */
+}
+
+.edittrack-description {
+    display: flex;
+    justify-content: center;
+}
+
+.edittrack-description textarea {
+    width: 90%;
+    height: 5em;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 2px solid red; */
+}
+
+.edittrack-trackimage {
+    display: flex;
+    justify-content: center;
+}
+
+.edittrack-trackimage input {
+    width: 90%;
+    height: 3em;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 2px solid red; */
+}
+
+.edittrack-form-container button {
+    width: 90%;
+    height: 3em;
+    align-self: center;
+    margin-top: 1em;
+    color: white;
+    background-color: #f50;
+    border-color: #f50;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}

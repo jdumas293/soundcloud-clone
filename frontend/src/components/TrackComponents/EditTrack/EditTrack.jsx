@@ -27,7 +27,7 @@ const EditTrack = ({ track }) => {
             imageUrl
         };
 
-        console.log("EDIT===>", editedTrack);
+        // console.log("EDIT===>", editedTrack);
 
         dispatch(thunkEditTrack(editedTrack))
             .then(closeModal)
