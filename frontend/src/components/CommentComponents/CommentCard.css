@@ -1,7 +1,20 @@
 .comments-container {
+    display: flex;
+    gap: 2em;
     margin-left: 150px;
     margin-bottom: 1em;
     font-size: 13px;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
     /* border: 1px solid black; */
+}
+
+.comment-btns-container {
+    display: flex;
+    gap: 0.5em;
+    /* border: 1px solid black; */
+}
+
+.edit-comment-btn-container button {
+    border: none;
+    background-color: white;
 }

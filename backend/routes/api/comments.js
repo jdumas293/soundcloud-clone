@@ -23,6 +23,7 @@ router.put('/:commentId', requireAuth, async (req, res) => {
         comment.update({
             commentBody: commentBody
         });
+        res.json(comment);
     } else {
         res.status(403);
         res.json({

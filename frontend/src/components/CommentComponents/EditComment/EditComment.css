@@ -1,0 +1,37 @@
+.edit-comment-form {
+    width: 500px;
+    height: 200px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+    margin-bottom: 2em;
+}
+
+.input-container textarea {
+    width: 450px;
+    height: 80px;
+}
+
+.actual-edit-comment-btn-container {
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+.edit-comment-btn {
+    display: flex;
+    width: 450px;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    color: white;
+    background-color: #f50;
+    border-color: #f50;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 1px solid black; */
+}
