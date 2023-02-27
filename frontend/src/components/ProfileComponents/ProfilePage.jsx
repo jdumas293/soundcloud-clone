@@ -4,14 +4,12 @@ import { thunkLoadCurrUserTracks } from "../../store/track";
 import ProfileTrack from "./ProfileTrack";
 import "./ProfilePage.css";
 
-
 const ProfilePage = () => {
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.session.user);
     const tracks = Object.values(useSelector(state => state.tracks.allTracks)).filter(track => track.userId === user.id);
-    // const validTracks = tracks.filter(track => track.userId === user.id);
-    console.log("TRACKS ==>", tracks);
+    // console.log("TRACKS ==>", tracks);
 
     useEffect(() => {
         dispatch(thunkLoadCurrUserTracks(tracks));

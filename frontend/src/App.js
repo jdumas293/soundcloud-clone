@@ -29,10 +29,10 @@ function App() {
           </Route>
           <Route exact path='/tracks/:trackId'>
             <SingleTrackPage />
-          </Route>
+          </Route>  
         </Switch>
       )}
-      <Footer />  
+      <Footer />
     </>
   );
 }
