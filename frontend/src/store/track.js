@@ -110,12 +110,24 @@ export const thunkUploadTrack = (track) => async (dispatch) => {
 };
 
 export const thunkEditTrack = (track) => async (dispatch) => {
+    const { title, file, genre, description, imageUrl } = track;
+    const formData = new FormData();
+
+    formData.append("title", title);
+    formData.append("genre", genre);
+    formData.append("description", description);
+    formData.append("imageUrl", imageUrl);
+
+    if (file) {
+        formData.append("file", file);
+    };
+
     const res = await csrfFetch(`/api/tracks/${track.id}`, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'multipart/form-data'
         },
-        body: JSON.stringify(track)
+        body: formData
     });
 
     if (res.ok) {

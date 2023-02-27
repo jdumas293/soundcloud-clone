@@ -78,8 +78,8 @@ router.post('/', singleMulterUpload("file"), requireAuth, async (req, res) => {
 });
 
 // EDIT A TRACK
-router.put('/:trackId', requireAuth, async (req, res) => {
-    const { title, file, genre, description, imageUrl } = req.body;
+router.put('/:trackId', singleMulterUpload("file"), requireAuth, async (req, res) => {
+    const { title, genre, description, imageUrl } = req.body;
 
     const track = await Track.findOne({
         where: {
@@ -97,9 +97,12 @@ router.put('/:trackId', requireAuth, async (req, res) => {
 
     // Track must belong to the current user
     if (track.userId === req.user.id) {
+
+        const audioFile = await singlePublicFileUpload(req.file);
+        
         track.update({
             title: title,
-            file: file,
+            file: audioFile,
             genre: genre,
             description: description,
             imageUrl: imageUrl
