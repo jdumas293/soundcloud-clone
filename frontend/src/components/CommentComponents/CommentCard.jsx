@@ -1,8 +1,9 @@
 import DeleteComment from "./DeleteComment/DeleteComment";
 import EditComment from "./EditComment/EditComment";
 import OpenModalButton from "../OpenModalButton";
-import "./CommentCard.css";
 import { useSelector } from "react-redux";
+import { yearMonthDay } from "../../store/utils";
+import "./CommentCard.css";
 
 const CommentCard = ({ comment }) => {
 
@@ -26,9 +27,12 @@ const CommentCard = ({ comment }) => {
     return (
         <>
             <div className="comments-container">
+                <div className="profile-image">
+                    <i className="fa-solid fa-circle-user fa-2xl"></i>
+                </div>
                 <div className="comment-info-container">
                     <div>
-                        {comment.createdAt}
+                        {yearMonthDay(comment.createdAt)}
                     </div>
                     <div>
                         {comment.commentBody}

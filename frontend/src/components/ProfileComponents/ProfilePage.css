@@ -10,7 +10,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 15em;
+    margin-top: 70px;
+    height: 17em;
     background-color: whitesmoke;
     /* border: 1px solid black; */
 }

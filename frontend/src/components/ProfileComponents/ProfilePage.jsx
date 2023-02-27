@@ -20,6 +20,10 @@ const ProfilePage = () => {
     return (
         <div className="profilepage-container">
             <div className="profile-header">
+                <div className="profile-image">
+                    <i className="fa-solid fa-circle-user fa-2xl"></i>
+                </div>
+                <br />
                 <div className="profile-username">
                     <h3>{user.username}</h3>
                 </div>
