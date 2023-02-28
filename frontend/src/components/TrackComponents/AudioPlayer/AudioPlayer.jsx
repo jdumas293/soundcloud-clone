@@ -1,17 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import AudioControls from "./AudioControls";
+import { truncateDesc } from "../../../store/utils";
 import './AudioPlayer.css';
 
 const AudioPlayer = ({ tracks }) => {
     const [trackIndex, setTrackIndex] = useState(0); // index of track being played
     const [trackProgress, setTrackProgress] = useState(0); // current progress of the track
     const [isPlaying, setIsPlaying] = useState(false); // whether or not the track is being played
-
-    const { title, description, genre, imageUrl, file } = tracks[trackIndex] || 0;
     // console.log("TRACKS ===>", tracks);
-    // console.log("FILE ===>", file);
-    // console.log("TITLE ===>", title);
-    // console.log("TRACK INDEX ===>", trackIndex);
+    
+    const { title, description, genre, imageUrl, file } = tracks[trackIndex] || 0;
 
     // Refs
     const audioRef = useRef(new Audio(file));
@@ -130,8 +128,8 @@ const AudioPlayer = ({ tracks }) => {
                         />
                     </div>
                     <div className="track-details">
-                        <div className="track-title">{title}</div>
-                        <div className="track-description">{description}</div>
+                        <div className="player-track-title">{title}</div>
+                        <div className="player-track-description">{truncateDesc(description)}</div>
                     </div>
                 </div>
             </div>

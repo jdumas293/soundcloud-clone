@@ -1,13 +1,12 @@
 import DeleteComment from "./DeleteComment/DeleteComment";
 import EditComment from "./EditComment/EditComment";
 import OpenModalButton from "../OpenModalButton";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { yearMonthDay } from "../../store/utils";
 import "./CommentCard.css";
 
 const CommentCard = ({ comment }) => {
-
-    const userId = useSelector(state => state.session.user.id)
+    const userId = useSelector(state => state.session.user.id);
 
     const showDelete = () => {
         if (comment.userId === userId) {
@@ -31,6 +30,9 @@ const CommentCard = ({ comment }) => {
                     <i className="fa-solid fa-circle-user fa-2xl"></i>
                 </div>
                 <div className="comment-info-container">
+                    {/* <div>
+                        {comment?.User?.username}
+                    </div> */}
                     <div>
                         {yearMonthDay(comment.createdAt)}
                     </div>

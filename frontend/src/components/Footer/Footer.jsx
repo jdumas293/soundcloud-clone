@@ -1,18 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { thunkLoadTracks } from "../../store/track";
 import AudioPlayer from "../TrackComponents/AudioPlayer/AudioPlayer";
-// import AudioPlayer from "../TrackComponents/AltAudioPlayer/AudioPlayer";
+import { thunkLoadTracks } from "../../store/track";
 import './Footer.css';
 
 const Footer = () => {
-    const tracks = Object.values(useSelector(state => state.tracks.allTracks));
-    console.log("FOOTER TRACKS===>", tracks);
+    const dispatch = useDispatch();
+    const [isLoaded, setIsLoaded] = useState(false);
+    const tracks = Object.values(useSelector(state => state?.tracks?.allTracks));
+    // console.log("FOOTER TRACKS===>", tracks);
 
-    return (
+    useEffect(() => {
+        dispatch(thunkLoadTracks())
+            .then(setIsLoaded(true))
+    }, [dispatch]);
+
+
+    return isLoaded ? (
         <footer className="footer">
             <AudioPlayer tracks={tracks} />
         </footer>
+    ) : (
+        <div>
+            Loading...
+        </div>
     )
 }
 

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { thunkLoadComments } from "../../../store/comment";
-import { thunkLoadSingleTrack } from "../../../store/track";
+import { thunkLoadSingleTrack, thunkLoadTracks } from "../../../store/track";
 import CommentCard from "../../CommentComponents/CommentCard";
 import CreateComment from "../../CommentComponents/CreateComment/CreateComment";
 import "./SingleTrackPage.css"
@@ -24,9 +24,9 @@ const SingleTrackPage = () => {
         return count;
     };
 
-
     useEffect(() => {
         dispatch(thunkLoadSingleTrack(trackId));
+        // dispatch(thunkLoadTracks());
     }, [dispatch, trackId]);
 
     useEffect(() => {

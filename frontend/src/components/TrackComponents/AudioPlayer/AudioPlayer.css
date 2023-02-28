@@ -23,6 +23,7 @@
     input[type='range'] {
       width: 600px;
       cursor: pointer;
+      height: 0.3em;
     }
 }
 
@@ -32,7 +33,6 @@
     height: fit-content;
     /* border: 1px solid black; */
 }
-
 
 .player-image {
     object-fit: cover;
@@ -45,9 +45,23 @@
 }
 
 .track-details {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
     margin-left: 1em;
     height: fit-content;
+    width: 200px;
     align-self: center;
+    /* border: 1px solid black; */
+}
+
+.player-track-title {
+    display: flex;
+    /* border: 1px solid black */
+}
+
+.player-track-description {
+    display: flex;
     /* border: 1px solid black; */
 }
 

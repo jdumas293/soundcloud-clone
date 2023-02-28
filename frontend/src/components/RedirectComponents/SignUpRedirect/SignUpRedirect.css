@@ -1,0 +1,59 @@
+.entire-alt-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4em;
+    margin-right: 150px;
+    margin-left: 150px;
+    height: 700px;
+    background-color: whitesmoke;
+}
+
+.alt-signup-header {
+    display: flex;
+    justify-content: center;
+    margin-top: 6em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.alt-signup-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.alt-signup-email input {
+    width: 600px;
+    height: 2em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.alt-signup-username input {
+    width: 600px;
+    height: 2em;
+    margin-bottom: 2em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.alt-signup-pw input {
+    width: 600px;
+    height: 2em;
+    margin-bottom: 2em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.alt-signup-confirm-pw input {
+    width: 600px;
+    height: 2em;
+    margin-bottom: 2em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.alt-signup-btn {
+    cursor: pointer;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}

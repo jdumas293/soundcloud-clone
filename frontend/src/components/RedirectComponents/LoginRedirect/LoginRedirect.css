@@ -1,0 +1,54 @@
+.entire-alt-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4em;
+    margin-right: 150px;
+    margin-left: 150px;
+    height: 700px;
+    background-color: whitesmoke;
+}
+
+.alt-login-header {
+    display: flex;
+    justify-content: center;
+    margin-top: 6em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.alt-login-signup-btn {
+    border: none;
+    background-color: whitesmoke;
+    color: #f50;
+    font-size: 17px;
+    cursor: pointer;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.alt-login-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.alt-login-cred input {
+    width: 600px;
+    height: 2em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.alt-login-pw input {
+    width: 600px;
+    height: 2em;
+    margin-bottom: 2em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.alt-login-btn {
+    cursor: pointer;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}

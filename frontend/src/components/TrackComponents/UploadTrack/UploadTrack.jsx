@@ -28,8 +28,6 @@ const UploadTrack = () => {
             imageUrl
         };
 
-        console.log(newTrack);
-
         dispatch(thunkUploadTrack(newTrack))
             .then(closeModal)
             .catch(
@@ -59,7 +57,7 @@ const UploadTrack = () => {
                         <input 
                             type="file"
                             onChange={updateFile}
-                        />
+                            />
                     </div>
                     <div className="upload-title">
                         <input

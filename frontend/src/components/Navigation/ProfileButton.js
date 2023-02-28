@@ -62,11 +62,13 @@ function ProfileButton({ user }) {
               <li>{user.username}</li>
               <li>{user.email}</li>
             </div>
-            <div className="authorized-profile-btn">
-              <button onClick={handleProfileClick}>Profile</button>
-            </div>
-            <div className="logout-btn">
-              <button onClick={logout}>Log Out</button>
+            <div className="authorized-user-btns">
+              <div className="authorized-profile-btn">
+                <button onClick={handleProfileClick}>Profile</button>
+              </div>
+              <div className="logout-btn">
+                <button onClick={logout}>Log Out</button>
+              </div>
             </div>
           </>
         ) : (
@@ -89,7 +91,11 @@ function ProfileButton({ user }) {
               <div className="demouser-btn">
                 <OpenModalButton
                   buttonText="Demo User"
-                  onButtonClick={() => dispatch(sessionActions.login({credential: 'Demo-lition', password: 'password'}))}
+                  onButtonClick={() => {
+                    dispatch(sessionActions.login({credential: 'Demo-lition', password: 'password'}))
+                    history.push('/');
+                    }
+                  }
                 />
               </div>
             </div>

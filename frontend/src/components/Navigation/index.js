@@ -11,30 +11,47 @@ function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
 
   return (
-  <div className='nav-background-container'>
-    <div className='nav-container'>
-      <div className='home-btn-container'>
-        <li>
-          <NavLink exact to="/">Home</NavLink>
-        </li>
-      </div>
-      <div className='search-filter-container'>
-        <SearchFilter />
-      </div>
-      <div className='right-container'>
-        <div className='upload-btn'>
-          <OpenModalButton 
-            buttonText="Upload"
-            modalComponent={<UploadTrack />}
-          />
+    <div className='nav-background-container'>
+      {sessionUser ? (
+        <div className='nav-container'>
+          <div className='home-btn-container'>
+            <li>
+              <NavLink exact to="/">Home</NavLink>
+            </li>
+          </div>
+          <div className='search-filter-container'>
+            <SearchFilter />
+          </div>
+          <div className='right-container'>
+            <div className='upload-btn'>
+              <OpenModalButton 
+                buttonText="Upload"
+                modalComponent={<UploadTrack />}
+              />
+            </div>
+            <div className='profile-btn-container'>
+              {isLoaded && (
+                <ProfileButton user={sessionUser} />
+              )}
+            </div>
+          </div>
         </div>
-        <div className='profile-btn-container'>
-          {isLoaded && (
-            <ProfileButton user={sessionUser} />
-          )}
+      ) : (
+        <div className='nav-container'>
+          <div className='home-btn-container'>
+            <li>
+              <NavLink exact to="/">Home</NavLink>
+            </li>
+          </div>
+          <div className='right-container'>
+            <div className='profile-btn-container'>
+              {isLoaded && (
+                <ProfileButton user={sessionUser} />
+              )}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
   </div>
   );
 }
