@@ -13,6 +13,14 @@ const ProfilePage = () => {
     // const validTracks = tracks.filter(track => track.userId === user.id);
     console.log("TRACKS ==>", tracks);
 
+    const numTracks = (tracks) => {
+        let count = 0;
+        tracks.forEach(track => {
+            count += 1;
+        });
+        return count;
+    };
+
     useEffect(() => {
         dispatch(thunkLoadCurrUserTracks(tracks));
     }, [dispatch]);
@@ -26,6 +34,10 @@ const ProfilePage = () => {
                 <br />
                 <div className="profile-username">
                     <h3>{user.username}</h3>
+                </div>
+                <br />
+                <div className="num-tracks-display">
+                    {numTracks(tracks)} tracks
                 </div>
             </div>
             <div>

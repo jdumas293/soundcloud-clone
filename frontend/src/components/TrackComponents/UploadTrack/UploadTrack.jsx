@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { useModal } from "../../../context/Modal";
 import { thunkUploadTrack } from "../../../store/track";
 import "./UploadTrack.css";
 
 const UploadTrack = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const [title, setTitle] = useState('');
     const [file, setFile] = useState(null);
     const [genre, setGenre] = useState('');
@@ -25,6 +27,8 @@ const UploadTrack = () => {
             description,
             imageUrl
         };
+
+        console.log(newTrack);
 
         dispatch(thunkUploadTrack(newTrack))
             .then(closeModal)

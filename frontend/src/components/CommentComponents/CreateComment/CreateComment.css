@@ -1,6 +1,7 @@
 .create-comment-form-container {
     display: flex;
     flex-direction: row;
+    /* border: 1px solid red; */
 }
 
 .create-comment-form-container button {
@@ -11,6 +12,7 @@
 }
 
 .commentbody-container input {
+    /* border: 1px solid red; */
     width: 700px;
     height: 2em;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;

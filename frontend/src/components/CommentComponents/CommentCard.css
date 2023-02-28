@@ -1,10 +1,15 @@
 .comments-container {
     display: flex;
-    gap: 2em;
+    gap: 1em;
     margin-left: 150px;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     font-size: 13px;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 1px solid black; */
+}
+
+.comment-info-container {
+    margin-right: 1em;
     /* border: 1px solid black; */
 }
 
