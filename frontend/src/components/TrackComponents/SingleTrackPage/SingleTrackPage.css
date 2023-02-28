@@ -5,6 +5,7 @@
     margin-left: 150px;
     margin-top: 4em;
     background-color: whitesmoke;
+    border-bottom: 1px solid lightgray;
     /* border: 1px solid black; */
 }
 
@@ -45,10 +46,10 @@
 }
 
 .singletrack-comments-container {
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 2em;
-    margin-bottom: 5em;
+    /* margin-left: 150px; */
+    /* margin-right: 150px; */
+    margin-top: 3em;
+    margin-bottom: 8em;
     /* border: 1px solid black; */
 }
 
@@ -56,4 +57,12 @@
     margin-left: 150px;
     margin-bottom: 1em;
     /* border: 1px solid black; */
+}
+
+.num-comments-display {
+    margin-right: 150px;
+    margin-left: 150px;
+    margin-bottom: 1em;
+    text-decoration: underline;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
 }

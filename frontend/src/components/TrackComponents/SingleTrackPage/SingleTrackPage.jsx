@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { thunkLoadComments } from "../../../store/comment";
 import { thunkLoadSingleTrack } from "../../../store/track";
-// import { thunkLoadTracks } from "../../../store/track";
 import CommentCard from "../../CommentComponents/CommentCard";
 import CreateComment from "../../CommentComponents/CreateComment/CreateComment";
 import "./SingleTrackPage.css"
@@ -13,13 +12,18 @@ const SingleTrackPage = () => {
     const { trackId } = useParams();
 
     const track = useSelector(state => state.tracks.singleTrack);
-    // console.log("TRACK ===>", track);
     const comments = Object.values(useSelector(state => state.comments.allComments));
+    // console.log("TRACK ===>", track);
     // console.log("COMMENTS ===>", comments);
 
-    // useEffect(() => {
-    //     dispatch(thunkLoadTracks());
-    // }, [dispatch]);
+    const numComments = (comments) => {
+        let count = 0;
+        comments.forEach(comment => {
+            count += 1;
+        });
+        return count;
+    };
+
 
     useEffect(() => {
         dispatch(thunkLoadSingleTrack(trackId));
@@ -51,6 +55,9 @@ const SingleTrackPage = () => {
             <div className="singletrack-comments-container">
                 <div className="create-comment-btn">
                     <CreateComment />
+                </div>
+                <div className="num-comments-display">
+                    {numComments(comments)} comments
                 </div>
                 {comments.map(comment => <CommentCard comment={comment} key={comment.id} />)}
             </div>

@@ -78,3 +78,10 @@
 .profiletrack-title {
     text-decoration: underline;
 }
+
+.num-tracks-display {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}

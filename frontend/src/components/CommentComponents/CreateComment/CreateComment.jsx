@@ -30,6 +30,7 @@ const CreateComment = () => {
                     if (data && data.errors) setErrors(data.errors);
                 }
             );
+            setCommentBody('');
     };
 
     return (
