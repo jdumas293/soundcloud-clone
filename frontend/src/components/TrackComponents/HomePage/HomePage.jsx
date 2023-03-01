@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { thunkLoadTracks } from "../../../store/track";
 import TrackCard from "./TrackCard";
 import "./HomePage.css";
-// import AudioPlayer from "../AltAudioPlayer/AudioPlayer";
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -19,7 +18,6 @@ const HomePage = () => {
             <div className="track-display"></div>
             <div className="trackcard-container">
                 {tracks.map(track => <TrackCard track={track} />)}                
-                {/* <AudioPlayer tracks={tracks} /> */}
             </div>
         </>
     )

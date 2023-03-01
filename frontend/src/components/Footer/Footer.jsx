@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import AudioPlayer from "../TrackComponents/AudioPlayer/AudioPlayer";
+// import AudioPlayer from "../TrackComponents/AudioPlayer/AudioPlayer";
+import AudioPlayerV2 from "../TrackComponents/AudioPlayerV2/AudioPlayer";
 import { thunkLoadTracks } from "../../store/track";
 import './Footer.css';
 
@@ -18,7 +19,7 @@ const Footer = () => {
 
     return isLoaded ? (
         <footer className="footer">
-            <AudioPlayer tracks={tracks} />
+            <AudioPlayerV2 tracks={tracks} />
         </footer>
     ) : (
         <div>

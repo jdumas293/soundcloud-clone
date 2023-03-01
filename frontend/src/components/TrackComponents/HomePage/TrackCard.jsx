@@ -1,6 +1,4 @@
 import { useHistory } from "react-router-dom";
-import AudioControls from "../AudioPlayer/AudioControls";
-import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import "./HomePage.css";
 
 const TrackCard = ({ track }) => {
