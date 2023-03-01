@@ -16,7 +16,7 @@ const UploadTrack = () => {
     const [errors, setErrors] = useState([]);
     const { closeModal } = useModal();
 
-    const handleUpload = (e) => {
+    const handleUpload = async (e) => {
         e.preventDefault();
         setErrors([]);
 
@@ -28,7 +28,7 @@ const UploadTrack = () => {
             imageUrl
         };
 
-        dispatch(thunkUploadTrack(newTrack))
+        await dispatch(thunkUploadTrack(newTrack))
             .then(closeModal)
             .catch(
                 async(res) => {
@@ -36,6 +36,7 @@ const UploadTrack = () => {
                     if (data && data.errors) setErrors(data.errors);
                 }
             );
+            history.push(`/tracks/${newTrack.id}`);
     }
 
     const updateFile = (e) => {
