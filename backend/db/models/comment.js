@@ -26,7 +26,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     commentBody: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        len: {
+          args: [1, 140],
+          msg: "Comments must be less than 140 characters"
+        }
+      }
     }
   }, {
     sequelize,

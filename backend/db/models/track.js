@@ -25,14 +25,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     genre: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     imageUrl: {
       type: DataTypes.STRING,
+      allowNull: false
     }
   }, {
     sequelize,

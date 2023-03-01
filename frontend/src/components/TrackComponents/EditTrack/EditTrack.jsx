@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { useModal } from "../../../context/Modal";
 import { thunkEditTrack } from "../../../store/track";
 import "./EditTrack.css";
 
 const EditTrack = ({ track }) => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const [title, setTitle] = useState(track.title);
     const [file, setFile] = useState(track.file);
     const [genre, setGenre] = useState(track.genre);
@@ -14,7 +16,7 @@ const EditTrack = ({ track }) => {
     const [errors, setErrors] = useState([]);
     const { closeModal } = useModal();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors([]);
 
@@ -29,7 +31,7 @@ const EditTrack = ({ track }) => {
 
         // console.log("EDIT===>", editedTrack);
 
-        dispatch(thunkEditTrack(editedTrack))
+        await dispatch(thunkEditTrack(editedTrack))
             .then(closeModal)
             .catch(
                 async(res) => {
@@ -37,6 +39,7 @@ const EditTrack = ({ track }) => {
                     if (data && data.errors) setErrors(data.errors);
                 }
             );
+            history.push(`/tracks/${editedTrack.id}`)
     }
 
     const updateFile = (e) => {
@@ -56,6 +59,8 @@ const EditTrack = ({ track }) => {
                     <input
                         type="file"
                         onChange={updateFile}
+                        accept=".mp3,.wav"
+                        required
                     />
                 </div>
             
@@ -94,6 +99,7 @@ const EditTrack = ({ track }) => {
                         placeholder="Your track image"
                         value={imageUrl}
                         onChange={(e) => setImageUrl(e.target.value)}
+                        required
                     />
                 </div>
                 <button onSubmit={handleSubmit}>Submit</button>

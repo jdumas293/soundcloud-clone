@@ -26,13 +26,11 @@ const SingleTrackPage = () => {
 
     useEffect(() => {
         dispatch(thunkLoadSingleTrack(trackId));
-        // dispatch(thunkLoadTracks());
     }, [dispatch, trackId]);
 
     useEffect(() => {
         dispatch(thunkLoadComments(trackId))
     }, [dispatch, trackId]);
-
 
     return (
         <>

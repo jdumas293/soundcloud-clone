@@ -35,8 +35,9 @@ const UploadTrack = () => {
                     const data = await res.json();
                     if (data && data.errors) setErrors(data.errors);
                 }
-            );
-            history.push(`/tracks/${newTrack.id}`);
+            )
+
+            history.push(`/tracks/${newTrack.id}`)
     }
 
     const updateFile = (e) => {
@@ -58,7 +59,9 @@ const UploadTrack = () => {
                         <input 
                             type="file"
                             onChange={updateFile}
-                            />
+                            accept=".mp3,.wav"
+                            required
+                        />
                     </div>
                     <div className="upload-title">
                         <input
@@ -95,6 +98,7 @@ const UploadTrack = () => {
                             placeholder="Your track image"
                             value={imageUrl}
                             onChange={(e) => setImageUrl(e.target.value)}
+                            required
                         />
                     </div>
                     <button onSubmit={handleUpload}>Upload</button>

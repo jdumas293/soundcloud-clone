@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import ProtectedRoute from "./components/Auth/ProtectedRoute";
 import * as sessionActions from "./store/session";
@@ -36,6 +36,7 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path='/profile'>
             <ProfilePage />
+            <Footer />
           </ProtectedRoute>
           <ProtectedRoute exact path='/tracks/:trackId'>
             <SingleTrackPage />
