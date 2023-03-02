@@ -22,16 +22,22 @@
 .trackdetails-container {
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
     /* border: 1px solid black; */
+}
+
+.trackdetails-container:hover {
+    transform: scale(1.04);
 }
 
 .track-info {
     width: 300px;
     margin-top: 0px;
     margin-bottom: 10px;
-    margin-left: 5px;
-    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    margin-left: 1em;
     font-size: 12px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
     /* border: 1px solid black; */
 }
 
@@ -61,11 +67,11 @@
     cursor: pointer;
 }
 
-.button {
+/* .button {
     display: none;
     width: fit-content;
 }
 
 .track-image:hover + .button, .button:hover {
     display: flex;
-}
+} */

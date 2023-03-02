@@ -14,7 +14,7 @@ const CreateComment = () => {
     const track = useSelector(state => state.tracks.singleTrack);
     // console.log(track);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors([]);
 
@@ -22,7 +22,7 @@ const CreateComment = () => {
             commentBody
         };
 
-        dispatch(thunkCreateComment(newComment, track.id, user))
+        await dispatch(thunkCreateComment(newComment, track.id, user))
             .then(closeModal)
             .catch(
                 async(res) => {

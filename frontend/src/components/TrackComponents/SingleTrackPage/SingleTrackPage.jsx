@@ -12,9 +12,7 @@ const SingleTrackPage = () => {
     const { trackId } = useParams();
 
     const track = useSelector(state => state.tracks.singleTrack);
-    const comments = Object.values(useSelector(state => state.comments.allComments));
-    // console.log("TRACK ===>", track);
-    // console.log("COMMENTS ===>", comments);
+    const comments = Object.values(useSelector(state => state?.comments?.allComments));
 
     const numComments = (comments) => {
         let count = 0;
