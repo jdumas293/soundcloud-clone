@@ -30,7 +30,10 @@ const SignUpRedirect = () => {
     return (
         <div className="entire-alt-signup">
             <div className="alt-login-header">
-                <h3>Please sign up to access features</h3>
+                <h3>Please sign up to access features!</h3>
+            </div>
+            <div className="alt-signup-demo">
+                <p>Test the app with a demo user located in the profile menu</p>
             </div>
             <form className="alt-signup-form" onSubmit={handleSubmit}>
                 <ul>

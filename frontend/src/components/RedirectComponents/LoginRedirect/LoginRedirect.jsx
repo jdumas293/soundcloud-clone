@@ -33,7 +33,7 @@ const LoginRedirect = () => {
     return (
         <div className="entire-alt-login">
             <div className="alt-login-header">
-                <h3>Please login or <button className="alt-login-signup-btn" onClick={redirectSignUp}>sign up</button> to access features</h3>
+                <h3>Please login or <button className="alt-login-signup-btn" onClick={redirectSignUp}>sign up</button> to access features!</h3>
             </div>
             <form className="alt-login-form" onSubmit={handleSubmit}>
                 <ul>

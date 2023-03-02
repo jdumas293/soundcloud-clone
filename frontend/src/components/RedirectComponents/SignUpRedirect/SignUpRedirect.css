@@ -26,7 +26,7 @@
 
 .alt-signup-email input {
     width: 600px;
-    height: 2em;
+    height: 35px;
     margin-top: 1em;
     margin-bottom: 2em;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
@@ -34,26 +34,45 @@
 
 .alt-signup-username input {
     width: 600px;
-    height: 2em;
+    height: 35px;
     margin-bottom: 2em;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
 }
 
 .alt-signup-pw input {
     width: 600px;
-    height: 2em;
+    height: 35px;
     margin-bottom: 2em;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
 }
 
 .alt-signup-confirm-pw input {
     width: 600px;
-    height: 2em;
+    height: 35px;
     margin-bottom: 2em;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
 }
 
 .alt-signup-btn {
     cursor: pointer;
+    width: 150px;
+    height: 35px;
+    background-color: whitesmoke;
+    color: #f50;
+    border-color: #f50;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.alt-signup-btn:hover {
+    color: whitesmoke;
+    background-color: #f50;
+}
+
+.alt-signup-or {
+    font-weight: bold;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.alt-signup-demo {
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
 }

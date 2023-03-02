@@ -46,6 +46,12 @@ function ProfileButton({ user }) {
     history.push('/profile');
   }
 
+  const handleDemo = async (e) => {
+    e.preventDefault();
+    await dispatch(sessionActions.login({credential: 'Demo-lition', password: 'password'}))
+    history.push('/')
+  };
+
   const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
 
   return (
@@ -89,14 +95,15 @@ function ProfileButton({ user }) {
                 />
               </div>
               <div className="demouser-btn">
-                <OpenModalButton
+                {/* <OpenModalButton
                   buttonText="Demo User"
                   onButtonClick={() => {
                     dispatch(sessionActions.login({credential: 'Demo-lition', password: 'password'}))
-                    history.push('/');
+                    history.push('/')
                     }
                   }
-                />
+                /> */}
+                <button onClick={handleDemo}>Demo User</button>
               </div>
             </div>
           </>
