@@ -6,6 +6,7 @@ import OpenModalButton from '../OpenModalButton';
 import UploadTrack from '../TrackComponents/UploadTrack/UploadTrack';
 import './Navigation.css';
 import SearchFilter from './SearchFilter';
+import logo from '../../assets/juke-high-resolution-logo-color-on-transparent-background.png';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -15,13 +16,13 @@ function Navigation({ isLoaded }){
       {sessionUser ? (
         <div className='nav-container'>
           <div className='home-btn-container'>
-            <li>
-              <NavLink exact to="/">Home</NavLink>
-            </li>
+            <div className='home-btn'>
+              <NavLink exact to="/"><img id="logo-img" src={logo} /></NavLink>
+            </div>
           </div>
-          <div className='search-filter-container'>
+          {/* <div className='search-filter-container'>
             <SearchFilter />
-          </div>
+          </div> */}
           <div className='right-container'>
             <div className='upload-btn'>
               <OpenModalButton 

@@ -53,7 +53,7 @@ const CreateComment = () => {
                             required
                         />
                     </div>
-                    <button onSubmit={handleSubmit}>Create</button>
+                    <button className="createcomment-btn" onSubmit={handleSubmit}>Create</button>
                 </div>
             </form>
         </>

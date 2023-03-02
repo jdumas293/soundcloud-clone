@@ -13,7 +13,7 @@ const Footer = () => {
 
     useEffect(() => {
         dispatch(thunkLoadTracks())
-            .then(setIsLoaded(true))
+        .then(setIsLoaded(true))
     }, [dispatch]);
 
 

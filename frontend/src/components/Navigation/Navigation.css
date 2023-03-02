@@ -6,7 +6,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    height: 4.5em;
+    height: 5em;
     width: 100%;
     padding: 0px;
     margin-top: 0px;
@@ -233,6 +233,22 @@
 }
 
 .profile-btn button {
+    cursor: pointer;
     height: 2em;
     width: 3em;
+    color: whitesmoke;
+    background-color: #f50;
+    border-color: #f50;
+}
+
+.profile-btn button:hover {
+    color: #333;
+}
+
+#logo-img {
+    width: 90px;
+    height: 35px;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #f50;
 }

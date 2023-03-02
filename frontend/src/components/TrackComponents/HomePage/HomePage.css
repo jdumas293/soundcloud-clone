@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     margin-left: 150px;
     margin-right: 150px;
-    margin-top: 6em;
+    margin-top: 4em;
     /* border: 1px solid black; */
 }
 
@@ -15,13 +15,18 @@
     flex-wrap: wrap;
     margin-left: 150px;
     margin-right: 150px;
-    margin-bottom: 5.5em;
+    margin-bottom: 4em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    background-color: whitesmoke;
     /* border: 1px solid black */
 }
 
 .trackdetails-container {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    margin: 0.5em;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
     /* border: 1px solid black; */
@@ -32,7 +37,9 @@
 }
 
 .track-info {
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
     margin-top: 0px;
     margin-bottom: 10px;
     margin-left: 1em;
