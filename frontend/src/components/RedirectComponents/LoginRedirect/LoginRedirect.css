@@ -52,13 +52,13 @@
     cursor: pointer;
     width: 150px;
     height: 35px;
-    background-color: whitesmoke;
-    color: #f50;
+    background-color: #f50;
+    color: whitesmoke;
     border-color: #f50;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
 }
 
 .alt-login-btn:hover {
-    color: whitesmoke;
-    background-color: #f50;
+    color: #f50;
+    background-color: whitesmoke;
 }

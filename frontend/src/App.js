@@ -40,10 +40,10 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path='/tracks/:trackId'>
             <SingleTrackPage />
+            <Footer />
           </ProtectedRoute>  
         </Switch>
       )}
-      {/* <Footer /> */}
     </>
   );
 }

@@ -19,6 +19,12 @@ const HomePage = () => {
             <div className="trackcard-container">
                 {tracks.map(track => <TrackCard track={track} />)}                
             </div>
+            <div className="contact-container">
+                <i className="fa-brands fa-linkedin fa-xl" onClick={() => window.open('https://www.linkedin.com/in/josephdumas16/')}></i>
+                <i className="fa-brands fa-github fa-xl" onClick={() => window.open('https://github.com/jdumas293')}></i>
+            </div>
+           
+            
         </>
     )
 }

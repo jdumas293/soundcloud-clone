@@ -1,18 +1,25 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import Controls from "./Controls";
 import DisplayTrack from "./DisplayTrack";
 import ProgressBar from "./ProgressBar";
 import "./AudioPlayerV2.css";
+import { thunkLoadTracks } from "../../../store/track";
+import { useDispatch } from "react-redux";
 
-const AudioPlayerV2 = ({ tracks }) => {
+const AudioPlayerV2 = () => {
+    const dispatch = useDispatch();
+    const tracks = useSelector(state => state?.tracks?.allTracks)
     const [trackIndex, setTrackIndex] = useState(0);
-    const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex] || 0);
+    const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex]);
     const [timeProgress, setTimeProgress] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    // console.log("FIRST TRACK!!!", tracks[1]?.file);
 
     const audioRef = useRef();
     const progressBarRef = useRef();
-    // console.log(tracks[0]);
     // console.log(audioRef);
 
     const handleNext = () => {
@@ -25,7 +32,12 @@ const AudioPlayerV2 = ({ tracks }) => {
         };
     };
 
-    return (
+    useEffect(() => {
+        dispatch(thunkLoadTracks())
+        .then(setIsLoaded(true));
+    }, [dispatch]);
+
+    return isLoaded && (
         <div className="audio-player-v2">
             <div className="inner">
                 <Controls 

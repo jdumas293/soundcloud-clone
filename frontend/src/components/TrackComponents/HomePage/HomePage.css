@@ -15,7 +15,7 @@
     flex-wrap: wrap;
     margin-left: 150px;
     margin-right: 150px;
-    margin-bottom: 4em;
+    margin-bottom: 2em;
     padding-top: 3em;
     padding-bottom: 3em;
     background-color: whitesmoke;
@@ -74,11 +74,17 @@
     cursor: pointer;
 }
 
-/* .button {
-    display: none;
-    width: fit-content;
+.contact-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6em;
+    gap: 1em;
 }
 
-.track-image:hover + .button, .button:hover {
-    display: flex;
-} */
+.fa-linkedin {
+    cursor: pointer;
+}
+
+.fa-github {
+    cursor: pointer;
+}

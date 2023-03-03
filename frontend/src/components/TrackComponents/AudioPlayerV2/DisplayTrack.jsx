@@ -12,18 +12,18 @@ const DisplayTrack = ({ currentTrack, audioRef, setDuration, progressBarRef, han
     return (
         <div>
             <audio
-                src={currentTrack.file} 
+                src={currentTrack?.file} 
                 ref={audioRef}
                 onLoadedMetadata={onLoadedMetadata}
                 onEnded={handleNext} 
             />
             <div className='audio-info-v2'>
                 <div className='audio-image-v2'>
-                    <img src={currentTrack.imageUrl} alt="audio-image-v2" />
+                    <img src={currentTrack?.imageUrl} alt="audio-image-v2" />
                 </div>
                 <div className="text-v2">
-                    <div>{currentTrack.title}</div>
-                    <div>{truncateDesc(currentTrack.description)}</div>
+                    <div>{currentTrack?.title}</div>
+                    <div>{truncateDesc(currentTrack?.description)}</div>
                 </div>
             </div>
         </div>
