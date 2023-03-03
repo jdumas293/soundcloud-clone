@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useModal } from "../../../context/Modal";
 import { thunkUploadTrack } from "../../../store/track";
@@ -36,8 +36,7 @@ const UploadTrack = () => {
                     if (data && data.errors) setErrors(data.errors);
                 }
             )
-
-            history.push(`/tracks/${newTrack.id}`)
+            history.push(`/tracks/${newTrack.id}`) 
     }
 
     const updateFile = (e) => {

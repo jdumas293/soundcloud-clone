@@ -31,7 +31,7 @@
     width: fit-content;
     height: fit-content;
     padding: 10px;
-    margin-top: 2.75em;
+    margin-top: 1.7em;
     list-style-type: none;
     background-color: #fff;
     border: 1px solid #ccc;
@@ -196,7 +196,7 @@
     display: flex;
     width: fit-content;
     justify-content: center;
-    height: 1.75em;
+    height: 2em;
     /* border: 1px solid black; */
 }
 
@@ -232,17 +232,22 @@
     /* border: 1px solid black; */
 }
 
-.profile-btn button {
-    cursor: pointer;
+.profile-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 2em;
-    width: 3em;
-    color: whitesmoke;
-    background-color: #f50;
-    border-color: #f50;
+    /* border: 2px solid red; */
 }
 
-.profile-btn button:hover {
-    color: #333;
+.profile-btn button {
+    cursor: pointer;
+    width: fit-content;
+    color: whitesmoke;
+    background-color: #333;
+    border: none;
+    font-size: 14px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
 }
 
 #logo-img {

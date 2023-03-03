@@ -40,9 +40,9 @@ function Navigation({ isLoaded }){
       ) : (
         <div className='nav-container'>
           <div className='home-btn-container'>
-            <li>
-              <NavLink exact to="/">Home</NavLink>
-            </li>
+            <div>
+              <NavLink exact to="/"><img id="logo-img" src={logo} /></NavLink>
+            </div>
           </div>
           <div className='right-container'>
             <div className='profile-btn-container'>
