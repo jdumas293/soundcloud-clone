@@ -21,14 +21,9 @@
 .createcomment-btn {
     cursor: pointer;
     width: 75px;
-    background-color: white;
-    color: #f50;
-    border-color: black;
-    border: 1.5px solid black;
-    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
-}
-
-.createcomment-btn:hover {
-    color: white;
     background-color: #f50;
+    border-radius: 5px;
+    color: whitesmoke;
+    border: 3px solid #f50;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
 }

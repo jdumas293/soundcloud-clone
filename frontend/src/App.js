@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import HomePage from "./components/TrackComponents/HomePage/HomePage";
 import SingleTrackPage from "./components/TrackComponents/SingleTrackPage/SingleTrackPage";
 import ProfilePage from "./components/ProfileComponents/ProfilePage";
+import SplashPage from "./components/SplashPage/SplashPage";
 import LoginRedirect from "./components/RedirectComponents/LoginRedirect/LoginRedirect";
 import SignUpRedirect from "./components/RedirectComponents/SignUpRedirect/SignUpRedirect";
 
@@ -30,6 +31,9 @@ function App() {
           <Route exact path='/signup'>
             <SignUpRedirect />
           </Route>
+          {/* <Route exact path='/splash'>
+            <SplashPage />
+          </Route> */}
           <ProtectedRoute exact path='/'>
             <HomePage />
             <Footer />

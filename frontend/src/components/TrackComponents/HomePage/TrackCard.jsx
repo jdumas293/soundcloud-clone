@@ -1,5 +1,4 @@
 import { useHistory } from "react-router-dom";
-import AudioPlayerV2 from "../AudioPlayerV2/AudioPlayer";
 import "./HomePage.css";
 
 const TrackCard = ({ track }) => {
@@ -8,7 +7,7 @@ const TrackCard = ({ track }) => {
     const handleClick = (e) => {
         e.preventDefault();
         history.push(`/tracks/${track.id}`);
-    }
+    };
 
     return (
         <>

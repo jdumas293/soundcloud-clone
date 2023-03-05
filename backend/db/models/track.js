@@ -18,12 +18,12 @@ module.exports = (sequelize, DataTypes) => {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-      // validate: {
-      //   len: {
-      //     args: [1, 25],
-      //     msg: "Title must be less than 25 characters!"
-      //   }
-      // }
+      validate: {
+        len: {
+          args: [1, 25],
+          msg: "Title must be less than 25 characters!"
+        }
+      }
     },
     file: {
       type: DataTypes.STRING,
@@ -32,22 +32,22 @@ module.exports = (sequelize, DataTypes) => {
     genre: {
       type: DataTypes.STRING,
       allowNull: false,
-      // validate: {
-      //   len: {
-      //     args: [1, 20],
-      //     msg: "Genre must be less than 20 characters!"
-      //   }
-      // }
+      validate: {
+        len: {
+          args: [1, 20],
+          msg: "Genre must be less than 20 characters!"
+        }
+      }
     },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
-      // validate: {
-      //   len: {
-      //     args: [1, 100],
-      //     msg: "Description must be less than 100 characters!"
-      //   }
-      // }
+      validate: {
+        len: {
+          args: [1, 100],
+          msg: "Description must be less than 100 characters!"
+        }
+      }
     },
     imageUrl: {
       type: DataTypes.STRING,

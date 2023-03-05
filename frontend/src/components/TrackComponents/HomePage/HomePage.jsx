@@ -17,7 +17,7 @@ const HomePage = () => {
         <>
             <div className="track-display"></div>
             <div className="trackcard-container">
-                {tracks.map(track => <TrackCard track={track} />)}                
+                {tracks.map(track => <TrackCard track={track} key={track.id} />)}                
             </div>
             <div className="contact-container">
                 <i className="fa-brands fa-linkedin fa-xl" onClick={() => window.open('https://www.linkedin.com/in/josephdumas16/')}></i>

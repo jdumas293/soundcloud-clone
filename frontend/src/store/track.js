@@ -162,15 +162,8 @@ const tracksReducer = (state = initialState, action) => {
             });
             return newState;
         }
-        // case LOAD_CURR_USER_TRACKS: {
-        //     newState = { allTracks: {}, singleTrack: {} };
-        //     action.payload.forEach(track => {
-        //         newState.allTracks[track.id] = track;
-        //     });
-        //     return newState;
-        // }
         case LOAD_SINGLE_TRACK: {
-            newState = { allTracks: {}, singleTrack: {...action.payload} };
+            newState = { allTracks: {}, singleTrack: {...state.singleTrack, ...action.payload} };
             return newState;
         }
         case UPLOAD_TRACK: {
