@@ -25,15 +25,15 @@ function App() {
     <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route exact path='/login' >
+          {/* <Route exact path='/login' >
             <LoginRedirect />
-          </Route>
-          <Route exact path='/signup'>
-            <SignUpRedirect />
-          </Route>
-          {/* <Route exact path='/splash'>
-            <SplashPage />
           </Route> */}
+          {/* <Route exact path='/signup'>
+            <SignUpRedirect />
+          </Route> */}
+          <Route exact path='/splash'>
+            <SplashPage />
+          </Route>
           <ProtectedRoute exact path='/'>
             <HomePage />
             <Footer />

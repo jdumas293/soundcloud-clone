@@ -36,11 +36,11 @@ const LoginRedirect = () => {
                 <h3>Please login or <button className="alt-login-signup-btn" onClick={redirectSignUp}>sign up</button> to access features!</h3>
             </div>
             <form className="alt-login-form" onSubmit={handleSubmit}>
-                <ul>
+                <div className="login-errors">
                     {errors.map((error, idx) => (
                         <li key={idx}>{error}</li>
                     ))}
-                </ul>
+                </div>
                 <div className="alt-login-info">
                     <div className="alt-login-cred">
                         <input

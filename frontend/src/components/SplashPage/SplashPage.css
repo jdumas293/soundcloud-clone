@@ -1,5 +1,4 @@
 .splash-container {
-    position: relative;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -27,21 +26,23 @@
 
 .splash-header {
     position: absolute;
-    order: 2;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 30px;
+    color: white;
 }
 
 .splash-info-container {
     display: flex;
     flex-direction: column;
-    margin-top: 2em;
     margin-left: 150px;
     margin-right: 150px;
     justify-content: center;
     text-align: center;
+    height: 200px;
+    background-color: whitesmoke;
+    /* border: 1px solid black; */
 }
 
 .splash-demo {
@@ -55,4 +56,6 @@
     gap: 1em;
     /* color: #f50; */
 }
+
+
 

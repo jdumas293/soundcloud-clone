@@ -5,16 +5,16 @@ const SplashPage = () => {
         <>
             <div className='splash-container'>
                 <div className='splash-image-container'>
-                    <img src="https://kidfromthe6ix.files.wordpress.com/2015/02/tumblr_ncviq9iwd01shh0v3o1_500.gif" alt="splash-img" /> 
+                    <img src="http://images.summitmedia-digital.com/esquiremagph/images/2019/02/07/MUSIC_COVER_FEB2019.jpg" alt="splash-img" /> 
                 </div>
                 <div className='splash-header'>
                     <p>Discover and share new music!</p>
-                    <i class="fa-solid fa-music fa-sm"></i>
+                    {/* <i class="fa-solid fa-music fa-sm"></i> */}
                 </div>
             </div>
             <div className='splash-info-container'>
                 <div className='splash-demo'>
-                    <h4>PLEASE LOGIN, SIGN UP, OR USE THE DEMO USER LOCATED IN THE PROFILE MENU TO ACCESS ALL FEATURES!</h4>
+                    <p>PLEASE LOGIN, SIGN UP, OR USE OUR DEMO USER LOCATED IN THE PROFILE MENU TO ACCESS ALL FEATURES!</p>
                 </div>
                 <div className="splash-contact-container">
                     <i className="fa-brands fa-linkedin fa-xl" onClick={() => window.open('https://www.linkedin.com/in/josephdumas16/')}></i>

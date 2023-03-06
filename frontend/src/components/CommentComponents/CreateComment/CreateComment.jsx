@@ -39,9 +39,9 @@ const CreateComment = () => {
                 className="createcomment-form"
                 onSubmit={handleSubmit}
             >
-                <ul>
+                <div className="comment-errors">
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                </ul>
+                </div>
                 <div className="create-comment-form-container">
                     <div className="commentbody-container">
                         <input

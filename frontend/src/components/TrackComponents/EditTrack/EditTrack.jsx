@@ -9,7 +9,7 @@ const EditTrack = ({ track }) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const [title, setTitle] = useState(track.title);
-    const [file, setFile] = useState(track.file);
+    const [file, setFile] = useState(track?.file);
     const [genre, setGenre] = useState(track.genre);
     const [description, setDescription] = useState(track.description);
     const [imageUrl, setImageUrl] = useState(track.imageUrl);

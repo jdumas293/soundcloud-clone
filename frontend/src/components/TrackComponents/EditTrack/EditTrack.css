@@ -15,9 +15,7 @@
 .edittrack-file input {
     width: 90%;
     height: 3em;
-    border-radius: 5px;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
-    /* border: 2px solid red; */
 }
 
 .edittrack-title {

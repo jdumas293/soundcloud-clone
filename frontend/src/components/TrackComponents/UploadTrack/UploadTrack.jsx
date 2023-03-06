@@ -51,9 +51,9 @@ const UploadTrack = () => {
                 className="uploadtrack-form"
                 onSubmit={handleUpload}
             >
-                <ul>
+                <div className="upload-track-errors">
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                </ul>
+                </div>
                 <div className="uploadtrack-form-container">
                     <div className="upload-file">
                         <input 

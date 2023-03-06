@@ -62,3 +62,11 @@
     color: #f50;
     background-color: whitesmoke;
 }
+
+.login-errors {
+    color: red;
+    list-style-type: none;
+    margin-bottom: 1em;
+    font-size: 14px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
