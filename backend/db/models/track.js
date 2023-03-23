@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Track.belongsTo(models.User, { foreignKey: 'userId' });
       Track.hasMany(models.Comment, { foreignKey: 'trackId' });
+      Track.hasMany(models.Like, { foreignKey: 'trackId' });
     }
   }
   Track.init({
