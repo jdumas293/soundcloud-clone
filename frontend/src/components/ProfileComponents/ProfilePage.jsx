@@ -1,15 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkLoadCurrUserTracks } from "../../store/track";
+import { useHistory } from "react-router-dom";
 import ProfileTrack from "./ProfileTrack";
+import FavoritesTab from "../FavoriteComponents/FavoritesTab";
 import "./ProfilePage.css";
 
-const ProfilePage = () => {
+const ProfilePage = ({ tabOverride }) => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const user = useSelector(state => state.session.user);
     const tracks = Object.values(useSelector(state => state.tracks.allTracks)).filter(track => track.userId === user.id);
     // console.log("TRACKS ==>", tracks);
+
+    const [ selectedTab, setSelectedTab ] = useState(tabOverride ? tabOverride : 'ProfilePage');
 
     const numTracks = (tracks) => {
         let count = 0;
@@ -19,9 +24,23 @@ const ProfilePage = () => {
         return count;
     };
 
+    const handleTabClick = (tabName) => {
+        setSelectedTab(tabName);
+    };
+
     useEffect(() => {
+
+        if (selectedTab === 'ProfileTrack') {
+            history.push(`/profile`)
+        }
+
+        if (selectedTab === 'FavoritesTab') {
+            history.push(`/favorites/${user.id}`)
+        }
+
         dispatch(thunkLoadCurrUserTracks(tracks));
-    }, [dispatch]);
+
+    }, [dispatch, user, selectedTab]);
 
     return (
         <div className="profilepage-container">
@@ -38,8 +57,23 @@ const ProfilePage = () => {
                     {numTracks(tracks)} tracks
                 </div>
             </div>
+            <div className="profile-tab-container">
+                <div 
+                    className={`profile-tracks-tab ${selectedTab === 'ProfileTrack' ? 'selected' : ''}`}
+                    onClick={() => handleTabClick('ProfileTrack')}
+                    >
+                    Your Tracks
+                </div>
+                <div
+                    className={`profile-favorites-tab ${selectedTab === 'FavoritesTab' ? 'selected' : ''}`}
+                    onClick={() => handleTabClick('FavoritesTab')}
+                >
+                    Likes
+                </div>
+            </div>
             <div>
-                {tracks.map(track => <ProfileTrack track={track} />)}
+                {selectedTab === 'ProfileTrack' && tracks.map(track => <ProfileTrack track={track} />)}
+                {selectedTab === 'FavoritesTab' && <FavoritesTab />}
             </div>
         </div>
     )

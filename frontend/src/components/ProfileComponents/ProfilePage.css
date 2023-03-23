@@ -85,3 +85,20 @@
     text-decoration: underline;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
 }
+
+.profile-tab-container {
+    display: flex;
+    gap: 2em;
+    padding: 1em;
+    border-bottom: 1px solid lightgrey;
+}
+
+.profile-favorites-tab:hover {
+    cursor: pointer;
+    color: #f50;
+}
+
+.profile-tracks-tab:hover {
+    cursor: pointer;
+    color: #f50;
+}

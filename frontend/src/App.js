@@ -39,13 +39,19 @@ function App() {
             <Footer />
           </ProtectedRoute>
           <ProtectedRoute exact path='/profile'>
-            <ProfilePage />
+            <ProfilePage tabOverride={"ProfileTrack"}/>
             <Footer />
           </ProtectedRoute>
           <ProtectedRoute exact path='/tracks/:trackId'>
             <SingleTrackPage />
             <Footer />
-          </ProtectedRoute>  
+          </ProtectedRoute>
+
+
+          <ProtectedRoute exact path='/favorites/:userId'>
+            <ProfilePage tabOverride={"FavoritesTab"} />
+            <Footer />  
+          </ProtectedRoute> 
         </Switch>
       )}
     </>
