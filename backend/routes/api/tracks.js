@@ -208,8 +208,44 @@ router.post('/:trackId/comments', requireAuth, async (req, res) => {
     });
 
     res.json(comment);
-})
+});
 
+
+// LIKE ROUTES
+
+// CREATE A LIKE
+router.post('/:trackId/likes', requireAuth, async (req, res) => {
+    const track = await Track.findByPk(req.params.trackId);
+
+    if (!track) {
+        res.status(404);
+        res.json({
+            message: "Track not found",
+            statusCode: 404
+        });
+    };
+
+    const existingLike = await Like.findOne({
+        where: {
+            userId: req.user.id,
+            trackId: req.params.trackId
+        }
+    });
+
+    if (existingLike) {
+        res.status(403);
+        res.json({
+            message: "User has already liked this track",
+            statusCode: 403
+        });
+    } else {
+        const like = await Like.create({
+            userId: req.user.id,
+            trackId: req.params.trackId
+        });
+        res.json(like);
+    };
+});
 
 
 module.exports = router;
