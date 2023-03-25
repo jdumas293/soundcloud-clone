@@ -95,17 +95,20 @@
 .profile-tracks-tab {
     padding: 1em;
     color: #f50;
+    background-color: light;
+    border-right: 2px solid lightgrey;
 }
 
 .profile-favorites-tab {
     padding: 1em;
     color: #f50;
+    border-right: 2px solid lightgrey;
 }
 
 .profile-favorites-tab:hover {
     cursor: pointer;
     color: white;
-    background-color: #f50;  
+    background-color: #f50;
 }
 
 .profile-tracks-tab:hover {
