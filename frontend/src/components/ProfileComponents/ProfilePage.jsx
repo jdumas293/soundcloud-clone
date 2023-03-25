@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { thunkLoadCurrUserTracks } from "../../store/track";
 import { useHistory } from "react-router-dom";
 import ProfileTrack from "./ProfileTrack";
-import FavoritesTab from "../FavoriteComponents/FavoritesTab";
+import FavoritesTab from "../Likes/FavoritesTab";
 import "./ProfilePage.css";
 
 const ProfilePage = ({ tabOverride }) => {
@@ -40,7 +40,7 @@ const ProfilePage = ({ tabOverride }) => {
 
         dispatch(thunkLoadCurrUserTracks(tracks));
 
-    }, [dispatch, user, selectedTab]);
+    }, [dispatch, user, selectedTab, history, tracks]);
 
     return (
         <div className="profilepage-container">
@@ -68,7 +68,13 @@ const ProfilePage = ({ tabOverride }) => {
                     className={`profile-favorites-tab ${selectedTab === 'FavoritesTab' ? 'selected' : ''}`}
                     onClick={() => handleTabClick('FavoritesTab')}
                 >
-                    Likes
+                    Your Likes
+                </div>
+                <div
+                    className={`profile-favorites-tab ${selectedTab === 'FavoritesTab' ? 'selected' : ''}`}
+                    onClick={() => handleTabClick('FavoritesTab')}
+                >
+                    Your Playlists
                 </div>
             </div>
             <div>

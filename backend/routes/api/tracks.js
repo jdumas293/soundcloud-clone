@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { Track, Comment } = require('../../db/models');
+const { Track, Comment, Like } = require('../../db/models');
 const { requireAuth } = require('../../utils/auth');
 const { singlePublicFileUpload, singleMulterUpload } = require('../../awsS3');
 

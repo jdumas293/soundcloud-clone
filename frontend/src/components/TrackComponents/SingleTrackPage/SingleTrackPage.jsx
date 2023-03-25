@@ -2,16 +2,18 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { thunkLoadComments } from "../../../store/comment";
-import { thunkLoadSingleTrack, thunkLoadTracks } from "../../../store/track";
+// import { thunkGetLikes, thunkGetSingleLike } from "../../../store/like";
+import { thunkLoadSingleTrack } from "../../../store/track";
 import CommentCard from "../../CommentComponents/CommentCard";
 import CreateComment from "../../CommentComponents/CreateComment/CreateComment";
+import LikeButton from "../../Likes/LikeButton";
 import "./SingleTrackPage.css"
 
 const SingleTrackPage = () => {
     const dispatch = useDispatch();
     const { trackId } = useParams();
 
-    const track = useSelector(state => state.tracks.singleTrack);
+    const track = useSelector(state => state?.tracks?.singleTrack);
     const comments = Object.values(useSelector(state => state?.comments?.allComments));
 
     const numComments = (comments) => {
@@ -36,6 +38,7 @@ const SingleTrackPage = () => {
                 <div className="singletrack-info-container">
                     <div className="singletrack-title">
                         <h1>{track.title}</h1>
+                        <LikeButton trackId={trackId} />
                     </div>
                     <div className="singletrack-description">
                         {track.description}

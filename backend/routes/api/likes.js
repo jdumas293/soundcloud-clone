@@ -25,6 +25,21 @@ router.get('/current', requireAuth, async (req, res) => {
     res.json({ Likes });
 });
 
+// GET SINGLE LIKE
+router.get('/:likeId', async (req, res) => {
+    const like = await Like.findByPk(req.params.likeId);
+
+    if (!like) {
+        res.status(404);
+        res.json({
+            message: "Like not found",
+            statusCode: 404
+        });
+    };
+
+    res.json(like);
+});
+
 // DELETE A LIKE
 router.delete('/:likeId', requireAuth, async (req, res) => {
     const like = await Like.findByPk(req.params.likeId);

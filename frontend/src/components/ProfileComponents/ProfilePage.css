@@ -88,17 +88,28 @@
 
 .profile-tab-container {
     display: flex;
-    gap: 2em;
-    padding: 1em;
     border-bottom: 1px solid lightgrey;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.profile-tracks-tab {
+    padding: 1em;
+    color: #f50;
+}
+
+.profile-favorites-tab {
+    padding: 1em;
+    color: #f50;
 }
 
 .profile-favorites-tab:hover {
     cursor: pointer;
-    color: #f50;
+    color: white;
+    background-color: #f50;  
 }
 
 .profile-tracks-tab:hover {
     cursor: pointer;
-    color: #f50;
+    color: white;
+    background-color: #f50;
 }
