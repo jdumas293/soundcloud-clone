@@ -51,7 +51,10 @@ function App() {
           <ProtectedRoute exact path='/favorites/:userId'>
             <ProfilePage tabOverride={"FavoritesTab"} />
             <Footer />  
-          </ProtectedRoute> 
+          </ProtectedRoute>
+          <ProtectedRoute exact path='/playlists/:userId'>
+            <ProfilePage tabOverride={"PlaylistTab"} />
+          </ProtectedRoute>
         </Switch>
       )}
     </>

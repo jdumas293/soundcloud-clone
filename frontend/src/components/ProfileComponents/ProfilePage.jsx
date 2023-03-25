@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import ProfileTrack from "./ProfileTrack";
 import FavoritesTab from "../Likes/FavoritesTab";
 import "./ProfilePage.css";
+import PlaylistTab from "../PlaylistComponents/PlaylistTab";
 
 const ProfilePage = ({ tabOverride }) => {
     const dispatch = useDispatch();
@@ -36,6 +37,10 @@ const ProfilePage = ({ tabOverride }) => {
 
         if (selectedTab === 'FavoritesTab') {
             history.push(`/favorites/${user.id}`)
+        }
+
+        if (selectedTab === 'PlaylistTab') {
+            history.push(`/playlists/${user.id}`)
         }
 
         dispatch(thunkLoadCurrUserTracks(tracks));
@@ -71,8 +76,8 @@ const ProfilePage = ({ tabOverride }) => {
                     Your Likes
                 </div>
                 <div
-                    className={`profile-favorites-tab ${selectedTab === 'FavoritesTab' ? 'selected' : ''}`}
-                    onClick={() => handleTabClick('FavoritesTab')}
+                    className={`profile-favorites-tab ${selectedTab === 'PlaylistTab' ? 'selected' : ''}`}
+                    onClick={() => handleTabClick('PlaylistTab')}
                 >
                     Your Playlists
                 </div>
@@ -80,6 +85,7 @@ const ProfilePage = ({ tabOverride }) => {
             <div>
                 {selectedTab === 'ProfileTrack' && tracks.map(track => <ProfileTrack track={track} />)}
                 {selectedTab === 'FavoritesTab' && <FavoritesTab />}
+                {selectedTab === 'PlaylistTab' && <PlaylistTab />}
             </div>
         </div>
     )
