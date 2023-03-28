@@ -1,0 +1,30 @@
+.general-playlist-info-container {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.playlist-name-delete-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.playlist-description {
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    color: grey;
+}
+
+.playlist-plus-trash {
+    display: flex;
+    gap: 0.7em;
+    cursor: pointer;
+}
+
+.playlist-plus-trash button {
+    border: none;
+    
+}
+

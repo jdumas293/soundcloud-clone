@@ -54,6 +54,7 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path='/playlists/:userId'>
             <ProfilePage tabOverride={"PlaylistTab"} />
+            <Footer />
           </ProtectedRoute>
         </Switch>
       )}

@@ -1,0 +1,31 @@
+.playlist-tab-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    /* border: 1px solid red; */
+}
+
+.playlist-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    /* border: 1px solid red; */
+}
+
+.create-playlist-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 15%;
+    /* border: 1px solid red; */
+}
+
+.create-playlist-btn-container button {
+    background-color: #f50;
+    border-color: #f50;
+    border-radius: 5px;
+    height: 3em;
+    width: 90%;
+    color: white;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    cursor: pointer;
+}

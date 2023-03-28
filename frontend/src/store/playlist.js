@@ -2,7 +2,7 @@ import { csrfFetch } from "./csrf";
 
 const GET_PLAYLISTS = 'playlists/getPlaylists';
 const GET_SINGLE_PLAYLIST = 'playlists/getSinglePlaylist';
-const UPLOAD_TRACK_PLAYLIST = 'playlists/uploadTrackPlaylist';
+const CREATE_TRACK_PLAYLIST = 'playlists/uploadTrackPlaylist';
 const CREATE_PLAYLIST = 'playlists/createPlaylist';
 const DELETE_PLAYLIST = 'playlists/deletePlaylist';
 
@@ -21,9 +21,9 @@ export const actionGetSinglePlaylist = (playlist) => {
     };
 };
 
-export const actionUploadTrackPlaylist = (track) => {
+export const actionCreateTrackPlaylist = (track) => {
     return {
-        type: UPLOAD_TRACK_PLAYLIST,
+        type: CREATE_TRACK_PLAYLIST,
         payload: track
     };
 };
@@ -63,12 +63,24 @@ export const thunkGetSinglePlaylist = (playlistId) => async (dispatch) => {
     };
 };
 
-// export const thunkUploadTrackPlaylist = () => {
+export const thunkCreateTrackPlaylist = (track, playlistId) => async (dispatch) => {
+    const res = await csrfFetch(`/api/playlists/${playlistId}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(track)
+    });
 
-// }
+    if (res.ok) {
+        const playlistTrack = await res.json();
+        dispatch(actionCreateTrackPlaylist(playlistTrack));
+        return playlistTrack;
+    };
+};
 
 export const thunkCreatePlaylist = (playlist) => async (dispatch) => {
-    const res = await csrfFetch(`/api/playlists/${playlist.id}`, {
+    const res = await csrfFetch('/api/playlists', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -110,7 +122,10 @@ const playlistsReducer = (state = initialState, action) => {
             newState = { allPlaylists: {}, singlePlaylist: {...state.singlePlaylist, ...action.payload} };
             return newState;
         }
-        // case UPLOAD_TRACK_PLAYLIST
+        case CREATE_TRACK_PLAYLIST: {
+            newState = { ...state, allPlaylists: {...state.allPlaylists}, singlePlaylist: {...state.singlePlaylist, ...action.payload} };
+            return newState;
+        }
         case CREATE_PLAYLIST: {
             newState = { ...state, allPlaylists: {...state.allPlaylists} };
             newState.allPlaylists[action.payload.id] = action.payload;

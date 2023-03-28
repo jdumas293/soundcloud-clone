@@ -4,8 +4,8 @@ import { thunkLoadCurrUserTracks } from "../../store/track";
 import { useHistory } from "react-router-dom";
 import ProfileTrack from "./ProfileTrack";
 import FavoritesTab from "../Likes/FavoritesTab";
-import "./ProfilePage.css";
 import PlaylistTab from "../PlaylistComponents/PlaylistTab";
+import "./ProfilePage.css";
 
 const ProfilePage = ({ tabOverride }) => {
     const dispatch = useDispatch();
@@ -76,7 +76,7 @@ const ProfilePage = ({ tabOverride }) => {
                     Your Likes
                 </div>
                 <div
-                    className={`profile-favorites-tab ${selectedTab === 'PlaylistTab' ? 'selected' : ''}`}
+                    className={`profile-playlists-tab ${selectedTab === 'PlaylistTab' ? 'selected' : ''}`}
                     onClick={() => handleTabClick('PlaylistTab')}
                 >
                     Your Playlists

@@ -39,6 +39,7 @@ const SingleTrackPage = () => {
                     <div className="singletrack-title">
                         <h1>{track.title}</h1>
                         <LikeButton trackId={trackId} />
+                        <i class="fa-solid fa-plus"></i>
                     </div>
                     <div className="singletrack-description">
                         {track.description}

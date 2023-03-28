@@ -96,13 +96,13 @@
     padding: 1em;
     color: #f50;
     background-color: light;
-    border-right: 2px solid lightgrey;
+    /* border-right: 2px solid lightgrey; */
 }
 
 .profile-favorites-tab {
     padding: 1em;
     color: #f50;
-    border-right: 2px solid lightgrey;
+    /* border-right: 2px solid lightgrey; */
 }
 
 .profile-favorites-tab:hover {
@@ -112,6 +112,18 @@
 }
 
 .profile-tracks-tab:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #f50;
+}
+
+.profile-playlists-tab {
+    padding: 1em;
+    color: #f50;
+    /* border-right: 2px solid lightgrey; */
+}
+
+.profile-playlists-tab:hover {
     cursor: pointer;
     color: white;
     background-color: #f50;

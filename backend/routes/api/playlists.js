@@ -5,7 +5,7 @@ const { requireAuth } = require('../../utils/auth');
 
 const router = express.Router();
 
-// GET ALL PLAYLISTS OF CURRENT USER - PLAYLIST
+// GET ALL PLAYLISTS OF CURRENT USER
 router.get('/', async (req, res) => {
     const playlists = await Playlist.findAll({
         where: {
@@ -21,9 +21,18 @@ router.get('/', async (req, res) => {
     res.json({ Playlists });
 });
 
-// GET SINGLE PLAYLIST DETAILS
+// GET SINGLE PLAYLIST
 router.get('/:playlistId', async (req, res) => {
-    const playlist = await Playlist.findByPk(req.params.playlistId);
+    const playlist = await Playlist.findOne({
+        where: {
+            id: req.params.playlistId
+        },
+        include: [
+            {
+                model: PlaylistTrack
+            }
+        ]
+    });
 
     if (!playlist) {
         res.status(404);
@@ -34,9 +43,9 @@ router.get('/:playlistId', async (req, res) => {
     };
 
     res.json(playlist);
-})
+});
 
-// CREATE PLAYLIST - PLAYLIST
+// CREATE PLAYLIST
 router.post('/', requireAuth, async (req, res) => {
     const { name, description } = req.body;
 
@@ -49,7 +58,7 @@ router.post('/', requireAuth, async (req, res) => {
     res.json(playlist);
 });
 
-// ADD TRACK TO PLAYLIST - PLAYLIST TRACKS
+// ADD TRACK TO PLAYLIST
 router.post('/:playlistId/:trackId', requireAuth, async (req, res) => {
     const playlist = await Playlist.findByPk(req.params.playlistId);
 

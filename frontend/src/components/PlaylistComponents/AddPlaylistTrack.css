@@ -1,0 +1,26 @@
+.playlist-add-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em;
+    width: 300px;
+    border-bottom: 1px solid lightgrey;
+    font-size: 12px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+}
+
+.playlist-add-title {
+    display: flex;
+    align-items: center;
+}
+
+.playlist-add-image-plus {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.playlist-add-image-plus img {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+}
