@@ -72,29 +72,29 @@ router.delete('/:playlistId', requireAuth, async (req, res) => {
 });
 
 // GET ALL TRACKS FROM A PLAYLIST (GET SINGLE PLAYLIST)
-router.get('/:playlistId', async (req, res) => {
-    const tracks = await PlaylistTrack.findAll({
-        where: {
-            playlistId: req.params.playlistId
-        },
-        include: [
-            {
-                model: Track
-            }
-        ]
-    });
+// router.get('/:playlistId', async (req, res) => {
+//     const tracks = await PlaylistTrack.findAll({
+//         where: {
+//             playlistId: req.params.playlistId
+//         },
+//         include: [
+//             {
+//                 model: Track
+//             }
+//         ]
+//     });
 
-    console.log("TRACKS", tracks);
+//     console.log("TRACKS", tracks);
 
-    if (!tracks) {
-        res.status(404);
-        res.json({
-            message: "No tracks found",
-            statusCode: 404
-        });
-    };
+//     if (!tracks) {
+//         res.status(404);
+//         res.json({
+//             message: "No tracks found",
+//             statusCode: 404
+//         });
+//     };
 
-    res.json(tracks);
-});
+//     res.json(tracks);
+// });
 
 module.exports = router;

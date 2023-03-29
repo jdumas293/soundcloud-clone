@@ -15,10 +15,6 @@ const PlaylistCard = ({ playlist }) => {
         dispatch(thunkDeletePlaylist(playlist?.id))
     };
 
-    // useEffect(() => {
-    //     dispatch(thunkGetSinglePlaylist(playlist?.id));
-    // }, [dispatch]);
-
     return (
         <div>
             <div className="general-playlist-info-container">

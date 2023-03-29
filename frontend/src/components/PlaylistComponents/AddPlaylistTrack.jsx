@@ -7,12 +7,11 @@ import "./AddPlaylistTrack.css";
 const AddPlaylistTrack = ({ playlist }) => {
     const dispatch = useDispatch();
     const likes = Object.values(useSelector(state => state?.likes?.allLikes));
-    // console.log('LIKES', likes);
+    console.log("LIKES", likes)
 
-    // const handleAdd = (track) => {
-    //     e.preventDefault();
-    //     dispatch(thunkCreateTrackPlaylist(track, playlist.id));
-    // }
+    const handleAdd = () => {
+        dispatch(thunkCreateTrackPlaylist(playlist.id));
+    }
 
     useEffect(() => {
         dispatch(thunkGetLikes());
@@ -20,22 +19,30 @@ const AddPlaylistTrack = ({ playlist }) => {
 
     return (
         <div>
+            <div className="add-playlist-header-container">
+                <div className="add-playlist-name-header">
+                    {playlist.name} - <div className="add-playlist-description-header">Choose a song to add to your playlist</div>
+                </div>
+            </div>
             <div>
                 {likes.map(like => {
+                    console.log("LIKE", like);
                     return (
-                        <div className="playlist-add-container">
-                            <div className="playlist-add-title">
-                                {like.Track.title}
-                            </div>
-                            <div className="playlist-add-image-plus">
-                                {/* <div onClick={handleAdd(like.Track)}>
-                                    <i class="fa-solid fa-plus"></i>
-                                </div> */}
-                                <div>
-                                    <img src={like.Track.imageUrl} alt="playlist-like-imgs" />
+                        <>
+                            <div className="playlist-add-container">
+                                <div className="playlist-add-title">
+                                    {like.Track.title}
+                                </div>
+                                <div className="playlist-add-image-plus">
+                                    <div>
+                                        <i onClick={handleAdd} class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <div>
+                                        <img src={like.Track.imageUrl} alt="playlist-like-imgs" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </>
                     )
                 })}
             </div>
