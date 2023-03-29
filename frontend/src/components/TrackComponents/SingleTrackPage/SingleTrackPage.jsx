@@ -20,7 +20,10 @@ const SingleTrackPage = () => {
         comments.forEach(comment => {
             count += 1;
         });
-        return count;
+        if (count === 1) {
+            return `${count} comment`;
+        }
+        else return `${count} comments`;
     };
 
     useEffect(() => {
@@ -56,7 +59,7 @@ const SingleTrackPage = () => {
                     <CreateComment />
                 </div>
                 <div className="num-comments-display">
-                    {numComments(comments)} comments
+                    {numComments(comments)}
                 </div>
                 {comments.map(comment => <CommentCard comment={comment} key={comment.id} />)}
             </div>

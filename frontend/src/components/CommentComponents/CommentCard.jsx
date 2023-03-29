@@ -33,7 +33,7 @@ const CommentCard = ({ comment }) => {
                     {/* <div>
                         {comment?.User?.username}
                     </div> */}
-                    <div>
+                    <div className="comment-created-at">
                         {yearMonthDay(comment.createdAt)}
                     </div>
                     <div>
@@ -42,14 +42,9 @@ const CommentCard = ({ comment }) => {
                 </div>
                 <div className="comment-btns-container">
                     <div>
-                        {/* <DeleteComment comment={comment} /> */}
                         {showDelete()}
                     </div>
                     <div className="edit-comment-btn-container">
-                        {/* <OpenModalButton
-                            buttonText={<i class="fa-solid fa-pen"></i>}
-                            modalComponent={<EditComment comment={comment} />}
-                        /> */}
                         {showEdit()}
                     </div>
                 </div>

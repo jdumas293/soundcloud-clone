@@ -1,6 +1,9 @@
 .create-comment-form-container {
     display: flex;
     flex-direction: row;
+    padding-bottom: 2em;
+    margin-right: 150px;
+    border-bottom: 1px solid lightgrey;
     /* border: 1px solid red; */
 }
 
