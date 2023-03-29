@@ -9,11 +9,13 @@ import "./AudioPlayerV2.css";
 const AudioPlayerV2 = () => {
     const dispatch = useDispatch();
     const tracks = useSelector(state => state?.tracks?.allTracks)
-    const [trackIndex, setTrackIndex] = useState(0);
-    const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex] || tracks[1]);
+    const [trackIndex, setTrackIndex] = useState(1);
+    const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex]);
     const [timeProgress, setTimeProgress] = useState(0);
     const [duration, setDuration] = useState(0);
     const [isLoaded, setIsLoaded] = useState(false);
+
+    console.log("TRACK INDEX", trackIndex);
 
     // console.log("FIRST TRACK!!!", tracks[1]);
     // console.log("ALL TRACKS", tracks);
