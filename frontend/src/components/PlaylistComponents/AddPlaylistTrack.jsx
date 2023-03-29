@@ -9,10 +9,10 @@ const AddPlaylistTrack = ({ playlist }) => {
     const likes = Object.values(useSelector(state => state?.likes?.allLikes));
     // console.log('LIKES', likes);
 
-    const handleAdd = (track) => {
-        // e.preventDefault();
-        dispatch(thunkCreateTrackPlaylist(track, playlist.id));
-    }
+    // const handleAdd = (track) => {
+    //     e.preventDefault();
+    //     dispatch(thunkCreateTrackPlaylist(track, playlist.id));
+    // }
 
     useEffect(() => {
         dispatch(thunkGetLikes());
@@ -28,9 +28,9 @@ const AddPlaylistTrack = ({ playlist }) => {
                                 {like.Track.title}
                             </div>
                             <div className="playlist-add-image-plus">
-                                <div onClick={handleAdd(like.Track)}>
+                                {/* <div onClick={handleAdd(like.Track)}>
                                     <i class="fa-solid fa-plus"></i>
-                                </div>
+                                </div> */}
                                 <div>
                                     <img src={like.Track.imageUrl} alt="playlist-like-imgs" />
                                 </div>

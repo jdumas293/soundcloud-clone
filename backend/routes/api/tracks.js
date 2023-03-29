@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { Track, Comment, Like } = require('../../db/models');
+const { Track, Comment, Like, Playlist, PlaylistTrack } = require('../../db/models');
 const { requireAuth } = require('../../utils/auth');
 const { singlePublicFileUpload, singleMulterUpload } = require('../../awsS3');
 
@@ -169,7 +169,7 @@ router.get('/:trackId/comments', async (req, res) => {
         where: {
             trackId: req.params.trackId
         },
-        // include: [
+        // include: [ 
         //     {
         //         model: User
         //     }
@@ -244,6 +244,30 @@ router.post('/:trackId/likes', requireAuth, async (req, res) => {
             trackId: req.params.trackId
         });
         res.json(like);
+    };
+});
+
+
+// PLAYLIST ROUTES
+
+// ADD TRACK TO PLAYLIST
+router.post('/:trackId/playlists/:playlistId', requireAuth, async (req, res) => {
+    const playlist = await Playlist.findByPk(req.params.playlistId);
+
+    if (!playlist) {
+        res.status(404);
+        res.json({
+            message: "Playlist not found",
+            statusCode: 404
+        });
+    };
+
+    if (playlist.userId === req.user.id) {
+        const playlistTrack = PlaylistTrack.create({
+            playlistId: req.params.playlistId,
+            trackId: req.params.trackId
+        });
+        res.json(playlistTrack);
     };
 });
 

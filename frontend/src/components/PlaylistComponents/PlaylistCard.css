@@ -1,7 +1,9 @@
 .general-playlist-info-container {
+    margin-bottom: 2em;
     border: 1px solid lightgrey;
     border-radius: 10px;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    font-size: 13px;
 }
 
 .playlist-name-delete-container {
@@ -12,9 +14,11 @@
 
 .playlist-description {
     padding-bottom: 1em;
-    padding-left: 2em;
-    padding-right: 2em;
+    margin-bottom: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
     color: grey;
+    border-bottom: 1px solid lightgrey;
 }
 
 .playlist-plus-trash {
@@ -25,6 +29,23 @@
 
 .playlist-plus-trash button {
     border: none;
-    
 }
 
+
+
+.playlist-track-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid lightgrey;
+    /* border: 1px solid red; */
+}
+
+.playlist-track-image img {
+    height: 30px;
+    width: 30px;
+}

@@ -14,10 +14,10 @@ export const actionGetPlaylists = (playlists) => {
     };
 };
 
-export const actionGetSinglePlaylist = (playlist) => {
+export const actionGetSinglePlaylist = (tracks) => {
     return {
         type: GET_SINGLE_PLAYLIST,
-        payload: playlist
+        payload: tracks
     };
 };
 
@@ -57,14 +57,14 @@ export const thunkGetSinglePlaylist = (playlistId) => async (dispatch) => {
     const res = await csrfFetch(`/api/playlists/${playlistId}`);
 
     if (res.ok) {
-        const playlist = await res.json();
-        dispatch(actionGetSinglePlaylist(playlist));
-        return playlist;
+        const tracks = await res.json();
+        dispatch(actionGetSinglePlaylist(tracks));
+        return tracks;
     };
 };
 
 export const thunkCreateTrackPlaylist = (track, playlistId) => async (dispatch) => {
-    const res = await csrfFetch(`/api/playlists/${playlistId}`, {
+    const res = await csrfFetch(`/api/tracks/${track.id}/playlists/${playlistId}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

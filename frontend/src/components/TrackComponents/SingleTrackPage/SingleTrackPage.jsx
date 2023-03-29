@@ -12,7 +12,6 @@ import "./SingleTrackPage.css"
 const SingleTrackPage = () => {
     const dispatch = useDispatch();
     const { trackId } = useParams();
-
     const track = useSelector(state => state?.tracks?.singleTrack);
     const comments = Object.values(useSelector(state => state?.comments?.allComments));
 

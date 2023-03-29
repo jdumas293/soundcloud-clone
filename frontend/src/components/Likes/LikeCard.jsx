@@ -4,15 +4,13 @@ import './LikeCard.css';
 const LikeCard = ({ like }) => {
     const history = useHistory();
 
-    // console.log("LIKE", like);
-
-    // const handleClick = (e) => {
-    //     e.preventDefault();
-    //     history.push(`/tracks/${trackId}`);
-    // };
+    const handleClick = (e) => {
+        e.preventDefault();
+        history.push(`/tracks/${like.Track.id}`);
+    };
 
     return (
-        <div className="profile-likes-container">
+        <div onClick={handleClick} className="profile-likes-container">
             <div className="profile-likes-img-container">
                 <img src={like.Track.imageUrl} alt="track-image" />
             </div>

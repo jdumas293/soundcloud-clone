@@ -1,27 +1,23 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { thunkDeletePlaylist, thunkGetSinglePlaylist } from "../../store/playlist";
+// import { useHistory } from "react-router-dom";
+import { thunkDeletePlaylist, thunkGetPlaylists, thunkGetSinglePlaylist } from "../../store/playlist";
 import OpenModalButton from "../OpenModalButton";
 import AddPlaylistTrack from "./AddPlaylistTrack";
 import './PlaylistCard.css';
 
 const PlaylistCard = ({ playlist }) => {
-    const history = useHistory();
     const dispatch = useDispatch();
-    const otherPlaylist = useSelector(state => state.playlists.singlePlaylist);
-    console.log(otherPlaylist);
-
-    // console.log("PLAYLIST", playlist);
+    // const history = useHistory();
 
     const deletePlaylist = (e) => {
         e.preventDefault();
         dispatch(thunkDeletePlaylist(playlist?.id))
     };
 
-    useEffect(() => {
-        thunkGetSinglePlaylist(playlist.id);
-    }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(thunkGetSinglePlaylist(playlist?.id));
+    // }, [dispatch]);
 
     return (
         <div>
@@ -42,6 +38,18 @@ const PlaylistCard = ({ playlist }) => {
                 </div>
                 <div className="playlist-description">
                     {playlist.description}
+                </div>
+                <div>
+                    {playlist.PlaylistTracks.map(pt =>
+                        <div className="playlist-track-container">
+                            <div>
+                                {pt.Track.title}
+                            </div>
+                            <div className="playlist-track-image">
+                                <img src={pt.Track.imageUrl} />   
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
