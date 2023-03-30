@@ -24,11 +24,21 @@
 .playlist-plus-trash {
     display: flex;
     gap: 0.7em;
-    cursor: pointer;
 }
 
 .playlist-plus-trash button {
     border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.playlist-plus-trash button:hover {
+    color: #f50;
+}
+
+.delete-playlist-button:hover {
+    color: red;
+    cursor: pointer;
 }
 
 
@@ -48,4 +58,10 @@
 .playlist-track-image img {
     height: 30px;
     width: 30px;
+}
+
+.delete-pt-button-pl-track-image {
+    display: flex;
+    align-items: center;
+    gap: 1em;
 }

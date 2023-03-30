@@ -71,30 +71,54 @@ router.delete('/:playlistId', requireAuth, async (req, res) => {
     };
 });
 
+// DELETE TRACK FROM PLAYLIST
+router.delete('/:playlistId/tracks/:trackId', requireAuth, async (req, res) => {
+    const playlistTrack = await PlaylistTrack.findOne({
+        where: {
+            playlistId: req.params.playlistId,
+            trackId: req.params.trackId
+        }
+    });
+
+    if (!playlistTrack) {
+        res.status(404);
+        return res.json({
+            message: "Successfully deleted",
+            statusCode: 404
+        })
+    };
+
+    await playlistTrack.destroy();
+    res.json({
+        message: "Successfully deleted",
+        statusCode: 404
+    });
+});
+
 // GET ALL TRACKS FROM A PLAYLIST (GET SINGLE PLAYLIST)
-// router.get('/:playlistId', async (req, res) => {
-//     const tracks = await PlaylistTrack.findAll({
-//         where: {
-//             playlistId: req.params.playlistId
-//         },
-//         include: [
-//             {
-//                 model: Track
-//             }
-//         ]
-//     });
+router.get('/:playlistId', async (req, res) => {
+    const tracks = await PlaylistTrack.findAll({
+        where: {
+            playlistId: req.params.playlistId
+        },
+        include: [
+            {
+                model: Track
+            }
+        ]
+    });
 
-//     console.log("TRACKS", tracks);
+    // console.log("TRACKS", tracks);
 
-//     if (!tracks) {
-//         res.status(404);
-//         res.json({
-//             message: "No tracks found",
-//             statusCode: 404
-//         });
-//     };
+    if (!tracks) {
+        res.status(404);
+        res.json({
+            message: "No tracks found",
+            statusCode: 404
+        });
+    };
 
-//     res.json(tracks);
-// });
+    res.json(tracks);
+});
 
 module.exports = router;

@@ -1,0 +1,8 @@
+.add-track-pl-button {
+    /* color: #f50; */
+    cursor: pointer;
+}
+
+.add-track-pl-button:hover {
+    color: #f50;
+}

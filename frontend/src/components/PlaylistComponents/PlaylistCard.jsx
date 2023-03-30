@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { thunkDeletePlaylist, thunkGetPlaylists, thunkGetSinglePlaylist } from "../../store/playlist";
 import OpenModalButton from "../OpenModalButton";
 import AddPlaylistTrack from "./AddPlaylistTrack";
+import DeletePlaylistTrackButton from "./DeletePlaylistTrackButton";
 import './PlaylistCard.css';
 
 const PlaylistCard = ({ playlist }) => {
@@ -14,6 +15,8 @@ const PlaylistCard = ({ playlist }) => {
         e.preventDefault();
         dispatch(thunkDeletePlaylist(playlist?.id))
     };
+
+    console.log("PLAYLIST!!!", playlist)
 
     return (
         <div>
@@ -27,7 +30,7 @@ const PlaylistCard = ({ playlist }) => {
                             buttonText={<i class="fa-solid fa-plus"></i>}
                             modalComponent={<AddPlaylistTrack playlist={playlist} />}
                         />
-                        <div onClick={deletePlaylist}>
+                        <div className="delete-playlist-button" onClick={deletePlaylist}>
                             <i class="fa-solid fa-trash"></i>
                         </div>
                     </div>
@@ -36,16 +39,21 @@ const PlaylistCard = ({ playlist }) => {
                     {playlist.description}
                 </div>
                 <div>
-                    {playlist.PlaylistTracks.map(pt =>
+                    {playlist.PlaylistTracks ? playlist?.PlaylistTracks.map(pt =>
                         <div className="playlist-track-container">
                             <div>
                                 {pt.Track.title}
                             </div>
-                            <div className="playlist-track-image">
-                                <img src={pt.Track.imageUrl} />   
+                            <div className="delete-pt-button-pl-track-image">
+                                <div className="playlist-track-image">
+                                    <img src={pt.Track.imageUrl} />   
+                                </div>
+                                <div>
+                                    <DeletePlaylistTrackButton playlistId={playlist.id} track={pt.Track} />
+                                </div>
                             </div>
                         </div>
-                    )}
+                    ) : <div>Add tracks to your new playlist!</div>}
                 </div>
             </div>
         </div>

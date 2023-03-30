@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 const GET_PLAYLISTS = 'playlists/getPlaylists';
 const GET_SINGLE_PLAYLIST = 'playlists/getSinglePlaylist';
 const CREATE_TRACK_PLAYLIST = 'playlists/uploadTrackPlaylist';
+const DELETE_TRACK_PLAYLIST = 'playlists/deleteTrackPlaylist';
 const CREATE_PLAYLIST = 'playlists/createPlaylist';
 const DELETE_PLAYLIST = 'playlists/deletePlaylist';
 
@@ -24,6 +25,13 @@ export const actionGetSinglePlaylist = (tracks) => {
 export const actionCreateTrackPlaylist = (track) => {
     return {
         type: CREATE_TRACK_PLAYLIST,
+        payload: track
+    };
+};
+
+export const actionDeleteTrackPlaylist = (track) => {
+    return {
+        type: DELETE_TRACK_PLAYLIST,
         payload: track
     };
 };
@@ -79,6 +87,16 @@ export const thunkCreateTrackPlaylist = (track, playlistId) => async (dispatch) 
     };
 };
 
+export const thunkDeleteTrackPlaylist = (playlistId, track) => async (dispatch) => {
+    const res = await csrfFetch(`/api/playlists/${playlistId}/tracks/${track.id}`, {
+        method: 'DELETE'
+    });
+
+    if (res.ok) {
+        dispatch(actionDeleteTrackPlaylist(track))
+    };
+};
+
 export const thunkCreatePlaylist = (playlist) => async (dispatch) => {
     const res = await csrfFetch('/api/playlists', {
         method: 'POST',
@@ -124,6 +142,11 @@ const playlistsReducer = (state = initialState, action) => {
         }
         case CREATE_TRACK_PLAYLIST: {
             newState = { ...state, allPlaylists: {...state.allPlaylists}, singlePlaylist: {...state.singlePlaylist, ...action.payload} };
+            return newState;
+        }
+        case DELETE_TRACK_PLAYLIST: {
+            newState = { ...state, allPlaylists: {...state.allPlaylists}, singlePlaylist: {...state.singlePlaylist}}
+            delete newState.singlePlaylist[action.payload];
             return newState;
         }
         case CREATE_PLAYLIST: {

@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { useModal } from "../../../context/Modal";
 import { thunkLoadTracks, thunkUploadTrack } from "../../../store/track";
 import "./UploadTrack.css";
 
 const UploadTrack = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
     const [title, setTitle] = useState('');
     const [file, setFile] = useState(null);
     const [genre, setGenre] = useState('');
