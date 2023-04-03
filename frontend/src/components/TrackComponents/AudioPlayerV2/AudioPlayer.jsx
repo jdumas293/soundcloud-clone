@@ -8,17 +8,16 @@ import "./AudioPlayerV2.css";
 
 const AudioPlayerV2 = () => {
     const dispatch = useDispatch();
-    const tracks = useSelector(state => state?.tracks?.allTracks)
-    const [trackIndex, setTrackIndex] = useState(1);
+    const tracks = Object.values(useSelector(state => state?.tracks?.allTracks));
+    const [trackIndex, setTrackIndex] = useState(0);
     const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex]);
     const [timeProgress, setTimeProgress] = useState(0);
     const [duration, setDuration] = useState(0);
     const [isLoaded, setIsLoaded] = useState(false);
 
     console.log("TRACK INDEX", trackIndex);
-
-    // console.log("FIRST TRACK!!!", tracks[1]);
-    // console.log("ALL TRACKS", tracks);
+    console.log("CURRENT TRACK", currentTrack);
+    console.log("ALL TRACKS", tracks);
 
     const audioRef = useRef();
     const progressBarRef = useRef();
@@ -36,8 +35,16 @@ const AudioPlayerV2 = () => {
 
     useEffect(() => {
         dispatch(thunkLoadTracks())
+        // .then(_ => {
+        //     console.log("TRACKSSSSS", tracks);
+        //     setCurrentTrack(tracks[trackIndex])
+        // })
         .then(setIsLoaded(true));
     }, [dispatch]);
+
+    useEffect(() => {
+        setCurrentTrack(tracks[trackIndex])
+    }, [tracks])
 
     return isLoaded && (
         <div className="audio-player-v2">
