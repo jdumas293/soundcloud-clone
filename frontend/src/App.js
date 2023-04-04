@@ -9,8 +9,6 @@ import HomePage from "./components/TrackComponents/HomePage/HomePage";
 import SingleTrackPage from "./components/TrackComponents/SingleTrackPage/SingleTrackPage";
 import ProfilePage from "./components/ProfileComponents/ProfilePage";
 import SplashPage from "./components/SplashPage/SplashPage";
-import LoginRedirect from "./components/RedirectComponents/LoginRedirect/LoginRedirect";
-import SignUpRedirect from "./components/RedirectComponents/SignUpRedirect/SignUpRedirect";
 
 function App() {
   const dispatch = useDispatch();

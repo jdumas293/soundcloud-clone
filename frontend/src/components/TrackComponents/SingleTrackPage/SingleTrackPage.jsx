@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { thunkLoadComments } from "../../../store/comment";
-// import { thunkGetLikes, thunkGetSingleLike } from "../../../store/like";
 import { thunkLoadSingleTrack } from "../../../store/track";
 import CommentCard from "../../CommentComponents/CommentCard";
 import CreateComment from "../../CommentComponents/CreateComment/CreateComment";
@@ -41,7 +40,7 @@ const SingleTrackPage = () => {
                     <div className="singletrack-title">
                         <h1>{track.title}</h1>
                         <LikeButton trackId={trackId} />
-                        <i class="fa-solid fa-plus"></i>
+                        {/* <i class="fa-solid fa-plus"></i> */}
                     </div>
                     <div className="singletrack-description">
                         {track.description}

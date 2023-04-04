@@ -1,15 +1,15 @@
 import { useDispatch } from "react-redux"
-import { thunkCreateTrackPlaylist, thunkGetPlaylists } from "../../store/playlist";
+import { thunkCreateTrackPlaylist } from "../../store/playlist";
+import { useModal } from "../../context/Modal";
 import "./AddPlaylistTrackButton.css";
 
 const AddPlaylistTrackButton = ({ track, playlistId }) => {
     const dispatch = useDispatch();
-
-    // console.log("TRACK", track);
-    // console.log("PLAYLIST ID", playlistId);
+    const { closeModal } = useModal();
 
     const handleAdd = async () => {
         await dispatch(thunkCreateTrackPlaylist(track, playlistId))
+        .then(closeModal)
     }
     
     return (

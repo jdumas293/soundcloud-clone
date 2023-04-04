@@ -17,17 +17,20 @@ const ProfileTrack = ({ track }) => {
         history.push('/');
     };
 
+    const handleClick = () => {
+        history.push(`/tracks/${track.id}`)
+    };
+
     return (
         <div className="profiletrack-container">
             <div className="profiletrack-info-container">
-                <div className="profiletrack-title">
+                <div className="profiletrack-title" onClick={handleClick}>
                     {track.title}
                 </div>
                 <div className="profiletrack-description">
                     {track.description}
                 </div>
                 <div className="profiletrack-btns-container">
-                    {/* <button className="edit-track-btn">EDIT</button> */}
                     <OpenModalButton 
                         buttonText="EDIT"
                         modalComponent={<EditTrack track={track} />}
@@ -35,7 +38,7 @@ const ProfileTrack = ({ track }) => {
                     <button onClick={handleDelete} className="delete-track-btn">DELETE</button>
                 </div>
             </div>
-            <div className="profiletrack-img-container">
+            <div className="profiletrack-img-container" onClick={handleClick}>
                 <img src={track.imageUrl} />
             </div>
         </div>

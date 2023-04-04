@@ -145,8 +145,8 @@ const playlistsReducer = (state = initialState, action) => {
             return newState;
         }
         case DELETE_TRACK_PLAYLIST: {
-            newState = { ...state, allPlaylists: {...state.allPlaylists}, singlePlaylist: {...state.singlePlaylist}}
-            delete newState.singlePlaylist[action.payload];
+            newState = { ...state, allPlaylists: {...state.allPlaylists}, singlePlaylist: {}}
+            delete newState.allPlaylists[action.payload];
             return newState;
         }
         case CREATE_PLAYLIST: {

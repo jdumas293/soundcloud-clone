@@ -16,7 +16,7 @@ const PlaylistCard = ({ playlist }) => {
         dispatch(thunkDeletePlaylist(playlist?.id))
     };
 
-    console.log("PLAYLIST!!!", playlist)
+    // console.log("PLAYLIST!!!", playlist)
 
     return (
         <div>
