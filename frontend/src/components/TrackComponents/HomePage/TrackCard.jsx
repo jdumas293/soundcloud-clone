@@ -3,6 +3,7 @@ import SelectTrackButton from "../AudioPlayerV2/SelectTrackButton";
 import LikeButton from "../../Likes/LikeButton";
 import "./HomePage.css";
 
+
 const TrackCard = ({ track }) => {
     const history = useHistory();
 
@@ -27,7 +28,7 @@ const TrackCard = ({ track }) => {
                         </div> */}
                     </div>
                     <div className="home-like-play">
-                        <SelectTrackButton />
+                        <SelectTrackButton track={track} />
                         <LikeButton trackId={track?.id} />
                     </div>
                 </div>
