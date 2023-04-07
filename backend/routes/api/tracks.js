@@ -263,11 +263,23 @@ router.post('/:trackId/playlists/:playlistId', requireAuth, async (req, res) => 
     };
 
     if (playlist.userId === req.user.id) {
-        const playlistTrack = PlaylistTrack.create({
+        let playlistTrack = await PlaylistTrack.create({
             playlistId: req.params.playlistId,
             trackId: req.params.trackId
         });
+        playlistTrack = playlistTrack.toJSON();
+        const track = await Track.findByPk(req.params.trackId);
+        playlistTrack.Track = track;
         res.json(playlistTrack);
+        // res.json({
+        //     status: "CHECK"
+        // })
+    } else {
+        res.status(401);
+        res.json({
+            message: "User not playlist owner",
+            statusCode: 401
+        })
     };
 });
 

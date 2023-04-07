@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { thunkCreateTrackPlaylist } from "../../store/playlist";
+import { thunkCreateTrackPlaylist, thunkGetPlaylists } from "../../store/playlist";
 import { useModal } from "../../context/Modal";
 import "./AddPlaylistTrackButton.css";
 

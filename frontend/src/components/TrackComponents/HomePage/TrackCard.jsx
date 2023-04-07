@@ -23,13 +23,10 @@ const TrackCard = ({ track }) => {
                         <div className="track-title">
                             {track.title}
                         </div>
-                        {/* <div className="track-genre">
-                            Genre: {track.genre}
-                        </div> */}
                     </div>
                     <div className="home-like-play">
                         <SelectTrackButton track={track} />
-                        <LikeButton trackId={track?.id} />
+                        {/* <LikeButton trackId={track?.id} /> */}
                     </div>
                 </div>
             </div>

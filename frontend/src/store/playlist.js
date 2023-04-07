@@ -22,17 +22,19 @@ export const actionGetSinglePlaylist = (tracks) => {
     };
 };
 
-export const actionCreateTrackPlaylist = (track) => {
+export const actionCreateTrackPlaylist = (track, playlistId) => {
     return {
         type: CREATE_TRACK_PLAYLIST,
-        payload: track
+        payload: track,
+        playlistId
     };
 };
 
-export const actionDeleteTrackPlaylist = (track) => {
+export const actionDeleteTrackPlaylist = (track, playlistId) => {
     return {
         type: DELETE_TRACK_PLAYLIST,
-        payload: track
+        payload: track,
+        playlistId
     };
 };
 
@@ -81,9 +83,13 @@ export const thunkCreateTrackPlaylist = (track, playlistId) => async (dispatch) 
     });
 
     if (res.ok) {
+        // debugger
         const playlistTrack = await res.json();
-        dispatch(actionCreateTrackPlaylist(playlistTrack));
+        console.log("PTTT", playlistTrack)
+        dispatch(actionCreateTrackPlaylist(playlistTrack, playlistId));
         return playlistTrack;
+    } else {
+        console.error(`${track.title} was not able to be added.`)
     };
 };
 
@@ -93,7 +99,7 @@ export const thunkDeleteTrackPlaylist = (playlistId, track) => async (dispatch) 
     });
 
     if (res.ok) {
-        dispatch(actionDeleteTrackPlaylist(track))
+        dispatch(actionDeleteTrackPlaylist(track, playlistId))
     };
 };
 
@@ -141,12 +147,15 @@ const playlistsReducer = (state = initialState, action) => {
             return newState;
         }
         case CREATE_TRACK_PLAYLIST: {
-            newState = { ...state, allPlaylists: {...state.allPlaylists}, singlePlaylist: {...state.singlePlaylist, ...action.payload} };
+            // debugger
+            // NEED TO REFACTOR - ACTION.PAYLOAD SPREAD IN ALLPLAYLISTS IN APPROPRIATE PLAYLIST
+            newState = { ...state, allPlaylists: {...state.allPlaylists}, singlePlaylist: {...state.singlePlaylist} };
+            newState.allPlaylists[action.playlistId].PlaylistTracks.push(action.payload);
             return newState;
         }
         case DELETE_TRACK_PLAYLIST: {
             newState = { ...state, allPlaylists: {...state.allPlaylists}, singlePlaylist: {}}
-            delete newState.allPlaylists[action.payload];
+            newState.allPlaylists[action.playlistId].PlaylistTracks = newState.allPlaylists[action.playlistId].PlaylistTracks.filter((tr) => tr.trackId !== action.payload.id);
             return newState;
         }
         case CREATE_PLAYLIST: {

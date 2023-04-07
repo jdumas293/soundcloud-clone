@@ -7,6 +7,7 @@ import CommentCard from "../../CommentComponents/CommentCard";
 import CreateComment from "../../CommentComponents/CreateComment/CreateComment";
 import LikeButton from "../../Likes/LikeButton";
 import "./SingleTrackPage.css"
+import SelectTrackButton from "../AudioPlayerV2/SelectTrackButton";
 
 const SingleTrackPage = () => {
     const dispatch = useDispatch();
@@ -40,7 +41,7 @@ const SingleTrackPage = () => {
                     <div className="singletrack-title">
                         <h1>{track.title}</h1>
                         <LikeButton trackId={trackId} />
-                        {/* <i class="fa-solid fa-plus"></i> */}
+                        <SelectTrackButton track={track} />
                     </div>
                     <div className="singletrack-description">
                         {track.description}

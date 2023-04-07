@@ -6,12 +6,9 @@ const SelectTrackButton = ({ track }) => {
 
     const handleClick = () => {
         setCurrentTrack(track);
-        console.log("TRACK SET", track)
-        console.log("CURRENT TRACK SET", currentTrack);
+        // console.log("TRACK SET", track)
+        // console.log("CURRENT TRACK SET", currentTrack);
     }
-
-    // console.log("CURRENT TRACK", currentTrack)
-    // console.log("TRACKKKK", track);
 
     return (
         <div>

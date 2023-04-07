@@ -65,3 +65,9 @@
     align-items: center;
     gap: 1em;
 }
+
+.playlist-card-delete-select-btns {
+    display: flex;
+    gap: 1em;
+    cursor: pointer;
+}

@@ -1,22 +1,19 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-// import { useHistory } from "react-router-dom";
-import { thunkDeletePlaylist, thunkGetPlaylists, thunkGetSinglePlaylist } from "../../store/playlist";
+import { useDispatch } from "react-redux";
+import { thunkDeletePlaylist } from "../../store/playlist";
 import OpenModalButton from "../OpenModalButton";
 import AddPlaylistTrack from "./AddPlaylistTrack";
 import DeletePlaylistTrackButton from "./DeletePlaylistTrackButton";
+import SelectTrackButton from "../TrackComponents/AudioPlayerV2/SelectTrackButton";
 import './PlaylistCard.css';
 
 const PlaylistCard = ({ playlist }) => {
     const dispatch = useDispatch();
-    // const history = useHistory();
 
     const deletePlaylist = (e) => {
         e.preventDefault();
         dispatch(thunkDeletePlaylist(playlist?.id))
     };
 
-    // console.log("PLAYLIST!!!", playlist)
 
     return (
         <div>
@@ -48,7 +45,8 @@ const PlaylistCard = ({ playlist }) => {
                                 <div className="playlist-track-image">
                                     <img src={pt.Track.imageUrl} />   
                                 </div>
-                                <div>
+                                <div className="playlist-card-delete-select-btns">
+                                    <SelectTrackButton track={pt.Track} />
                                     <DeletePlaylistTrackButton playlistId={playlist.id} track={pt.Track} />
                                 </div>
                             </div>

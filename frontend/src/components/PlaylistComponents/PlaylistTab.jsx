@@ -16,6 +16,10 @@ const PlaylistTab = () => {
         dispatch(thunkGetPlaylists())
     }, [dispatch]);
 
+    // useEffect(() => {
+    //     console.log("PLAYLISTUPDATE", playlists);
+    // }, [playlists])
+
     return (
         <div className="playlist-tab-container">
             <div className="playlist-card-container">
