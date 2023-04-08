@@ -4,6 +4,8 @@
     border-radius: 10px;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
     font-size: 13px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    padding: 5px;
 }
 
 .playlist-name-delete-container {
