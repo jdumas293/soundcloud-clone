@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router-dom';
+import SelectTrackButton from "../TrackComponents/AudioPlayerV2/SelectTrackButton";
 import './LikeCard.css';
 
 const LikeCard = ({ like }) => {
@@ -10,14 +11,15 @@ const LikeCard = ({ like }) => {
     };
 
     return (
-        <div onClick={handleClick} className="profile-likes-container">
-            <div className="profile-likes-img-container">
+        <div className="profile-likes-container">
+            <div className="profile-likes-img-container" onClick={handleClick}>
                 <img src={like.Track.imageUrl} alt="track-image" />
             </div>
             <div className="profile-likes-info">
                 <div className='profile-likes-title'>
                     {like.Track.title}
                 </div>
+                <SelectTrackButton track={like.Track} />
             </div>
         </div>
     )
