@@ -10,12 +10,9 @@ import "./ProfilePage.css";
 const ProfilePage = ({ tabOverride }) => {
     const dispatch = useDispatch();
     const history = useHistory();
-
+    const [ selectedTab, setSelectedTab ] = useState(tabOverride ? tabOverride : 'ProfilePage');
     const user = useSelector(state => state.session.user);
     const tracks = Object.values(useSelector(state => state.tracks.allTracks)).filter(track => track.userId === user.id);
-    // console.log("TRACKS ==>", tracks);
-
-    const [ selectedTab, setSelectedTab ] = useState(tabOverride ? tabOverride : 'ProfilePage');
 
     const numTracks = (tracks) => {
         let count = 0;

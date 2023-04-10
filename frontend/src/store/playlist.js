@@ -85,7 +85,6 @@ export const thunkCreateTrackPlaylist = (track, playlistId) => async (dispatch) 
     if (res.ok) {
         // debugger
         const playlistTrack = await res.json();
-        console.log("PTTT", playlistTrack)
         dispatch(actionCreateTrackPlaylist(playlistTrack, playlistId));
         return playlistTrack;
     } else {

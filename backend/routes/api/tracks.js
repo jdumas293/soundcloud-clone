@@ -15,8 +15,6 @@ router.get('/', async (req, res) => {
         Tracks.push(track.toJSON());
     });
 
-    // console.log('TRACKS ===>', tracks);
-
     res.json({ Tracks });
 });
 
@@ -32,8 +30,6 @@ router.get('/current', requireAuth, async (req, res) => {
     tracks.forEach(track => {
         Tracks.push(track.toJSON());
     });
-
-    // console.log('TRACKS ===>', Tracks);
 
     res.json({ Tracks });
 })
@@ -53,8 +49,6 @@ router.get('/:trackId', async (req, res) => {
             statusCode: 404
         })
     }
-
-    // console.log('TRACK ===>', track);
 
     res.json(track);
 });

@@ -23,9 +23,7 @@ const LikeButton = ({ trackId }) => {
                     setLikeId(like.id);
                 }
             }))
-        }
-        
-        // console.log("LIKED", liked);
+        }        
     };
 
     useEffect(() => {

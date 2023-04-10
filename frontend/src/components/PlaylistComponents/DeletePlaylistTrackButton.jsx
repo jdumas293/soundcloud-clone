@@ -5,9 +5,6 @@ import "./DeletePlaylistTrackButton.css";
 const DeletePlaylistTrackButton = ({ playlistId, track }) => {
     const dispatch = useDispatch();
 
-    // console.log("TRACKKKK", track);
-    // console.log("PLAYLIST ID", playlistId);
-
     const handleDelete = async () => {
         await dispatch(thunkDeleteTrackPlaylist(playlistId, track))
     }

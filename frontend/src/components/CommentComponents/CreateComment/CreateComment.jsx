@@ -12,7 +12,6 @@ const CreateComment = () => {
 
     const user = useSelector(state => state.session.user);
     const track = useSelector(state => state.tracks.singleTrack);
-    // console.log(track);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

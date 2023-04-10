@@ -108,8 +108,6 @@ router.get('/:playlistId', async (req, res) => {
         ]
     });
 
-    // console.log("TRACKS", tracks);
-
     if (!tracks) {
         res.status(404);
         res.json({

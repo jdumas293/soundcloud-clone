@@ -17,11 +17,9 @@ const AudioPlayerV2 = () => {
     const [isLoaded, setIsLoaded] = useState(false);
 
     const [currentTrack, setCurrentTrack] = useContext(AudioPlayerContext);
-    // console.log("CURRENT TRACK", currentTrack);
 
     const audioRef = useRef();
     const progressBarRef = useRef();
-    // console.log(audioRef);
 
     const handleNext = () => {
         if (trackIndex >= tracks.length - 1) {

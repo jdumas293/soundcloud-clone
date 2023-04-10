@@ -10,15 +10,9 @@ const PlaylistTab = () => {
     const dispatch = useDispatch();
     const playlists = Object.values(useSelector(state => state?.playlists?.allPlaylists));
 
-    // console.log("PL", playlists.forEach(playlist => playlist.PlaylistTracks.forEach(pt => console.log(pt))));
-
     useEffect(() => {
         dispatch(thunkGetPlaylists())
     }, [dispatch]);
-
-    // useEffect(() => {
-    //     console.log("PLAYLISTUPDATE", playlists);
-    // }, [playlists])
 
     return (
         <div className="playlist-tab-container">

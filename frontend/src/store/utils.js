@@ -4,7 +4,6 @@ export const yearMonthDay = (date) => {
 };
 
 export const truncateDesc = (desc) => {
-    // console.log(desc);
     if (desc?.length >= 25) {
         const shortDesc = desc?.slice(0, 25);
         return shortDesc + "...";

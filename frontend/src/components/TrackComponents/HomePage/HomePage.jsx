@@ -7,7 +7,6 @@ import "./HomePage.css";
 const HomePage = () => {
     const dispatch = useDispatch();
     const tracks = Object.values(useSelector(state => state?.tracks?.allTracks));
-    // console.log("TRACKS ===>", tracks);
 
     useEffect(() => {
         dispatch(thunkLoadTracks());
