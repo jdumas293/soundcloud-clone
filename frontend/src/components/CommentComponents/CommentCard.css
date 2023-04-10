@@ -27,14 +27,9 @@
     cursor: pointer;
 }
 
-.edit-comment-btn-container button:hover {
-    color: #f50;
-}
-
 .profile-image {
     display: flex;
     align-self: center;
-    /* border: 1px solid black; */
 }
 
 .comment-created-at {

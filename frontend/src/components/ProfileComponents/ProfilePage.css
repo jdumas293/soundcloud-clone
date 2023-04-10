@@ -81,6 +81,11 @@
     cursor: pointer;
 }
 
+.profiletrack-description {
+    display: flex;
+    gap: 1em;
+}
+
 .num-tracks-display {
     display: flex;
     justify-content: center;

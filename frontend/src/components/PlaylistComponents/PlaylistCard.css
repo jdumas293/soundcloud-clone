@@ -2,10 +2,10 @@
     margin-bottom: 2em;
     border: 1px solid lightgrey;
     border-radius: 10px;
-    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
-    font-size: 13px;
     box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
     padding: 5px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    font-size: 13px;
 }
 
 .playlist-name-delete-container {
@@ -25,7 +25,7 @@
 
 .playlist-plus-trash {
     display: flex;
-    gap: 0.7em;
+    gap: 0.5em;
 }
 
 .playlist-plus-trash button {
@@ -34,16 +34,10 @@
     cursor: pointer;
 }
 
-.playlist-plus-trash button:hover {
-    color: #f50;
-}
-
 .delete-playlist-button:hover {
     color: red;
     cursor: pointer;
 }
-
-
 
 .playlist-track-container {
     display: flex;

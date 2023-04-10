@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { thunkDeleteTrack } from "../../store/track";
 import OpenModalButton from "../OpenModalButton";
 import EditTrack from "../TrackComponents/EditTrack/EditTrack";
+import SelectTrackButton from "../TrackComponents/AudioPlayerV2/SelectTrackButton";
 import "./ProfilePage.css";
 
 const ProfileTrack = ({ track }) => {
@@ -29,6 +30,7 @@ const ProfileTrack = ({ track }) => {
                 </div>
                 <div className="profiletrack-description">
                     {track.description}
+                    <SelectTrackButton track={track} />
                 </div>
                 <div className="profiletrack-btns-container">
                     <OpenModalButton 
