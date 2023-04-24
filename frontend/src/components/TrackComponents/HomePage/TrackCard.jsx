@@ -1,6 +1,5 @@
 import { useHistory } from "react-router-dom";
 import SelectTrackButton from "../AudioPlayerV2/SelectTrackButton";
-import LikeButton from "../../Likes/LikeButton";
 import "./HomePage.css";
 
 
@@ -23,10 +22,12 @@ const TrackCard = ({ track }) => {
                         <div className="track-title">
                             {track.title}
                         </div>
+                        <div>
+                            {track.artist}
+                        </div>
                     </div>
-                    <div className="home-like-play">
+                    <div className="home-play">
                         <SelectTrackButton track={track} />
-                        {/* <LikeButton trackId={track?.id} /> */}
                     </div>
                 </div>
             </div>

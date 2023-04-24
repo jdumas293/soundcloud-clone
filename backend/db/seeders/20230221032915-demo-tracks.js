@@ -13,6 +13,7 @@ module.exports = {
       {
         userId: 1,
         title: 'Around Me',
+        artist: 'Metro Boomin',
         file: 'https://soundcloud-clone-bucket.s3.us-east-2.amazonaws.com/Around+Me.mp3',
         genre: 'Rap',
         description: 'Around Me - Metro Boomin ft. Don Toliver',
@@ -21,6 +22,7 @@ module.exports = {
       {
         userId: 2,
         title: 'Drugs You Should Try It',
+        artist: 'Travis Scott',
         file: 'https://soundcloud-clone-bucket.s3.us-east-2.amazonaws.com/04+Drugs+You+Should+Try+It.mp3',
         genre: 'Rap',
         description: 'Drugs You Should Try It - Travis Scott',
@@ -29,6 +31,7 @@ module.exports = {
       {
         userId: 3,
         title: 'Codeine Crazy',
+        artist: 'Future',
         file: 'https://soundcloud-clone-bucket.s3.us-east-2.amazonaws.com/Future+-+Codeine+Crazy+(Audio).mp3',
         genre: 'Rap',
         description: 'Codeine Crazy - Future',
@@ -37,6 +40,7 @@ module.exports = {
       {
         userId: 1,
         title: 'Sanguine Paradise',
+        artist: 'Lil Uzi',
         file: 'https://soundcloud-clone-bucket.s3.us-east-2.amazonaws.com/bf319920-b2ef-11ed-ac58-a1d2e790c701.wav',
         genre: 'Rap',
         description: 'Sanguine Paradise - LUV',
@@ -45,6 +49,7 @@ module.exports = {
       {
         userId: 1,
         title: 'Highest in the Room',
+        artist: 'Travis Scott',
         file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/1677105864040.mp3',
         genre: 'Rap',
         description: 'Highest in the Room - Travis Scott',
@@ -53,6 +58,7 @@ module.exports = {
       {
         userId: 1,
         title: 'Guilty Conscience',
+        artist: 'Wiz Khalifa',
         file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/1680617661440.mp3',
         genre: 'Rap',
         description: 'Guilty Conscience - Wiz Khalifa',
@@ -61,6 +67,7 @@ module.exports = {
       {
         userId: 1,
         title: 'Poochie Gown',
+        artist: 'Gunna',
         file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/1677105561173.mp3',
         genre: 'Rap',
         description: 'Poochie Gown - Gunna',
@@ -69,6 +76,7 @@ module.exports = {
       {
         userId: 1,
         title: 'In Vein',
+        artist: 'Rick Ross',
         file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/1677105561173.mp3',
         genre: 'Rap/R&B',
         description: 'In Vein - Rick Ross ft. The Weeknd',
@@ -77,6 +85,7 @@ module.exports = {
       {
         userId: 1,
         title: 'Pink & White',
+        artist: 'Frank Ocean',
         file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/1680968918315.mp3',
         genre: 'R&B',
         description: 'Pink & White - Frank Ocean',
@@ -89,7 +98,7 @@ module.exports = {
     options.tableName = 'Tracks';
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete(options, {
-      title: { [Op.in]: ['Around Me', 'Drugs You Should Try It', 'Codeine Crazy']}
+      title: { [Op.in]: ['Around Me', 'Drugs You Should Try It', 'Codeine Crazy', 'Highest in the Room', 'Guilty Conscience', 'Poochie Gown', 'In Vein', 'Pink & White']}
     }, {});
   }
 };

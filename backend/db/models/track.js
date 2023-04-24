@@ -27,6 +27,16 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    artist: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: {
+          args: [1, 50],
+          msg: "Artist must be less than 50 characters!"
+        }
+      }
+    },
     file: {
       type: DataTypes.STRING,
       allowNull: false

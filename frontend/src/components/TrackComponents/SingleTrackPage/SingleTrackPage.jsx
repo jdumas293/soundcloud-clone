@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { thunkLoadComments } from "../../../store/comment";
@@ -6,14 +6,17 @@ import { thunkLoadSingleTrack } from "../../../store/track";
 import CommentCard from "../../CommentComponents/CommentCard";
 import CreateComment from "../../CommentComponents/CreateComment/CreateComment";
 import LikeButton from "../../Likes/LikeButton";
-import "./SingleTrackPage.css"
 import SelectTrackButton from "../AudioPlayerV2/SelectTrackButton";
+// import WaveSurfer from "wavesurfer.js";
+import "./SingleTrackPage.css"
 
 const SingleTrackPage = () => {
     const dispatch = useDispatch();
     const { trackId } = useParams();
     const track = useSelector(state => state?.tracks?.singleTrack);
     const comments = Object.values(useSelector(state => state?.comments?.allComments));
+    // const audioRef = useRef(null);
+    // const waveformRef = useRef(null);
 
     const numComments = (comments) => {
         let count = 0;
@@ -33,6 +36,26 @@ const SingleTrackPage = () => {
     useEffect(() => {
         dispatch(thunkLoadComments(trackId))
     }, [dispatch, trackId]);
+
+    // useEffect(() => {
+    //     if (track) {
+    //         waveformRef.current = WaveSurfer.create({
+    //             container: "#waveform",
+    //             waveColor: "gray",
+    //             progressColor: "orange",
+    //             height: 100,
+    //             barWidth: 2,
+    //             barRadius: 3,
+    //             responsive: true,
+    //         });
+    //     }
+
+    //     waveformRef.current.load(track.file);
+
+    //     return () => {
+    //         waveformRef.current.destroy();
+    //     }
+    // }, [track]);
 
     return (
         <>
@@ -61,6 +84,7 @@ const SingleTrackPage = () => {
                 <div className="num-comments-display">
                     {numComments(comments)}
                 </div>
+                {/* <div id="waveform" ref={audioRef}></div> */}
                 {comments.map(comment => <CommentCard comment={comment} key={comment.id} />)}
             </div>
         </>
