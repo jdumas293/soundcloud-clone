@@ -69,8 +69,11 @@ const SingleTrackPage = () => {
                     <div className="singletrack-description">
                         {track.description}
                     </div>
+                    <div>
+                        {track.artist}
+                    </div>
                     <div className="singletrack-genre">
-                        Genre: {track.genre}
+                        {track.genre}
                     </div>
                 </div>
                 <div className="singletrack-img-container">
