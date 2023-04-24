@@ -7,6 +7,7 @@ import "./UploadTrack.css";
 const UploadTrack = () => {
     const dispatch = useDispatch();
     const [title, setTitle] = useState('');
+    const [artist, setArtist] = useState('');
     const [file, setFile] = useState(null);
     const [genre, setGenre] = useState('');
     const [description, setDescription] = useState('');
@@ -20,6 +21,7 @@ const UploadTrack = () => {
 
         const newTrack = {
             title,
+            artist,
             file,
             genre,
             description,
@@ -68,6 +70,16 @@ const UploadTrack = () => {
                             name="title"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="upload-title">
+                        <input
+                            type="text"
+                            placeholder="Your artist"
+                            name="artist"
+                            value={artist}
+                            onChange={(e) => setArtist(e.target.value)}
                             required
                         />
                     </div>

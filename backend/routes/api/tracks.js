@@ -55,13 +55,14 @@ router.get('/:trackId', async (req, res) => {
 
 // CREATE A TRACK
 router.post('/', singleMulterUpload("file"), requireAuth, async (req, res) => {
-    const { title, genre, description, imageUrl } = req.body;
+    const { title, artist, genre, description, imageUrl } = req.body;
 
     const audioFile = await singlePublicFileUpload(req.file);
 
     const track = await Track.create({
         userId: req.user.id,
         title: title,
+        artist: artist,
         file: audioFile,
         genre: genre,
         description: description,
@@ -73,7 +74,7 @@ router.post('/', singleMulterUpload("file"), requireAuth, async (req, res) => {
 
 // EDIT A TRACK
 router.put('/:trackId', singleMulterUpload("file"), requireAuth, async (req, res) => {
-    const { title, genre, description, imageUrl } = req.body;
+    const { title, artist, genre, description, imageUrl } = req.body;
 
     const track = await Track.findOne({
         where: {
@@ -96,6 +97,7 @@ router.put('/:trackId', singleMulterUpload("file"), requireAuth, async (req, res
         
         track.update({
             title: title,
+            artist: artist,
             file: audioFile,
             genre: genre,
             description: description,
