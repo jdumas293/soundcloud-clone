@@ -41,6 +41,46 @@ module.exports = {
         genre: 'Rap',
         description: 'Sanguine Paradise - LUV',
         imageUrl: 'https://i1.sndcdn.com/artworks-jKhZxZp2WEMwtM6k-ciuTdQ-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'Highest in the Room',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/1677105864040.mp3',
+        genre: 'Rap',
+        description: 'Highest in the Room - Travis Scott',
+        imageUrl: 'https://i1.sndcdn.com/artworks-000611052880-8l787a-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'Guilty Conscience',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/1680617661440.mp3',
+        genre: 'Rap',
+        description: 'Guilty Conscience - Wiz Khalifa',
+        imageUrl: 'https://i1.sndcdn.com/artworks-4j6wtA7PPN8d-0-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'Poochie Gown',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/1677105561173.mp3',
+        genre: 'Rap',
+        description: 'Poochie Gown - Gunna',
+        imageUrl: 'https://i1.sndcdn.com/artworks-61YNaGbBWUU64lTr-ZRgQkg-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'In Vein',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/1677105561173.mp3',
+        genre: 'Rap/R&B',
+        description: 'In Vein - Rick Ross ft. The Weeknd',
+        imageUrl: 'https://i1.sndcdn.com/artworks-000081140615-il9mnl-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'Pink & White',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/1680968918315.mp3',
+        genre: 'R&B',
+        description: 'Pink & White - Frank Ocean',
+        imageUrl: 'https://i1.sndcdn.com/artworks-000287362979-dosv90-t500x500.jpg'
       }
     ])
   },
