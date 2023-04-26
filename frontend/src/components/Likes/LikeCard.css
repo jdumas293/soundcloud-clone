@@ -10,6 +10,24 @@
     transform: scale(1.04);
 }
 
+.profile-likes-img-container {
+    position: relative;
+}
+
+.profile-likes-img-container .select-track-btn {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+}
+
+.profile-likes-img-container:hover img {
+    filter: grayscale(30%) blur(3px);
+}
+
 .profile-likes-img-container img {
     height: 200px;
     width: 200px;
@@ -19,10 +37,15 @@
 
 .profile-likes-info {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* justify-content: space-between; */
     margin-right: 0.5em;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
     font-size: 12px;
+}
+
+.profile-likes-title {
+    text-decoration: underline;
 }
 
 .profile-likes-artist {
