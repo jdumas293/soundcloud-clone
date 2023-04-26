@@ -23,7 +23,8 @@ const DisplayTrack = ({ currentTrack, audioRef, setDuration, progressBarRef, han
                 </div>
                 <div className="text-v2">
                     <div>{currentTrack?.title}</div>
-                    <div>{truncateDesc(currentTrack?.description)}</div>
+                    {/* <div>{truncateDesc(currentTrack?.description)}</div> */}
+                    <div>{truncateDesc(currentTrack?.artist)}</div>
                 </div>
             </div>
         </div>

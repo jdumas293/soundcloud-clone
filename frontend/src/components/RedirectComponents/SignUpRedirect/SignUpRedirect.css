@@ -57,14 +57,14 @@
     cursor: pointer;
     width: 150px;
     height: 35px;
-    background-color: #f50;
+    background-color: #3244b8;
     color: whitesmoke;
-    border-color: #f50;
+    border-color: #3244b8;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
 }
 
 .alt-signup-btn:hover {
-    color: #f50;
+    color: #3244b8;
     background-color: whitesmoke;
 }
 

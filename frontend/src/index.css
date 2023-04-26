@@ -26,7 +26,7 @@ body {
 }
 
 .text {
-  color: #f50;
+  color: #3244b8;
 }
 
 .title {
@@ -113,7 +113,7 @@ button svg {
 }
 
 .time.current {
-  color: #f50;
+  color: #3244b8;
 }
 
 /* Top bar */

@@ -69,8 +69,8 @@
     align-self: center;
     margin-top: 1em;
     color: white;
-    background-color: #f50;
-    border-color: #f50;
+    background-color: #3244b8;
+    border-color: #3244b8;
     border-radius: 5px;
     cursor: pointer;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
@@ -101,37 +101,37 @@
 
 .profile-tracks-tab {
     padding: 1em;
-    color: #f50;
+    color: #3244b8;
     background-color: light;
     /* border-right: 2px solid lightgrey; */
 }
 
 .profile-favorites-tab {
     padding: 1em;
-    color: #f50;
+    color: #3244b8;
     /* border-right: 2px solid lightgrey; */
 }
 
 .profile-favorites-tab:hover {
     cursor: pointer;
     color: white;
-    background-color: #f50;
+    background-color: #3244b8;
 }
 
 .profile-tracks-tab:hover {
     cursor: pointer;
     color: white;
-    background-color: #f50;
+    background-color: #3244b8;
 }
 
 .profile-playlists-tab {
     padding: 1em;
-    color: #f50;
+    color: #3244b8;
     /* border-right: 2px solid lightgrey; */
 }
 
 .profile-playlists-tab:hover {
     cursor: pointer;
     color: white;
-    background-color: #f50;
+    background-color: #3244b8;
 }
