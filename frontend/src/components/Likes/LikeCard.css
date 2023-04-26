@@ -20,8 +20,12 @@
 .profile-likes-info {
     display: flex;
     justify-content: space-between;
-    margin-left: 0.1em;
     margin-right: 0.5em;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    font-size: 12px;
+}
+
+.profile-likes-artist {
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
     font-size: 12px;
 }

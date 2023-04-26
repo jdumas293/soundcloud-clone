@@ -66,7 +66,7 @@ function ProfileButton({ user }) {
           <>
             <div className="authorized-user-info">
               <li>{user.username}</li>
-              <li>{user.email}</li>
+              {/* <li>{user.email}</li> */}
             </div>
             <div className="authorized-user-btns">
               <div className="authorized-profile-btn">

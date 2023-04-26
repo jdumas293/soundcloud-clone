@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { thunkCreateLike, thunkDeleteLike, thunkGetLikes, thunkGetSingleLike } from '../../store/like';
+import "./LikeButton.css";
 
 const LikeButton = ({ trackId }) => {
     const dispatch = useDispatch();
@@ -42,7 +43,7 @@ const LikeButton = ({ trackId }) => {
     }, [dispatch]);
 
     return (
-        <div onClick={handleClick}>
+        <div className="like-button-heart" onClick={handleClick}>
             {isLiked ? <i className="fa-solid fa-heart"></i> : <i className="fa-regular fa-heart"></i>}
         </div>
     )

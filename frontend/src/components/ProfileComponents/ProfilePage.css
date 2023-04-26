@@ -23,36 +23,52 @@
     /* border: 1px solid black; */
 }
 
+.profile-email {
+    display: flex;
+    justify-content: center;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    /* border: 1px solid black; */
+}
+
 .profiletrack-container {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     border-top: 1px solid lightgray;
-    /* margin-top: 2em; */
     /* border: 1px solid black; */
 }
 
 .profiletrack-info-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-top: 2em;
     width: 33%;
-    gap: 1em;
+    height: fit-content;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
     /* border: 1px solid black; */
 }
 
 .profiletrack-img-container {
     object-fit: cover;
-    margin-top: 3em;
-    margin-bottom: 3em;
+    margin-top: 2em;
+    margin-bottom: 1em;
     cursor: pointer;
+    position: relative;
 }
 
 .profiletrack-img-container img {
-    width: 200px;
-    height: 200px;
+    width: 125px;
+    height: 125px;
     object-fit: cover;
+}
+
+.profiletrack-img-container:hover .select-track-btn {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
 }
 
 .profiletrack-btns-container {

@@ -1,5 +1,6 @@
 import { AudioPlayerContext } from "../../../context/AudioPlayerContext";
 import { useContext } from "react";
+import "./SelectTrackButton.css";
 
 const SelectTrackButton = ({ track }) => {
     const [currentTrack, setCurrentTrack] = useContext(AudioPlayerContext);
@@ -10,8 +11,8 @@ const SelectTrackButton = ({ track }) => {
 
     return (
         <div>
-            <div>
-                <i onClick={handleClick} class="fa-solid fa-play"></i>
+            <div className="select-track-btn">
+                <i onClick={handleClick} class="fa-solid fa-play fa-xl"></i>
             </div>
         </div>
     )

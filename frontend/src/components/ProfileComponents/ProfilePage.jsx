@@ -54,6 +54,9 @@ const ProfilePage = ({ tabOverride }) => {
                 <div className="profile-username">
                     <h3>{user.username}</h3>
                 </div>
+                <div className="profile-email">
+                    <p>{user.email}</p>
+                </div>
                 <br />
                 <div className="num-tracks-display">
                     {numTracks(tracks)} tracks

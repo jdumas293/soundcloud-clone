@@ -7,7 +7,7 @@ import CommentCard from "../../CommentComponents/CommentCard";
 import CreateComment from "../../CommentComponents/CreateComment/CreateComment";
 import LikeButton from "../../Likes/LikeButton";
 import SelectTrackButton from "../AudioPlayerV2/SelectTrackButton";
-// import WaveSurfer from "wavesurfer.js";
+import Waveform from "../AudioPlayerV2/Waveform";
 import "./SingleTrackPage.css"
 
 const SingleTrackPage = () => {
@@ -15,8 +15,6 @@ const SingleTrackPage = () => {
     const { trackId } = useParams();
     const track = useSelector(state => state?.tracks?.singleTrack);
     const comments = Object.values(useSelector(state => state?.comments?.allComments));
-    // const audioRef = useRef(null);
-    // const waveformRef = useRef(null);
 
     const numComments = (comments) => {
         let count = 0;
@@ -37,26 +35,6 @@ const SingleTrackPage = () => {
         dispatch(thunkLoadComments(trackId))
     }, [dispatch, trackId]);
 
-    // useEffect(() => {
-    //     if (track) {
-    //         waveformRef.current = WaveSurfer.create({
-    //             container: "#waveform",
-    //             waveColor: "gray",
-    //             progressColor: "orange",
-    //             height: 100,
-    //             barWidth: 2,
-    //             barRadius: 3,
-    //             responsive: true,
-    //         });
-    //     }
-
-    //     waveformRef.current.load(track.file);
-
-    //     return () => {
-    //         waveformRef.current.destroy();
-    //     }
-    // }, [track]);
-
     return (
         <>
             <div className="singletrack-container">
@@ -66,6 +44,9 @@ const SingleTrackPage = () => {
                         <LikeButton trackId={trackId} />
                         <SelectTrackButton track={track} />
                     </div>
+                    {/* <div>
+                        <Waveform track={track} />
+                    </div> */}
                     <div className="singletrack-description">
                         {track.description}
                     </div>

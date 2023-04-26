@@ -1,16 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import WaveSurfer from "wavesurfer.js";
 
-const Waveform = () => {
-    const [waveformLoaded, setWaveformLoaded] = useState(false);
-    const webSurfer = useRef(null);
-    const audioData = useRef(null);
-
+const Waveform = ({ track }) => {
+    console.log(track);
+    
     useEffect(() => {
-        webSurfer.current = WaveSurfer.create({})
+        const wavesurfer = WaveSurfer.create({
+            container: '#waveform',
+            waveColor: 'blue',
+            // progressColor: 'red'
+        });
+
+        wavesurfer.load(track?.file);
     })
 
     return (
-        <div>WAVE HERE</div>
+        <div id="waveform"></div>
     )
 }
+
+export default Waveform;

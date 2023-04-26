@@ -21,6 +21,9 @@ const LikeCard = ({ like }) => {
                 </div>
                 <SelectTrackButton track={like.Track} />
             </div>
+            <div className='profile-likes-artist'>
+                {like.Track.artist}
+            </div>
         </div>
     )
 }
