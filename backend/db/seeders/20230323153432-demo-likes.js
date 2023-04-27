@@ -27,8 +27,28 @@ module.exports = {
         trackId: 2
       },
       {
-        userId: 2,
-        trackId: 3
+        userId: 1,
+        trackId: 4
+      },
+      {
+        userId: 1,
+        trackId: 5
+      },
+      {
+        userId: 1,
+        trackId: 6
+      },
+      {
+        userId: 1,
+        trackId: 7
+      },
+      {
+        userId: 1,
+        trackId: 8
+      },
+      {
+        userId: 1,
+        trackId: 9
       },
     ])
   },

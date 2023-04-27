@@ -77,7 +77,7 @@ module.exports = {
         userId: 1,
         title: 'In Vein',
         artist: 'Rick Ross',
-        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/1677105561173.mp3',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/Rick+Ross+-+In+Vein+(feat.+The+Weeknd)+(1).mp3',
         genre: 'Rap/R&B',
         description: 'In Vein - Rick Ross ft. The Weeknd',
         imageUrl: 'https://i1.sndcdn.com/artworks-000081140615-il9mnl-t500x500.jpg'
@@ -90,7 +90,88 @@ module.exports = {
         genre: 'R&B',
         description: 'Pink & White - Frank Ocean',
         imageUrl: 'https://i1.sndcdn.com/artworks-000287362979-dosv90-t500x500.jpg'
-      }
+      },
+      {
+        userId: 1,
+        title: 'Selfless',
+        artist: 'xxxtentacion',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/xxxtentacion+-++Selfless+(2016)+AI.mp3',
+        genre: 'R&B',
+        description: 'Selfless - xxxtentacion',
+        imageUrl: 'https://i1.sndcdn.com/artworks-kRwdn05zXxAX2cUz-v6wcTg-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'Star Shopping',
+        artist: 'Lil Peep',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/lil+peep+-+star+shopping+(prod.+kryptik).mp3',
+        genre: 'Rap',
+        description: 'Star Shopping - Lil Peep',
+        imageUrl: 'https://i1.sndcdn.com/artworks-000306655380-kthex1-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'Dreamin',
+        artist: 'PartyNextDoor',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/PARTYNEXTDOOR+-+Dreamin+%5BHQ++Lyrics%5D.mp3',
+        genre: 'R&B',
+        description: 'Dreamin - PND',
+        imageUrl: 'https://i1.sndcdn.com/artworks-000166944382-11ii78-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'This Cant Be Happening',
+        artist: 'PartyNextDoor',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/Juice+Wrld+-+This+Cant+Be+Happening+(unofficial+audio).mp3',
+        genre: 'R&B',
+        description: 'Dreamin - PND',
+        imageUrl: 'https://i1.sndcdn.com/artworks-000232697141-3zgfv7-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'Autograph',
+        artist: 'Juice WRLD',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/Juice+WRLD+_Autograph+(On+My+Line)_+(Official+Audio).mp3',
+        genre: 'Rap',
+        description: 'Autograph - Juice WRLD',
+        imageUrl: 'https://i1.sndcdn.com/artworks-000355912506-47kka2-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'Candles',
+        artist: 'Juice WRLD',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/Juice+WRLD+-+Candles+(Official+Audio).mp3',
+        genre: 'Rap',
+        description: 'Candles - Juice WRLD',
+        imageUrl: 'https://i1.sndcdn.com/artworks-FTWOncYR7bfm-0-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'Fo Real',
+        artist: 'Future',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/Fo+Real+(Ft.+Drake).mp3',
+        genre: 'Rap',
+        description: 'Fo Real - Future ft. Drake',
+        imageUrl: 'https://i1.sndcdn.com/artworks-000038098910-9jm0hs-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'Wanna Know',
+        artist: 'Dave',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/Dave+-+Wanna+Know+ft.+Drake+(Audio).mp3',
+        genre: 'Rap',
+        description: 'Wanna Know - Dave ft. Drake',
+        imageUrl: 'https://i1.sndcdn.com/artworks-QwfjnNHpIiLm-0-t500x500.jpg'
+      },
+      {
+        userId: 1,
+        title: 'Let Me Explain',
+        artist: 'Bryson Tiller',
+        file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/Bryson+Tiller+-+Let+Me+Explain+(Audio).mp3',
+        genre: 'Rap',
+        description: 'Let Me Explain - Bryson Tiller',
+        imageUrl: 'https://i1.sndcdn.com/artworks-nIprVDv6FmU5-0-t500x500.jpg'
+      },
     ])
   },
 
