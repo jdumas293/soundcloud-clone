@@ -112,7 +112,7 @@ module.exports = {
       {
         userId: 1,
         title: 'Dreamin',
-        artist: 'PartyNextDoor',
+        artist: 'PND',
         file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/PARTYNEXTDOOR+-+Dreamin+%5BHQ++Lyrics%5D.mp3',
         genre: 'R&B',
         description: 'Dreamin - PND',
@@ -121,10 +121,10 @@ module.exports = {
       {
         userId: 1,
         title: 'This Cant Be Happening',
-        artist: 'PartyNextDoor',
+        artist: 'Juice WRLD',
         file: 'https://soundtracks-bucket.s3.us-east-2.amazonaws.com/Juice+Wrld+-+This+Cant+Be+Happening+(unofficial+audio).mp3',
         genre: 'R&B',
-        description: 'Dreamin - PND',
+        description: 'This Cant Be Happening - Juice WRLD',
         imageUrl: 'https://i1.sndcdn.com/artworks-000232697141-3zgfv7-t500x500.jpg'
       },
       {
