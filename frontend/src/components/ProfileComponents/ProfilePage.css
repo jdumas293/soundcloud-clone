@@ -97,9 +97,14 @@
     cursor: pointer;
 }
 
-.profiletrack-description {
+.profile-track-description {
     display: flex;
     gap: 1em;
+    color: grey;
+}
+
+.profile-track-date {
+    color: grey;
 }
 
 .num-tracks-display {

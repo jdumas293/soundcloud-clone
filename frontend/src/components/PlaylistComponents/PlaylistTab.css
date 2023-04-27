@@ -1,15 +1,11 @@
 .playlist-tab-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2em;
-    /* border: 1px solid red; */
+    margin-top: 1em;
+    width: 100%;
 }
 
 .playlist-card-container {
     display: flex;
     flex-direction: column;
-    width: 85%;
-    /* border: 1px solid red; */
 }
 
 .create-playlist-btn-container {

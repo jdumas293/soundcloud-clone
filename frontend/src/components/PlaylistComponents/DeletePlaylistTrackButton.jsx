@@ -12,7 +12,7 @@ const DeletePlaylistTrackButton = ({ playlistId, track }) => {
     return (
         <div>
             <div className="delete-pt-button">
-                <i onClick={handleDelete} class="fa-solid fa-trash fa-sm"></i>
+                <i onClick={handleDelete} class="fa-solid fa-trash"></i>
             </div>
         </div>
     )

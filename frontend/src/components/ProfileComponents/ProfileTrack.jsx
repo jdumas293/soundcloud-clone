@@ -38,10 +38,10 @@ const ProfileTrack = ({ track }) => {
                 <div className="profiletrack-title" onClick={handleClick}>
                     {track.title}
                 </div>
-                <div className="profiletrack-description">
+                <div className="profile-track-description">
                     {track.description}
                 </div>
-                <div>
+                <div className="profile-track-date">
                     Posted on: {yearMonthDay(track.createdAt)}
                 </div>
                 <div className="profiletrack-btns-container">
