@@ -1,5 +1,4 @@
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { thunkDeletePlaylist } from "../../store/playlist";
 import OpenModalButton from "../OpenModalButton";
 import AddPlaylistTrack from "./AddPlaylistTrack";
