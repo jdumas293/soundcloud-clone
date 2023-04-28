@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { thunkCreateLike, thunkDeleteLike, thunkGetLikes, thunkGetSingleLike } from '../../store/like';
+import { thunkCreateLike, thunkDeleteLike, thunkGetLikes } from '../../store/like';
 import "./LikeButton.css";
 
 const LikeButton = ({ trackId }) => {
@@ -24,7 +24,7 @@ const LikeButton = ({ trackId }) => {
                     setLikeId(like.id);
                 }
             }))
-        }        
+        }
     };
 
     useEffect(() => {

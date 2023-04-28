@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import SelectTrackButton from "../TrackComponents/AudioPlayerV2/SelectTrackButton";
 import DeletePlaylistTrackButton from "./DeletePlaylistTrackButton";
 import "./PlaylistTrackCard.css";
 
 const PlaylistTrackCard = ({ track, playlist }) => {
+    const history = useHistory();
     const [showSelectButton, setShowSelectButton] = useState(false);
 
     const handleMouseEnter = () => {
@@ -14,6 +16,10 @@ const PlaylistTrackCard = ({ track, playlist }) => {
         setShowSelectButton(false);
     };
 
+    const handleClick = () => {
+        history.push(`/tracks/${track.id}`)
+    };
+
     return (
         <div>
             <div 
@@ -21,7 +27,7 @@ const PlaylistTrackCard = ({ track, playlist }) => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
-                <img src={track.imageUrl} />
+                <img onClick={handleClick} src={track.imageUrl} />
                 {showSelectButton && <SelectTrackButton track={track} />}
             </div>
             <div className="playlist-track-info-container">
@@ -29,7 +35,7 @@ const PlaylistTrackCard = ({ track, playlist }) => {
                     <div>{track.title}</div>
                     <div>{track.artist}</div>
                 </div>
-                <div>
+                <div className="trash-bin">
                     <DeletePlaylistTrackButton playlistId={playlist.id} track={track} />
                 </div>
             </div>

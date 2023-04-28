@@ -7,8 +7,7 @@ const LikeCard = ({ like }) => {
     const history = useHistory();
     const [showSelectButton, setShowSelectButton] = useState(false);
 
-    const handleClick = (e) => {
-        e.preventDefault();
+    const handleClick = () => {
         history.push(`/tracks/${like.Track.id}`);
     };
 
@@ -27,7 +26,7 @@ const LikeCard = ({ like }) => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
-                <img src={like.Track.imageUrl} alt="track-image" />
+                <img onClick={handleClick} src={like.Track.imageUrl} alt="track-image" />
                 {showSelectButton && <SelectTrackButton track={like.Track} />}
             </div>
             <div className="profile-likes-info" onClick={handleClick}>

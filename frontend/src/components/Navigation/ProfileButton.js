@@ -58,16 +58,12 @@ function ProfileButton({ user }) {
     <>
       <div className="profile-btn">
         <button onClick={openMenu}>
-          <i class="fa-solid fa-user 2xl"></i> &or;
+          {user?.username} &nbsp; <i class="fa-solid fa-circle-chevron-down"></i>
         </button>
       </div>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <div className="authorized-user-info">
-              <li>{user.username}</li>
-              {/* <li>{user.email}</li> */}
-            </div>
             <div className="authorized-user-btns">
               <div className="authorized-profile-btn">
                 <button onClick={handleProfileClick}>Profile</button>
@@ -95,14 +91,6 @@ function ProfileButton({ user }) {
                 />
               </div>
               <div className="demouser-btn">
-                {/* <OpenModalButton
-                  buttonText="Demo User"
-                  onButtonClick={() => {
-                    dispatch(sessionActions.login({credential: 'Demo-lition', password: 'password'}))
-                    history.push('/')
-                    }
-                  }
-                /> */}
                 <button onClick={handleDemo}>Demo User</button>
               </div>
             </div>

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import SelectTrackButton from "../AudioPlayerV2/SelectTrackButton";
+import LikeButton from "../../Likes/LikeButton";
 import "./HomePage.css";
 
 
@@ -8,8 +9,7 @@ const TrackCard = ({ track }) => {
     const history = useHistory();
     const [showSelectButton, setShowSelectButton] = useState(false);
 
-    const handleClick = (e) => {
-        e.preventDefault();
+    const handleClick = () => {
         history.push(`/tracks/${track.id}`);
     };
 
@@ -29,7 +29,7 @@ const TrackCard = ({ track }) => {
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                 >
-                    <img src={track.imageUrl}></img>
+                    <img onClick={handleClick} src={track.imageUrl}></img>
                     {showSelectButton && <SelectTrackButton track={track} />}
                 </div>
                 <div className="track-info">
@@ -40,6 +40,9 @@ const TrackCard = ({ track }) => {
                         <div>
                             {track.artist}
                         </div>
+                    </div>
+                    <div>
+                        <LikeButton trackId={track.id} />
                     </div>
                 </div>
             </div>
