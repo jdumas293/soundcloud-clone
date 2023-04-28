@@ -16,11 +16,11 @@ const PlaylistTab = () => {
 
     return (
         <div className="playlist-tab-container">
-            <div className="create-playlist-btn-container">
-                    <OpenModalButton
-                        buttonText="New Playlist"
-                        modalComponent={<CreatePlaylist />}
-                    />
+            <div className="new-playlist-button">
+                <OpenModalButton
+                    buttonText="New Playlist"
+                    modalComponent={<CreatePlaylist />}
+                />
             </div>
             <div className="playlist-card-container">
                 {playlists.map(playlist => <PlaylistCard playlist={playlist} key={playlist.id} />)}

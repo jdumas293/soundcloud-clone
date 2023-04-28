@@ -15,7 +15,6 @@ const PlaylistCard = ({ playlist }) => {
     };
 
     return (
-        <div>
             <div className="playlist-info-container">
                 <div className="playlist-info">
                     <div>
@@ -42,7 +41,6 @@ const PlaylistCard = ({ playlist }) => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 

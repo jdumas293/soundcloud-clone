@@ -21,9 +21,9 @@ function Navigation({ isLoaded }){
               <NavLink exact to="/"><img id="logo-img" src={whitelogo} /></NavLink>
             </div>
           </div>
-          {/* <div className='search-filter-container'>
+          <div className='search-filter'>
             <SearchFilter />
-          </div> */}
+          </div>
           <div className='right-container'>
             <div className='upload-btn'>
               <OpenModalButton 

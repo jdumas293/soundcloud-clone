@@ -71,27 +71,6 @@
     color: white;
 }
 
-.profiletrack-btns-container {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    gap: 2em;
-    /* border: 1px solid black; */
-}
-
-.profiletrack-btns-container button {
-    width: 90%;
-    height: 3em;
-    align-self: center;
-    margin-top: 1em;
-    color: white;
-    background-color: #FF0000;
-    border-color: #FF0000;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
-}
-
 .profiletrack-title {
     text-decoration: underline;
     cursor: pointer;
@@ -122,37 +101,79 @@
 
 .profile-tracks-tab {
     padding: 1em;
-    color: #FF0000;
-    background-color: light;
+    color: black;
     /* border-right: 2px solid lightgrey; */
 }
 
 .profile-favorites-tab {
     padding: 1em;
-    color: #FF0000;
+    color: black;
     /* border-right: 2px solid lightgrey; */
 }
 
 .profile-favorites-tab:hover {
     cursor: pointer;
-    color: white;
-    background-color: #FF0000;
+    color: #FF0000;
 }
 
 .profile-tracks-tab:hover {
     cursor: pointer;
-    color: white;
-    background-color: #FF0000;
+    color: #FF0000;
 }
 
 .profile-playlists-tab {
     padding: 1em;
-    color: #FF0000;
+    color: black;
     /* border-right: 2px solid lightgrey; */
 }
 
 .profile-playlists-tab:hover {
     cursor: pointer;
+    color: #FF0000;
+}
+
+
+/* BUTTONS */
+.selected {
+    color: #FF0000;
+}
+
+.delete-track-btn {
+    background-image: linear-gradient(to bottom right, #FF0000, #8B0000);
+    border-color: #FF0000;
+    width: 10em;
+    height: 3em;
+    border-radius: 10px;
     color: white;
-    background-color: #FF0000;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    font-weight: 300;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.delete-track-btn:hover {
+    background-image: linear-gradient(to bottom right, #8B0000, #FF0000);
+}
+
+.edit-track-btn button {
+    background-image: linear-gradient(to bottom right, #FF0000, #8B0000);
+    border-color: #FF0000;
+    width: 10em;
+    height: 3em;
+    border-radius: 10px;
+    color: white;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    font-weight: 300;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.edit-track-btn button:hover {
+    background-image: linear-gradient(to bottom right, #8B0000, #FF0000);
+}
+
+.profiletrack-btns-container {
+    display: flex;
+    gap: 1em;
+    margin-top: 1em;
 }

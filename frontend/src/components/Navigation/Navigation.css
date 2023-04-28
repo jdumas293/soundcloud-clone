@@ -165,7 +165,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.authorizred-profile-btn button:hover {
+.authorized-profile-btn button:hover {
     background-image: linear-gradient(to bottom right, #8B0000, #FF0000);
 }
 
@@ -235,7 +235,7 @@
 .upload-btn button {
     background-image: linear-gradient(to bottom right, #FF0000, #8B0000);
     border-color: #FF0000;
-    width: 10em;
+    width: 14em;
     height: 3em;
     border-radius: 10px;
     color: white;
@@ -249,20 +249,6 @@
   .upload-btn button:hover {
     background-image: linear-gradient(to bottom right, #8B0000, #FF0000);
   }
-
-.search-input {
-    height: 20px;
-    width: 400px;
-    margin-right: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
-}
-
-.search-button {
-    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
-}
 
 .right-container {
     display: flex;

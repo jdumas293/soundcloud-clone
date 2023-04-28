@@ -45,10 +45,12 @@ const ProfileTrack = ({ track }) => {
                     Posted on: {yearMonthDay(track.createdAt)}
                 </div>
                 <div className="profiletrack-btns-container">
-                    <OpenModalButton 
-                        buttonText="EDIT"
-                        modalComponent={<EditTrack track={track} />}
-                    />
+                    <div className="edit-track-btn">
+                        <OpenModalButton 
+                            buttonText="EDIT"
+                            modalComponent={<EditTrack track={track} />}
+                        />
+                    </div>
                     <button onClick={handleDelete} className="delete-track-btn">DELETE</button>
                 </div>
             </div>

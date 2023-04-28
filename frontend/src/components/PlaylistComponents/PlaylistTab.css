@@ -6,24 +6,25 @@
 .playlist-card-container {
     display: flex;
     flex-direction: column;
-    margin-top: 2em;
     margin-bottom: 2em;
+    width: 100%;
 }
 
-.create-playlist-btn-container {
-    display: flex;
-    justify-content: flex-end;
-    width: 15%;
-    /* border: 1px solid red; */
-}
 
-.create-playlist-btn-container button {
-    background-color: #FF0000;
+/* BUTTON */
+.new-playlist-button button {
+    background-image: linear-gradient(to bottom right, #FF0000, #8B0000);
     border-color: #FF0000;
-    border-radius: 5px;
-    height: 3em;
-    width: 90%;
+    width: 16em;
+    height: 3.5em;
+    border-radius: 10px;
     color: white;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    font-weight: 300;
     cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.new-playlist-button button:hover {
+    background-image: linear-gradient(to bottom right, #8B0000, #FF0000);
 }
