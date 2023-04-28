@@ -41,7 +41,7 @@ const TrackCard = ({ track }) => {
                             {track.artist}
                         </div>
                     </div>
-                    <div>
+                    <div className="home-page-like-button">
                         <LikeButton trackId={track.id} />
                     </div>
                 </div>

@@ -12,7 +12,6 @@ const LikeButton = ({ trackId }) => {
 
     const handleClick = async (e) => {
         e.preventDefault();
-        
         if (isLiked) {
             await dispatch(thunkDeleteLike(likeId))
             .then(setIsLiked(false))

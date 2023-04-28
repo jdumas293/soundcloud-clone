@@ -95,3 +95,7 @@
 .fa-github {
     cursor: pointer;
 }
+
+.home-page-like-button:active {
+    transform: translateY(0.5px) translateX(0.5px);
+}
