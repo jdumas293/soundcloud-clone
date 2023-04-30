@@ -111,7 +111,9 @@ const UploadTrack = () => {
                             required
                         />
                     </div>
-                    <button onSubmit={handleUpload}>Upload</button>
+                    <div className="upload-track-button">
+                        <button onSubmit={handleUpload}>Upload</button>
+                    </div>
                 </div>
             </form>
         </>

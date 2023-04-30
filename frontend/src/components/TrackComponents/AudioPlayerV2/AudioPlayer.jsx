@@ -4,8 +4,8 @@ import { thunkLoadTracks } from "../../../store/track";
 import Controls from "./Controls";
 import DisplayTrack from "./DisplayTrack";
 import ProgressBar from "./ProgressBar";
-import "./AudioPlayerV2.css";
 import { AudioPlayerContext } from "../../../context/AudioPlayerContext";
+import "./AudioPlayerV2.css";
 
 const AudioPlayerV2 = () => {
     const dispatch = useDispatch();

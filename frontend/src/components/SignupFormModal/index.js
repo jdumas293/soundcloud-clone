@@ -32,7 +32,6 @@ function SignupFormModal() {
 
   return (
     <>
-      {/* <h1>Sign Up</h1> */}
       <form onSubmit={handleSubmit}>
         <div className="signup-errors">
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
@@ -74,7 +73,9 @@ function SignupFormModal() {
                 required
               />
           </div>
-          <button type="submit">Continue</button>
+          <div className="signup-button">
+            <button type="submit">Continue</button>
+          </div>
           <div className="login-disclaimer">
             <p>When registering, you agree that we may use your provided data for the registration and to send you notifications on our products and services. You can unsubscribe from notifications at any time in your settings. For additional info please refer to our Privacy Policy.</p>
           </div>

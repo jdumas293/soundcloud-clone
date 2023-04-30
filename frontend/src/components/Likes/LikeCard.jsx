@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import LikeButton from "../Likes/LikeButton";
 import SelectTrackButton from "../TrackComponents/AudioPlayerV2/SelectTrackButton";
 import './LikeCard.css';
 
@@ -32,11 +33,12 @@ const LikeCard = ({ like }) => {
             <div className="profile-likes-info" onClick={handleClick}>
                 <div className='profile-likes-title'>
                     {like.Track.title}
+                    <LikeButton trackId={like.Track.id} />
                 </div>
                 {/* <SelectTrackButton track={like.Track} /> */}
-            <div className='profile-likes-artist'>
-                {like.Track.artist}
-            </div>
+                <div className='profile-likes-artist'>
+                    {like.Track.artist}
+                </div>
             </div>
         </div>
     )

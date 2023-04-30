@@ -45,6 +45,8 @@
 }
 
 .profile-likes-title {
+    display: flex;
+    justify-content: space-between;
     text-decoration: underline;
 }
 

@@ -31,9 +31,7 @@ function LoginFormModal() {
     <>
       <form onSubmit={handleSubmit}>
         <div className="login-errors">
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </div>
         <div className="login-form-container">
           <div className="login-cred-container">
@@ -54,7 +52,9 @@ function LoginFormModal() {
                 required
               />
           </div>
-          <button type="submit">Continue</button>
+          <div className="login-button">
+            <button type="submit">Continue</button>
+          </div>
           <div className="login-disclaimer">
             <p>When registering, you agree that we may use your provided data for the registration and to send you notifications on our products and services. You can unsubscribe from notifications at any time in your settings. For additional info please refer to our Privacy Policy.</p>
           </div>

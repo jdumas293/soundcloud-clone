@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 400px;
+    height: 425px;
     width: 400px;
 }
 
@@ -73,18 +73,27 @@
     /* border: 2px solid red; */
 }
 
-.uploadtrack-form-container button {
+
+.upload-track-button {
+    display: flex;
+    justify-content: center;
+}
+
+.upload-track-button button {
+    background-image: linear-gradient(to bottom right, #FF0000, #8B0000);
+    border-color: #FF0000;
     width: 90%;
     height: 3em;
-    align-self: center;
-    margin-top: 1em;
+    border-radius: 10px;
     color: white;
-    background-color: #FF0000;
-    border: none;
-    /* border-color: #3244b8; */
-    border-radius: 5px;
-    cursor: pointer;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;;
+    font-weight: 300;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.upload-track-button button:hover {
+    background-image: linear-gradient(to bottom right, #8B0000, #FF0000);
 }
 
 .upload-track-errors {
